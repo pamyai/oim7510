@@ -38,7 +38,7 @@ chart is code a student pastes after running `uv add matplotlib`.
 
 import marimo
 
-__generated_with = "0.24.0"
+__generated_with = "0.24.2"
 app = marimo.App(width="medium", sql_output="pandas")
 
 
@@ -51,7 +51,9 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""# Your First Notebook""")
+    mo.md(r"""
+    # Your First Notebook
+    """)
     return
 
 
@@ -90,7 +92,7 @@ def _(mo):
 
 @app.cell
 def _():
-    freight_charges = [16.75, 22.25, 25.00, 20.25, 36.25]
+    freight_charges = [999.99, 22.25, 25.00, 20.25, 36.25]
     freight_charges
     return (freight_charges,)
 
@@ -116,6 +118,25 @@ def _(mo):
     return
 
 
+@app.cell
+def _(freight_charges):
+    freight_charges[0]
+    return
+
+
+@app.cell
+def _(freight_charges):
+    len(freight_charges)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    total = sum(freight_charges)
+    total
+    return (total,)
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -136,6 +157,28 @@ def _(mo):
     return
 
 
+@app.cell
+def _():
+    x = 50
+    orders = 3
+    return orders, x
+
+
+@app.cell
+def _(orders, x):
+    print(x)
+    orders * 12
+    return
+
+
+@app.cell
+def _(total):
+    print(total)
+
+
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -145,6 +188,11 @@ def _(mo):
 
     Watch your three cells.
     """)
+    return
+
+
+@app.cell
+def _():
     return
 
 
