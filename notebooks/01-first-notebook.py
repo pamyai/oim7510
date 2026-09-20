@@ -92,9 +92,7 @@ def _(mo):
 
 @app.cell
 def _():
-    freight_charges = [999.99, 22.25, 25.00, 20.25, 36.25]
-    freight_charges
-    return (freight_charges,)
+    return
 
 
 @app.cell(hide_code=True)
@@ -174,8 +172,6 @@ def _(orders, x):
 @app.cell
 def _(total):
     print(total)
-
-
     return
 
 
@@ -188,11 +184,6 @@ def _(mo):
 
     Watch your three cells.
     """)
-    return
-
-
-@app.cell
-def _():
     return
 
 
