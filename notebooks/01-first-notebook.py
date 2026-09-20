@@ -626,3 +626,6 @@ def _(mo):
 
 if __name__ == "__main__":
     app.run()
+uv add marimo
+
+
