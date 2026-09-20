@@ -8,7 +8,14 @@
     {
       "id": "Hbol",
       "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -51,13 +58,20 @@
       "console": []
     },
     {
-      "id": "GgFg",
-      "code_hash": null,
-      "outputs": [],
+      "id": "nVNr",
+      "code_hash": "6a86d7e7337553afb9b73306a540e82e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "lEQa",
+      "id": "PKri",
       "code_hash": "14a04c3e9180f0188c38b1c23f12b8aa",
       "outputs": [
         {
@@ -70,25 +84,33 @@
       "console": []
     },
     {
-      "id": "PKri",
-      "code_hash": "abd5a46c9b2d6515004aada631c3ff55",
-      "outputs": [],
-      "console": []
-    },
-    {
       "id": "Xref",
-      "code_hash": "47c11c10e5fa42f4ae3d744af66eaac0",
-      "outputs": [],
+      "code_hash": "abd5a46c9b2d6515004aada631c3ff55",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>1</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "SFPL",
-      "code_hash": "e707e1d0713d0e505ef05956a4278cac",
-      "outputs": [],
+      "code_hash": "47c11c10e5fa42f4ae3d744af66eaac0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>5</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "BYtC",
+      "id": "RGSE",
       "code_hash": "26b4c34487e23e3a6a8a25ca45d5c821",
       "outputs": [
         {
@@ -101,25 +123,7 @@
       "console": []
     },
     {
-      "id": "RGSE",
-      "code_hash": "6cfc046dc6b6829bd553427381db7d63",
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "Kclp",
-      "code_hash": "97ff76b72067156b49def33feff834e0",
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "emfo",
-      "code_hash": "34eb9c807df2869b63dc0d139e4bee55",
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "Hstk",
+      "id": "nWHF",
       "code_hash": "94a57b4d2f7415c80ebbf5f23c594311",
       "outputs": [
         {
@@ -132,7 +136,7 @@
       "console": []
     },
     {
-      "id": "nWHF",
+      "id": "iLit",
       "code_hash": "a38d32dbbb47ac81ee857a8e4f587493",
       "outputs": [
         {
@@ -145,7 +149,7 @@
       "console": []
     },
     {
-      "id": "iLit",
+      "id": "ZHCJ",
       "code_hash": "1c7f5d35f40512380e4e63a7d3602152",
       "outputs": [
         {
@@ -158,7 +162,7 @@
       "console": []
     },
     {
-      "id": "ZHCJ",
+      "id": "ROlb",
       "code_hash": "c560a73c50a639b3232304257ed0738d",
       "outputs": [
         {
@@ -171,7 +175,7 @@
       "console": []
     },
     {
-      "id": "ROlb",
+      "id": "qnkX",
       "code_hash": "77da7510c24b20cf9a9ed3dd3452fbe1",
       "outputs": [
         {
@@ -184,7 +188,7 @@
       "console": []
     },
     {
-      "id": "qnkX",
+      "id": "TqIu",
       "code_hash": "1057f06a192ac3338dafec878b1a2ac3",
       "outputs": [
         {
@@ -197,13 +201,20 @@
       "console": []
     },
     {
-      "id": "TqIu",
+      "id": "Vxnm",
       "code_hash": "fcd5fe5a90d3e8ec5b572d836365a5bf",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[10248, 10249, 10250, 10251, 10252]"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "Vxnm",
+      "id": "DnEU",
       "code_hash": "24a98ea6d88d50be86f90cf02fd1775b",
       "outputs": [
         {
@@ -216,7 +227,124 @@
       "console": []
     },
     {
-      "id": "DnEU",
+      "id": "yoUk",
+      "code_hash": "6dadfaee3664c4c1cfe5e3a0b0390208",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>36.25</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Mpyi",
+      "code_hash": "81da3844f1ce177d1b2c9860c8e25cda",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[1, \"text/plain+float:22.25\", \"text/plain+float:25.0\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "QWnZ",
+      "code_hash": "140a6e539ed3c6434a83409895be12a4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>10248</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mGog",
+      "code_hash": "d27e30c2d11c4de1bacc99dcbff11d6a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>11</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "EeMF",
+      "code_hash": "3ef594f3e0dfdc5c2a477988b469ab73",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>51250</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NfVh",
+      "code_hash": "fe66eb122d3712a244706936ddc4f708",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[10248, 10249, 10250, 10251, 10252, 10248, 10249, 10250, 10251, 10252]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Tfwd",
+      "code_hash": "a305a221ed34fab4b8a8e9c710887d0e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[10248, 10249, 10250, 10251, 10252, 1, \"text/plain+float:22.25\", \"text/plain+float:25.0\", \"text/plain+float:20.25\", \"text/plain+float:36.25\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AEnU",
+      "code_hash": "c868ee09c8177da4fbaedcb30ed7efbe",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[1, \"text/plain+float:20.25\", \"text/plain+float:22.25\", \"text/plain+float:25.0\", \"text/plain+float:36.25\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "eDVx",
+      "code_hash": "ae7555daaeaad700a408a44157317898",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain+float:36.25\", \"text/plain+float:25.0\", \"text/plain+float:22.25\", \"text/plain+float:20.25\", 1]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
       "code_hash": "6d0b81807515509cd78ab5d6bcdf23b9",
       "outputs": [
         {
@@ -229,13 +357,20 @@
       "console": []
     },
     {
-      "id": "ulZA",
+      "id": "ecfG",
       "code_hash": "e4fe7720112bf52771a7c6e23b6680c8",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain:<class 'int'>\", \"text/plain:<class 'int'>\", \"text/plain:<class 'str'>\", \"text/plain:<class 'bool'>\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "Pvdt",
       "code_hash": "e37bd35d034f1b1250af1bc0ff154ca7",
       "outputs": [
         {
@@ -248,7 +383,7 @@
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "ZBYS",
       "code_hash": "e772d821a86328a255a3c0e7072f418c",
       "outputs": [
         {
@@ -261,7 +396,40 @@
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "HqtL",
+      "code_hash": "2b07604d6c8bc36de7b48b01e58b0753",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;16.7522.25&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Utzh",
+      "code_hash": "85bdef82e23bec3a37cc5f601903a68c",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "unsupported operand type(s) for +: 'float' and 'str'",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\napas\\AppData\\Local\\Temp\\marimo_12852\\__marimo__cell_Utzh_.py\"</span>, line <span class=\"m\">2</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"mf\">16.75</span> <span class=\"o\">+</span> <span class=\"s2\">\"22.25\"</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~^~~~~~~~~</span>\n<span class=\"gr\">TypeError</span>: <span class=\"n\">unsupported operand type(s) for +: 'float' and 'str'</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "aLJB",
       "code_hash": "61c872df0f30ee9fc863188843e1827f",
       "outputs": [
         {
@@ -274,7 +442,7 @@
       "console": []
     },
     {
-      "id": "aLJB",
+      "id": "nHfw",
       "code_hash": "f055d6c47921af028d1e478512b0c4ef",
       "outputs": [
         {
@@ -287,7 +455,7 @@
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "xXTn",
       "code_hash": "c769b53cfa5c0d31eb4774ccc90cead4",
       "outputs": [
         {
@@ -300,13 +468,27 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "AjVT",
       "code_hash": "ab81ca09e82b5615c45e533a8eb8a2d5",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Order 10248 paid $1.00 in freight.\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "AjVT",
+      "id": "pHFh",
       "code_hash": "3412983ccee1651667e60ce26c8ebab7",
       "outputs": [
         {
@@ -319,7 +501,7 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "NCOB",
       "code_hash": "ae8593286258fa717ee70a219c0780b9",
       "outputs": [
         {
@@ -332,7 +514,7 @@
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "aqbW",
       "code_hash": "820c55de11633da2a9d03c20e93517b6",
       "outputs": [
         {
@@ -345,13 +527,20 @@
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "TRpd",
       "code_hash": "99d2afc68739f124c36b434e4f86adcf",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain+float:22.25\", \"text/plain+float:25.0\", \"text/plain+float:20.25\", \"text/plain+float:36.25\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "TRpd",
+      "id": "TXez",
       "code_hash": "cfb66343400f3ca3ff1c2cef1cf4eb77",
       "outputs": [
         {
@@ -364,7 +553,7 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "dNNg",
       "code_hash": "eaff85162f208add7648c4d43810498a",
       "outputs": [
         {
@@ -377,7 +566,40 @@
       "console": []
     },
     {
-      "id": "dNNg",
+      "id": "IOZr",
+      "code_hash": "144cd143bcf4fae5835ae5b7708a709a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[1, \"text/plain+float:22.25\", \"text/plain+float:25.0\", \"text/plain+float:20.25\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BZCZ",
+      "code_hash": "330213ee0853b76a7697c17544543d71",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "There are 4 charges below $25, totaling $68.50.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "yCnT",
       "code_hash": "3c0f55b2f8582e207416da282626db3d",
       "outputs": [
         {
@@ -390,7 +612,7 @@
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "wlCL",
       "code_hash": "ceef6bdc4617e1512188a28309983104",
       "outputs": [
         {
@@ -403,7 +625,46 @@
       "console": []
     },
     {
-      "id": "wlCL",
+      "id": "RDRW",
+      "code_hash": "856810d8ceb05d350e1606273ecba0d9",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "syntax",
+          "evalue": "line 1\n    a package name with a typo\n      ^^^^^^^\nSyntaxError: invalid syntax\n",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "VAZf",
+      "code_hash": "de0e6cbf22bcb57a8b83685ca00886de",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "syntax",
+          "evalue": "line 1\n    no file \"sales.csv in the project\"\n       ^^^^\nSyntaxError: invalid syntax\n",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TGKY",
+      "code_hash": "d543281ef4c4e45dd2fb4979dcfada04",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "syntax",
+          "evalue": "line 1\n    bracket missing\n    ^^^^^^^\nSyntaxError: invalid syntax. Did you mean 'raise'?\n",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kqZH",
       "code_hash": "830409d9361fd16a4b5b79956f3dae62",
       "outputs": [
         {
@@ -416,7 +677,20 @@
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "ynDC",
+      "code_hash": "447c284a6c5ccf9edb2f980d920e9208",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;9.50&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wAgl",
       "code_hash": "b3a11deac49dcba187ae6c47dcc0854c",
       "outputs": [
         {
@@ -429,20 +703,33 @@
       "console": []
     },
     {
-      "id": "wAgl",
-      "code_hash": "9604a4334a5c681e4d051bb1c7468616",
+      "id": "rEll",
+      "code_hash": "8aeb1f9651c6fea701e3f8e28d7de300",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"read-this-one-on-paper\">\u270f\ufe0f Read This One on Paper</h1>\n<span class=\"paragraph\"><strong>By hand, with no agent.</strong> When code an agent wrote is the thing that broke, reading the error yourself is how you find out why.</span>\n<span class=\"paragraph\">A file called <code>hello.py</code>, with its line numbers:</span>\n<div class=\"language-text codehilite\"><pre><span></span><code>1  freight_charges = [16.75, 22.25, \"pending\", 9.50]\n2\n3  total = sum(freight_charges)\n4  print(total)\n</code></pre></div>\n<span class=\"paragraph\">Running it prints:</span>\n<div class=\"language-text codehilite\"><pre><span></span><code>Traceback (most recent call last):\n  File \"/Users/you/oim7510/hello.py\", line 3, in &lt;module&gt;\n    total = sum(freight_charges)\nTypeError: unsupported operand type(s) for +: 'float' and 'str'\n</code></pre></div>\n<ol>\n<li>Which line does Python name?</li>\n<li>Which line would you change, and why is it a different line from the one Python named?</li>\n<li>What would you change it to? More than one answer is defensible, so state the rule you chose.</li>\n</ol></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"read-this-one-on-paper\">\u270f\ufe0f Read This One on Paper</h1>\n<span class=\"paragraph\"><strong>By hand, with no agent.</strong> When code an agent wrote is the thing that broke, reading the error yourself is how you find out why.</span>\n<span class=\"paragraph\">A file called <code>hello.py</code>, with its line numbers:</span>\n<div class=\"language-text codehilite\"><pre><span></span><code>1  freight_charges = [16.75, 22.25, \"pending\", 9.50]\n2\n3  total = sum(freight_charges)\n4  print(total)\n</code></pre></div>\n<span class=\"paragraph\">Running it prints:</span>\n<div class=\"language-text codehilite\"><pre><span></span><code>Traceback (most recent call last):\n  File \"/Users/you/oim7510/hello.py\", line 3, in &lt;module&gt;\n    total = sum(freight_charges)\nTypeError: unsupported operand type(s) for +: 'float' and 'str'\n</code></pre></div>\n<ol>\n<li>Which line does Python name?\n   --&gt; Line 3 (total = sum(freight_charges))</li>\n<li>Which line would you change, and why is it a different line from the one Python named?\n   --&gt; change line 1 because it contains \"pending\", which is a string</li>\n<li>What would you change it to? More than one answer is defensible, so state the rule you chose.\n   --&gt;Rule: remove non-numeric values before calculating the total.\n   from -- freight_charges = [16.75, 22.25, \"pending\", 9.50]\n   to -- freight_charges = [16.75, 22.25, 9.50]</li>\n</ol></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "rEll",
+      "id": "gdyH",
+      "code_hash": "3018f82f0df28018ef792ddee14af237",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>Line 3 (total = sum(freight_charges))</li>\n<li>change line 1 because it contains \"pending\", which is a string</li>\n<li>Rule: remove non-numeric values before calculating the total. from -- freight_charges = [16.75, 22.25, \"pending\", 9.50] to -- freight_charges = [16.75, 22.25, 9.50]</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dGlV",
       "code_hash": "220c060dad06108b309d7d0e848cd4d6",
       "outputs": [
         {
@@ -455,7 +742,7 @@
       "console": []
     },
     {
-      "id": "dGlV",
+      "id": "SdmI",
       "code_hash": "3d8a46394aacb87f7fbca6175b3d5175",
       "outputs": [
         {
@@ -468,7 +755,7 @@
       "console": []
     },
     {
-      "id": "SdmI",
+      "id": "lgWD",
       "code_hash": "aeb144ec827e787994efccd05da6699e",
       "outputs": [
         {

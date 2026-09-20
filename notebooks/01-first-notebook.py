@@ -92,7 +92,14 @@ def _(mo):
 
 @app.cell
 def _():
-    return
+    freight_charges= [
+     1,
+      22.25,
+      25.0,
+      20.25,
+      36.25
+    ]
+    return (freight_charges,)
 
 
 @app.cell(hide_code=True)
@@ -128,13 +135,6 @@ def _(freight_charges):
     return
 
 
-@app.cell
-def _(freight_charges):
-    total = sum(freight_charges)
-    total
-    return (total,)
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -152,26 +152,6 @@ def _(mo):
 
     Four experiments follow. Do them in order, and undo each one before the next.
     """)
-    return
-
-
-@app.cell
-def _():
-    x = 50
-    orders = 3
-    return orders, x
-
-
-@app.cell
-def _(orders, x):
-    print(x)
-    orders * 12
-    return
-
-
-@app.cell
-def _(total):
-    print(total)
     return
 
 
@@ -278,6 +258,69 @@ def _(mo):
     return
 
 
+@app.cell
+def _(freight_charges):
+    # idk
+    freight_charges[-1]
+    return
+
+
+@app.cell
+def _(freight_charges):
+    # first 3 value
+    freight_charges[:3]
+    return
+
+
+@app.cell
+def _(orders):
+    #first value
+    orders[0]
+    return
+
+
+@app.cell
+def _():
+    #idk
+    category = "Confections"
+    len(category)
+    return
+
+
+@app.cell
+def _(orders):
+    #simply sum
+    sum(orders)
+    return
+
+
+@app.cell
+def _(orders):
+    # I expected each value to be multiplied ouchhh
+    orders * 2
+
+    return
+
+
+@app.cell
+def _(freight_charges, orders):
+    # again I expected array of 5 each valued to be added up 
+    orders + freight_charges
+    return
+
+
+@app.cell
+def _(freight_charges):
+    sorted(freight_charges)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    sorted(freight_charges, reverse=True)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -314,6 +357,21 @@ def _(mo):
     1. `"16.75" + "22.25"`
     2. `16.75 + "22.25"`
     """)
+    return
+
+
+@app.cell
+def _():
+    #that looks like a string I guess it just go 16.7522.25
+    "16.75" + "22.25"
+    #woohoo correct
+    return
+
+
+@app.cell
+def _():
+    #this one idk
+    16.75 + "22.25"
     return
 
 
@@ -439,6 +497,26 @@ def _(mo):
     return
 
 
+@app.cell
+def _(freight_charges):
+    below_25 = []
+
+    for item in freight_charges:
+        if item <= 25:
+            below_25.append(item)
+
+    below_25
+    return (below_25,)
+
+
+@app.cell
+def _(below_25):
+    print(
+        f"There are {len(below_25)} charges below $25, totaling ${sum(below_25):.2f}."
+    )
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -477,6 +555,30 @@ def _(mo):
     return
 
 
+app._unparsable_cell(
+    r"""
+    a package name with a typo
+    """,
+    name="_"
+)
+
+
+app._unparsable_cell(
+    r"""
+    no file "sales.csv in the project"
+    """,
+    name="_"
+)
+
+
+app._unparsable_cell(
+    r"""
+    bracket missing
+    """,
+    name="_"
+)
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -486,6 +588,14 @@ def _(mo):
 
     `max(["9.50", "16.75", "22.25"])`
     """)
+    return
+
+
+@app.cell
+def _():
+    #22.25
+    max(["9.50", "16.75", "22.25"])
+    #huh? oh ok it's tring array
     return
 
 
@@ -529,8 +639,23 @@ def _(mo):
     ```
 
     1. Which line does Python name?
+       --> Line 3 (total = sum(freight_charges))
     2. Which line would you change, and why is it a different line from the one Python named?
+       --> change line 1 because it contains "pending", which is a string
     3. What would you change it to? More than one answer is defensible, so state the rule you chose.
+       -->Rule: remove non-numeric values before calculating the total.
+       from -- freight_charges = [16.75, 22.25, "pending", 9.50]
+       to -- freight_charges = [16.75, 22.25, 9.50]
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    1. Line 3 (total = sum(freight_charges))
+    2. change line 1 because it contains "pending", which is a string
+    3. Rule: remove non-numeric values before calculating the total. from -- freight_charges = [16.75, 22.25, "pending", 9.50] to -- freight_charges = [16.75, 22.25, 9.50]
     """)
     return
 
@@ -626,6 +751,3 @@ def _(mo):
 
 if __name__ == "__main__":
     app.run()
-uv add marimo
-
-
