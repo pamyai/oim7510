@@ -376,6 +376,18 @@ def _(statuses):
             ShippedOrder += 1
 
     print(ShippedOrder)
+    return (ShippedOrder,)
+
+
+@app.cell
+def _(ShippedOrder, statuses):
+    len(statuses) - ShippedOrder
+    return
+
+
+@app.cell
+def _(ShippedOrder, statuses):
+    ShippedOrder / len(statuses) * 100
     return
 
 

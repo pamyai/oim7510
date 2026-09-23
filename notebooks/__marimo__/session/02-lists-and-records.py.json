@@ -314,6 +314,32 @@
       ]
     },
     {
+      "id": "sIsY",
+      "code_hash": "88b2e563d821ea8b5cf93863d704df70",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>2</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ajAX",
+      "code_hash": "82d90a34122692b7cdd814bcb4f2d5e8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>60.0</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "nWHF",
       "code_hash": "53b3a52a2d49ccac692ab047603ba4c1",
       "outputs": [
