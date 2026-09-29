@@ -366,6 +366,19 @@
       "console": []
     },
     {
+      "id": "orBb",
+      "code_hash": "dc4562b11af0fc62ed5e1f1dc59956c4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"stapler\", \"tape\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "ZHCJ",
       "code_hash": "6935532a36f420a3c62570d37b41c982",
       "outputs": [
