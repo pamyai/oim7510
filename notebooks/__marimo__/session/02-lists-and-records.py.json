@@ -45,7 +45,7 @@
       "console": []
     },
     {
-      "id": "gHoH",
+      "id": "bkHC",
       "code_hash": "423633a140c7e7ecacdb9d5184ffde0e",
       "outputs": [
         {
@@ -59,13 +59,13 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Enter the cost:  16.259\nEnter tax:  3.25\n",
+          "text": "Enter the cost:  10\nEnter tax:  2\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "WALR",
+      "id": "lEQa",
       "code_hash": "b05db5e5b13acd59f299c4ca5dad3560",
       "outputs": [
         {
@@ -79,39 +79,39 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Total cost: $16.26\n",
+          "text": "Total cost: $10.00\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
-      "id": "Sndw",
+      "id": "PKri",
       "code_hash": "b329912142512f5404a3b441c5348d71",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>32.518</pre>"
+            "text/html": "<pre class='text-xs'>20.0</pre>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "XKOf",
+      "id": "Xref",
       "code_hash": "bd584f485531dc8a8612f58924a3ce3c",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>19.509</pre>"
+            "text/html": "<pre class='text-xs'>12.0</pre>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "bkHC",
+      "id": "SFPL",
       "code_hash": "115cdc766461e63d887742e99ed47a5d",
       "outputs": [
         {
@@ -124,7 +124,7 @@
       "console": []
     },
     {
-      "id": "lEQa",
+      "id": "BYtC",
       "code_hash": "9b44ca46a3aeb5b1fdd7baa4989e7e88",
       "outputs": [
         {
@@ -137,7 +137,7 @@
       "console": []
     },
     {
-      "id": "PKri",
+      "id": "RGSE",
       "code_hash": "18db72514e4744db7535f15264da6a85",
       "outputs": [
         {
@@ -150,7 +150,7 @@
       "console": []
     },
     {
-      "id": "Xref",
+      "id": "Kclp",
       "code_hash": "3162e71c11ea9d96662b50a13fe21705",
       "outputs": [
         {
@@ -163,7 +163,7 @@
       "console": []
     },
     {
-      "id": "GtFI",
+      "id": "emfo",
       "code_hash": "c69aabcc95556e47720f514ac485e34c",
       "outputs": [
         {
@@ -176,7 +176,7 @@
       "console": []
     },
     {
-      "id": "dXQF",
+      "id": "Hstk",
       "code_hash": "8eb6885ce9727c291167dbfae8f4724d",
       "outputs": [
         {
@@ -196,7 +196,7 @@
       ]
     },
     {
-      "id": "SFPL",
+      "id": "nWHF",
       "code_hash": "8b92c83e94bc2769763f79661e30f6eb",
       "outputs": [
         {
@@ -209,7 +209,7 @@
       "console": []
     },
     {
-      "id": "BYtC",
+      "id": "iLit",
       "code_hash": "19fcbdf4ffd48826b1d19dcc06b0483d",
       "outputs": [
         {
@@ -222,7 +222,7 @@
       "console": []
     },
     {
-      "id": "RGSE",
+      "id": "ZHCJ",
       "code_hash": "9b6d1aeb948c609622d2cb77220b7d81",
       "outputs": [
         {
@@ -235,7 +235,7 @@
       "console": []
     },
     {
-      "id": "Kclp",
+      "id": "ROlb",
       "code_hash": "7d66f1c35b5353daeb788a08f3b9181e",
       "outputs": [
         {
@@ -255,7 +255,7 @@
       ]
     },
     {
-      "id": "LDUr",
+      "id": "qnkX",
       "code_hash": null,
       "outputs": [
         {
@@ -268,7 +268,7 @@
       "console": []
     },
     {
-      "id": "emfo",
+      "id": "TqIu",
       "code_hash": "fb022f81dfbffed89f3565af612fe5ec",
       "outputs": [
         {
@@ -281,7 +281,7 @@
       "console": []
     },
     {
-      "id": "Hstk",
+      "id": "Vxnm",
       "code_hash": "413f573172b95d2cba69850b5e98a1e1",
       "outputs": [
         {
@@ -294,7 +294,7 @@
       "console": []
     },
     {
-      "id": "dHNo",
+      "id": "DnEU",
       "code_hash": "c55de6e6712fcb002c7c0650b8e83c55",
       "outputs": [
         {
@@ -314,7 +314,7 @@
       ]
     },
     {
-      "id": "sIsY",
+      "id": "ulZA",
       "code_hash": "88b2e563d821ea8b5cf93863d704df70",
       "outputs": [
         {
@@ -327,7 +327,7 @@
       "console": []
     },
     {
-      "id": "ajAX",
+      "id": "ecfG",
       "code_hash": "82d90a34122692b7cdd814bcb4f2d5e8",
       "outputs": [
         {
@@ -340,7 +340,7 @@
       "console": []
     },
     {
-      "id": "nWHF",
+      "id": "Pvdt",
       "code_hash": "53b3a52a2d49ccac692ab047603ba4c1",
       "outputs": [
         {
@@ -353,7 +353,7 @@
       "console": []
     },
     {
-      "id": "iLit",
+      "id": "ZBYS",
       "code_hash": "d7f1e30a273b00c372f58d2c77801a99",
       "outputs": [
         {
@@ -366,20 +366,40 @@
       "console": []
     },
     {
-      "id": "orBb",
-      "code_hash": "dc4562b11af0fc62ed5e1f1dc59956c4",
+      "id": "aLJB",
+      "code_hash": "cb8a67fa1c34da278ac0d97df3a208e8",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "application/json": "[\"stapler\", \"tape\"]"
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "['notebook', 'pen', ['stapler', 'tape']]\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "SgIL",
+      "code_hash": "ec4102155d178df637b47304192fb61a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">how many items does append add - 1 which is [\"stapler\", \"tape\"]</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "ZHCJ",
+      "id": "nHfw",
       "code_hash": "6935532a36f420a3c62570d37b41c982",
       "outputs": [
         {
@@ -392,7 +412,7 @@
       "console": []
     },
     {
-      "id": "ROlb",
+      "id": "xXTn",
       "code_hash": "01a8d5269858a498482cb962fade9d87",
       "outputs": [
         {
@@ -412,7 +432,7 @@
       ]
     },
     {
-      "id": "qnkX",
+      "id": "AjVT",
       "code_hash": "f405b348260f91aaa0a73e40c618af25",
       "outputs": [
         {
@@ -425,7 +445,7 @@
       "console": []
     },
     {
-      "id": "TqIu",
+      "id": "pHFh",
       "code_hash": "8d95c8f244caaf7e1606caf938476e98",
       "outputs": [
         {
@@ -438,7 +458,7 @@
       "console": []
     },
     {
-      "id": "Vxnm",
+      "id": "NCOB",
       "code_hash": "8e5e2a59e9f4c3607fa0b5cb1f86f715",
       "outputs": [
         {
@@ -451,7 +471,7 @@
       "console": []
     },
     {
-      "id": "DnEU",
+      "id": "aqbW",
       "code_hash": "e22c9fe5df8633ecd9c695b5510cb87f",
       "outputs": [
         {
@@ -471,7 +491,7 @@
       ]
     },
     {
-      "id": "ulZA",
+      "id": "TRpd",
       "code_hash": "1d4cd33d87f69cef37de87f6bdd519ca",
       "outputs": [
         {
@@ -484,7 +504,7 @@
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "TXez",
       "code_hash": "b9a8a3f558e3abd939892755cdb675a5",
       "outputs": [
         {
@@ -497,7 +517,7 @@
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "dNNg",
       "code_hash": "53f7fdf6f5abd48e8964538bd017999e",
       "outputs": [
         {
@@ -510,7 +530,7 @@
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "yCnT",
       "code_hash": "692b58e986493ab11653c79bccc2af34",
       "outputs": [
         {
@@ -523,7 +543,7 @@
       "console": []
     },
     {
-      "id": "aLJB",
+      "id": "wlCL",
       "code_hash": "332446c7b3958fd46ca5386ebac32217",
       "outputs": [
         {
@@ -536,7 +556,7 @@
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "kqZH",
       "code_hash": "b4c4fb6a4f42fd5d98b6b18739a03241",
       "outputs": [
         {
@@ -549,7 +569,20 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "qvXv",
+      "code_hash": "50be611e1f77d5e53ba193b6d6f67b40",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wAgl",
       "code_hash": "0ed1e9cc210d89a44e791cc8866fac27",
       "outputs": [
         {
@@ -562,7 +595,7 @@
       "console": []
     },
     {
-      "id": "AjVT",
+      "id": "rEll",
       "code_hash": "2e78ba09148c2840a0ce57701f538f5b",
       "outputs": [
         {
@@ -575,7 +608,7 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "dGlV",
       "code_hash": "215e85cc1d798eb376e760e2e6876215",
       "outputs": [
         {
@@ -588,7 +621,7 @@
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "SdmI",
       "code_hash": "56ae7cf264083e0936598623c21b783a",
       "outputs": [
         {
@@ -601,7 +634,7 @@
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "lgWD",
       "code_hash": "362a604c80a321d2e4d5c0c5e80b4671",
       "outputs": [
         {
@@ -614,7 +647,7 @@
       "console": []
     },
     {
-      "id": "TRpd",
+      "id": "yOPj",
       "code_hash": "276567fb8e96c73de1480e5e345ad8c1",
       "outputs": [
         {
@@ -627,7 +660,7 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "fwwy",
       "code_hash": "1a951e63750454427afca99d94d5c044",
       "outputs": [
         {
@@ -640,7 +673,7 @@
       "console": []
     },
     {
-      "id": "dNNg",
+      "id": "LJZf",
       "code_hash": "33f3e6ba51f144e4af890984773e0cfc",
       "outputs": [
         {
@@ -653,7 +686,7 @@
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "urSm",
       "code_hash": "ee04f5dc9b3e474ede5f3f883c3aa33e",
       "outputs": [
         {
@@ -666,7 +699,7 @@
       "console": []
     },
     {
-      "id": "wlCL",
+      "id": "jxvo",
       "code_hash": "d7c2e174de0e810f192e0ebcd5f38e05",
       "outputs": [
         {
@@ -679,7 +712,7 @@
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "mWxS",
       "code_hash": "84a6141f626588f299934afdd739184b",
       "outputs": [
         {
@@ -692,7 +725,7 @@
       "console": []
     },
     {
-      "id": "wAgl",
+      "id": "CcZR",
       "code_hash": "d8cb88a4a782aa1a3abecba9ae2a81aa",
       "outputs": [
         {

@@ -8,7 +8,14 @@
     {
       "id": "Hbol",
       "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -53,7 +60,14 @@
     {
       "id": "lEQa",
       "code_hash": "6a86d7e7337553afb9b73306a540e82e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -72,13 +86,27 @@
     {
       "id": "Xref",
       "code_hash": "abd5a46c9b2d6515004aada631c3ff55",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>1</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "SFPL",
       "code_hash": "47c11c10e5fa42f4ae3d744af66eaac0",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>5</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -175,7 +203,14 @@
     {
       "id": "ZHCJ",
       "code_hash": "fcd5fe5a90d3e8ec5b572d836365a5bf",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[10248, 10249, 10250, 10251, 10252]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -194,55 +229,118 @@
     {
       "id": "qnkX",
       "code_hash": "6dadfaee3664c4c1cfe5e3a0b0390208",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>36.25</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "TqIu",
       "code_hash": "81da3844f1ce177d1b2c9860c8e25cda",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[1, \"text/plain+float:22.25\", \"text/plain+float:25.0\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "Vxnm",
       "code_hash": "140a6e539ed3c6434a83409895be12a4",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>10248</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "DnEU",
       "code_hash": "d27e30c2d11c4de1bacc99dcbff11d6a",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>11</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "ulZA",
       "code_hash": "3ef594f3e0dfdc5c2a477988b469ab73",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>51250</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "ecfG",
       "code_hash": "b03390c7324b724e0e828177b80ab0ca",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[10248, 10249, 10250, 10251, 10252, 10248, 10249, 10250, 10251, 10252]"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "Pvdt",
       "code_hash": "a305a221ed34fab4b8a8e9c710887d0e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[10248, 10249, 10250, 10251, 10252, 1, \"text/plain+float:22.25\", \"text/plain+float:25.0\", \"text/plain+float:20.25\", \"text/plain+float:36.25\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "ZBYS",
       "code_hash": "c868ee09c8177da4fbaedcb30ed7efbe",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[1, \"text/plain+float:20.25\", \"text/plain+float:22.25\", \"text/plain+float:25.0\", \"text/plain+float:36.25\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "aLJB",
       "code_hash": "ae7555daaeaad700a408a44157317898",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain+float:36.25\", \"text/plain+float:25.0\", \"text/plain+float:22.25\", \"text/plain+float:20.25\", 1]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -261,7 +359,14 @@
     {
       "id": "xXTn",
       "code_hash": "e4fe7720112bf52771a7c6e23b6680c8",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain:<class 'int'>\", \"text/plain:<class 'int'>\", \"text/plain:<class 'str'>\", \"text/plain:<class 'bool'>\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -293,14 +398,35 @@
     {
       "id": "NCOB",
       "code_hash": "2b07604d6c8bc36de7b48b01e58b0753",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;16.7522.25&#x27;</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "aqbW",
       "code_hash": "85bdef82e23bec3a37cc5f601903a68c",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "unsupported operand type(s) for +: 'float' and 'str'",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\napas\\AppData\\Local\\Temp\\marimo_19304\\__marimo__cell_aqbW_.py\"</span>, line <span class=\"m\">2</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"mf\">16.75</span> <span class=\"o\">+</span> <span class=\"s2\">\"22.25\"</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~^~~~~~~~~</span>\n<span class=\"gr\">TypeError</span>: <span class=\"n\">unsupported operand type(s) for +: 'float' and 'str'</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
     },
     {
       "id": "TRpd",
@@ -344,8 +470,22 @@
     {
       "id": "yCnT",
       "code_hash": "ab81ca09e82b5615c45e533a8eb8a2d5",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Order 10248 paid $1.00 in freight.\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "wlCL",
@@ -389,7 +529,14 @@
     {
       "id": "rEll",
       "code_hash": "99d2afc68739f124c36b434e4f86adcf",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain+float:22.25\", \"text/plain+float:25.0\", \"text/plain+float:20.25\", \"text/plain+float:36.25\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -421,14 +568,35 @@
     {
       "id": "lgWD",
       "code_hash": "144cd143bcf4fae5835ae5b7708a709a",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[1, \"text/plain+float:22.25\", \"text/plain+float:25.0\", \"text/plain+float:20.25\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "yOPj",
       "code_hash": "330213ee0853b76a7697c17544543d71",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "There are 4 charges below $25, totaling $68.50.\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "fwwy",
@@ -459,19 +627,40 @@
     {
       "id": "urSm",
       "code_hash": "856810d8ceb05d350e1606273ecba0d9",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "syntax",
+          "evalue": "line 1\n    a package name with a typo\n      ^^^^^^^\nSyntaxError: invalid syntax\n",
+          "traceback": []
+        }
+      ],
       "console": []
     },
     {
       "id": "jxvo",
       "code_hash": "de0e6cbf22bcb57a8b83685ca00886de",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "syntax",
+          "evalue": "line 1\n    no file \"sales.csv in the project\"\n       ^^^^\nSyntaxError: invalid syntax\n",
+          "traceback": []
+        }
+      ],
       "console": []
     },
     {
       "id": "mWxS",
       "code_hash": "d543281ef4c4e45dd2fb4979dcfada04",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "syntax",
+          "evalue": "line 1\n    bracket missing\n    ^^^^^^^\nSyntaxError: invalid syntax. Did you mean 'raise'?\n",
+          "traceback": []
+        }
+      ],
       "console": []
     },
     {
@@ -490,7 +679,14 @@
     {
       "id": "YWSi",
       "code_hash": "447c284a6c5ccf9edb2f980d920e9208",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;9.50&#x27;</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {

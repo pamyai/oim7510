@@ -423,6 +423,15 @@ def _():
 @app.cell
 def _(order_lines):
     order_lines[2]
+    print(order_lines)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    how many items does append add - 1 which is ["stapler", "tape"]
+    """)
     return
 
 
@@ -598,6 +607,14 @@ def _(mo):
     Two of them fail, and both give the same kind of error. Add a cell and find out
     which, and what the message says. A `KeyError` names the key it could not find.
     """)
+    return
+
+
+@app.cell
+def _():
+    #first_order["Freight"]
+    #first_order["Freight"]
+    #first_order["0"]
     return
 
 
