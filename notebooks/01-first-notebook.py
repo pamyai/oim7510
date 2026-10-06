@@ -298,7 +298,6 @@ def _(orders):
 def _(orders):
     # I expected each value to be multiplied ouchhh
     orders * 2
-
     return
 
 
