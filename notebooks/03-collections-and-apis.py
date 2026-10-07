@@ -189,7 +189,7 @@ def _(mo):
 def _():
     closing_prices = {"AAPL": 260.81, "NVDA": 186.00, "MSFT": 404.88, "GOOG": 308.42}
     closing_prices
-    return (closing_prices,)
+    return
 
 
 @app.cell(hide_code=True)
@@ -216,7 +216,7 @@ def _():
         "Finland", "USA", "USA", "Germany", "France", "Austria", "Argentina", "Venezuela",
     ]
     len(ship_countries)
-    return (ship_countries,)
+    return
 
 
 @app.cell(hide_code=True)
@@ -417,6 +417,17 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
+    1. list
+    2. set
+    3. dict
+    4. tuple
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
     ## ✏️ D · The portfolio again
 
     Notebook 2 held the six holdings as a list of dictionaries. Here they are as a list of tuples, one holding per tuple.
@@ -442,7 +453,21 @@ def _():
         ("NVDA", 20, 410.17),
         ("TSLA", 150, 255.70),
     ]
-    holdings
+
+    return (holdings,)
+
+
+@app.cell
+def _(holdings):
+    total_cost = 0
+    #use for loop to iterate every stock to get share price of each stock, then calculate subtotal then add subtotal to total_cost
+    for stock in holdings:
+        shares = stock[1]
+        price = stock[2]
+        subtotal = shares * price
+        total_cost += subtotal
+
+    total_cost
     return
 
 
@@ -634,6 +659,16 @@ def _(mo):
 
     **E · The wind in a sentence.** Add a cell that takes the wind speed and its unit out of `babson_weather` and puts both into one sentence with an f-string. *Check yourself: the unit reads `mp/h`, which is how this service writes miles per hour.*
     """)
+    return
+
+
+@app.cell
+def _(babson_weather):
+    wind_speed = babson_weather["wind_mph"]
+    wind_unit = babson_weather["wind_unit"]
+
+    sentence = f"The wind speed is {wind_speed} {wind_unit}."
+    sentence
     return
 
 
