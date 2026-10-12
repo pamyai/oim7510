@@ -128,7 +128,13 @@ def _():
     reorder_points = [20, 30, 40, 50]
     daily_demand = [12, 15, 9, 14, 18, 11, 10, 16, 13, 17, 8, 12, 20, 14, 11,
                     9, 15, 13, 16, 12, 10, 14, 19, 11, 13, 15, 9, 12, 17, 14]
-    return daily_demand, lead_time_days, order_quantity, starting_stock
+    return (
+        daily_demand,
+        lead_time_days,
+        order_quantity,
+        reorder_points,
+        starting_stock,
+    )
 
 
 @app.cell(hide_code=True)
@@ -188,21 +194,87 @@ def _(daily_demand, lead_time_days, order_quantity, starting_stock):
 
         day_table.append((day + 1, starting_today, arrived, demand, sold, lost, ending, units_ordered))
 
-    day_table[0]   # peek at day 1's record
+    day_table[0] #check result 
     return (day_table,)
 
 
 @app.cell
 def _(day_table):
-    #check reporting table
     print(f"{'day':>4} {'start':>6} {'arrived':>8} {'demand':>7} {'sold':>5} {'lost':>5} {'end':>6} {'ordered':>8}")
-    for _day_num, _start, _arrived, _demand, _sold, _lost, _end, _ordered in day_table:
-        print(f"{_day_num:>4} {_start:>6} {_arrived:>8} {_demand:>7} {_sold:>5} {_lost:>5} {_end:>6} {_ordered:>8}")
+    for day_num, start, arrived_qty, demand_qty, sold_qty, lost_qty, end, ordered_qty in day_table:
+        print(f"{day_num:>4} {start:>6} {arrived_qty:>8} {demand_qty:>7} {sold_qty:>5} {lost_qty:>5} {end:>6} {ordered_qty:>8}")
     return
 
 
 @app.cell
-def _():
+def _(
+    daily_demand,
+    lead_time_days,
+    order_quantity,
+    reorder_points,
+    starting_stock,
+):
+    # run the same simulation for every reorder point, saving one summary row for each
+    comparison_table = []   # one row per reorder point: (reorder point, units lost, days with a lost sale, orders placed, average ending stock)
+
+    for rp in reorder_points:
+        current_stock = starting_stock
+        current_outstanding = []   # list of (arrival_day, quantity) tuples: orders placed but not yet delivered
+
+        rp_units_lost = 0
+        rp_days_with_lost_sale = 0
+        rp_orders_placed = 0
+        rp_ending_stock_sum = 0
+
+        for today in range(30):
+            # 1. deliver any order whose arrival day is today
+            today_arrived = 0
+            still_waiting = []
+            for order_arrival_day, order_qty in current_outstanding:
+                if order_arrival_day == today:
+                    today_arrived = today_arrived + order_qty
+                else:
+                    still_waiting.append((order_arrival_day, order_qty))
+            current_outstanding = still_waiting
+            current_stock = current_stock + today_arrived
+
+            # 2. sell what demand asks for, up to what is on the shelf
+            today_demand = daily_demand[today]
+            if current_stock >= today_demand:
+                today_sold = today_demand
+                today_lost = 0
+            else:
+                today_sold = current_stock
+                today_lost = today_demand - current_stock
+            current_stock = current_stock - today_sold
+            rp_units_lost = rp_units_lost + today_lost
+            if today_lost > 0:
+                rp_days_with_lost_sale = rp_days_with_lost_sale + 1
+            rp_ending_stock_sum = rp_ending_stock_sum + current_stock
+
+            # 3. inventory position = ending stock plus whatever is still on order
+            still_on_order = 0
+            for order_arrival_day, order_qty in current_outstanding:
+                still_on_order = still_on_order + order_qty
+            today_inventory_position = current_stock + still_on_order
+
+            # 4. reorder if the position has fallen to or below the reorder point
+            if today_inventory_position <= rp:
+                current_outstanding.append((today + lead_time_days, order_quantity))
+                rp_orders_placed = rp_orders_placed + 1
+
+        rp_average_ending_stock = rp_ending_stock_sum / 30
+        comparison_table.append((rp, rp_units_lost, rp_days_with_lost_sale, rp_orders_placed, rp_average_ending_stock))
+
+    comparison_table
+    return (comparison_table,)
+
+
+@app.cell
+def _(comparison_table):
+    print(f"{'reorder pt':>10} {'units lost':>10} {'days w/ lost sale':>17} {'orders placed':>14} {'avg end stock':>14}")
+    for rp_value, rp_lost, rp_days_lost, rp_orders, rp_avg_end in comparison_table:
+        print(f"{rp_value:>10} {rp_lost:>10} {rp_days_lost:>17} {rp_orders:>14} {rp_avg_end:>14.1f}")
     return
 
 

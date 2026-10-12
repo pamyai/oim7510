@@ -137,7 +137,7 @@
     },
     {
       "id": "Kclp",
-      "code_hash": "897f6617ecfff6de25137085b2353243",
+      "code_hash": "c65ad72e9f87cfc66da8d7b3bcac45b6",
       "outputs": [
         {
           "type": "data",
@@ -149,8 +149,8 @@
       "console": []
     },
     {
-      "id": "yQZn",
-      "code_hash": "e9a42a7ec5a4d5745b3427e7473cb6fd",
+      "id": "xtNd",
+      "code_hash": "2ec03586a2ef2c400ec3f57ed783a5f5",
       "outputs": [
         {
           "type": "data",
@@ -169,10 +169,37 @@
       ]
     },
     {
-      "id": "DezB",
-      "code_hash": null,
-      "outputs": [],
+      "id": "UeLD",
+      "code_hash": "032192685203f4e2636c3726d6c07a3f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[[20, 59, 6, 4, \"text/plain+float:37.43333333333333\"], [30, 15, 2, 4, \"text/plain+float:42.9\"], [40, 0, 0, 4, \"text/plain+float:48.43333333333333\"], [50, 0, 0, 4, \"text/plain+float:58.43333333333333\"]]"
+          }
+        }
+      ],
       "console": []
+    },
+    {
+      "id": "bAax",
+      "code_hash": "d933cd57de96c50c625c9df2aa4ed05e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "reorder pt units lost days w/ lost sale  orders placed  avg end stock\n        20         59                 6              4           37.4\n        30         15                 2              4           42.9\n        40          0                 0              4           48.4\n        50          0                 0              4           58.4\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "rUPc",
