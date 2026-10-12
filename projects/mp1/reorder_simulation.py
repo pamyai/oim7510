@@ -142,18 +142,19 @@ def _(mo):
 
 
 @app.cell
-def _(starting_stock):
-    #declare tracking variables and lists
-    # Outstanding orders: each order is a record (we'll use a list of [day_placed, quantity, day_arrives])
-    order_placed = []
-    order_delivered = []
+def _():
+    return
 
-    # Tracking variables and lists
+
+@app.cell
+def _(starting_stock):
+    #try with ROP = 40
+    reorder_point_40 = 40
     stock = starting_stock
-    lost_sales = 0
-    total_lost_sales = []
-    orders_placed = []
-    ending_stock = []
+    outstanding_orders = []  # list of (arrival_day, quantity) tuples: orders placed but not yet delivered
+    day_table = []           # one row per day: (day, starting stock, arrived, demand, sold, lost, ending stock, units ordered)
+
+
     return
 
 
@@ -164,6 +165,11 @@ def _(mo):
 
     *A table of your results in the cell below, printed with `print` and f-strings, then one sentence here that answers the question in section 1, with the number in it.*
     """)
+    return
+
+
+@app.cell
+def _():
     return
 
 

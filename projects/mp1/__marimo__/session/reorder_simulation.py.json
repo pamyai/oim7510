@@ -45,7 +45,7 @@
       "console": []
     },
     {
-      "id": "SPlF",
+      "id": "bkHC",
       "code_hash": "a758e16ef3fb064f97c2accea2fd76c7",
       "outputs": [
         {
@@ -58,7 +58,7 @@
       "console": []
     },
     {
-      "id": "bkHC",
+      "id": "lEQa",
       "code_hash": "f5e3e0e704045272fd881089e5d00c3d",
       "outputs": [
         {
@@ -71,7 +71,7 @@
       "console": []
     },
     {
-      "id": "pwax",
+      "id": "PKri",
       "code_hash": "1c9e5bab6b2c6d5b5b5686c1d438e289",
       "outputs": [
         {
@@ -84,20 +84,20 @@
       "console": []
     },
     {
-      "id": "fPcP",
-      "code_hash": "484429c60a9f7e9973e0e05c0279dc75",
+      "id": "Xref",
+      "code_hash": "3c01df793a9a408bf7859615878478b6",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>What does your loop carry from one step to the next, the way a running total carries its sum?</li>\n</ol>\n<span class=\"paragraph\">The loop </span>\n<ul>\n<li>Carries the current inventory level and any outstanding orders that have been placed but not yet delivered.</li>\n<li>Updates running totals of lost sales, orders placed, and ending inventory as it moves from one day to the next.</li>\n</ul>\n<ol start=\"2\">\n<li>Which check will you use in section 6, and which two numbers should agree?</li>\n</ol>\n<span class=\"paragraph\">Total Demand = Total Sold + Total Lost Sales</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>What does your loop carry from one step to the next, the way a running total carries its sum?</li>\n</ol>\n<span class=\"paragraph\">The loop</span>\n<ul>\n<li>Carries the current inventory level and any outstanding orders that have been placed but not yet delivered.</li>\n<li>Updates running totals of lost sales, orders placed, and ending inventory as it moves from one day to the next.</li>\n</ul>\n<ol start=\"2\">\n<li>Which check will you use in section 6, and which two numbers should agree?</li>\n</ol>\n<span class=\"paragraph\">Total Demand = Total Sold + Total Lost Sales</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "lEQa",
+      "id": "SFPL",
       "code_hash": "89874429ffcd1ba52cfa091ae5bcd456",
       "outputs": [
         {
@@ -110,7 +110,7 @@
       "console": []
     },
     {
-      "id": "PKri",
+      "id": "BYtC",
       "code_hash": "f75a0c54507e12c9b5a59b1de12679b9",
       "outputs": [
         {
@@ -123,7 +123,7 @@
       "console": []
     },
     {
-      "id": "Xref",
+      "id": "RGSE",
       "code_hash": "71d32bd63e1b86444a83f18329c3c3f8",
       "outputs": [
         {
@@ -136,8 +136,8 @@
       "console": []
     },
     {
-      "id": "IXfC",
-      "code_hash": "e87f244d80e4ad7aaa86b6057b4ec9e3",
+      "id": "mPuE",
+      "code_hash": null,
       "outputs": [
         {
           "type": "data",
@@ -149,7 +149,20 @@
       "console": []
     },
     {
-      "id": "BYtC",
+      "id": "Kclp",
+      "code_hash": "6d9e0e7a69f3cb09386d93aa5f30df90",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "rUPc",
       "code_hash": "189948d98f771b65614d9dc06a5a3ea6",
       "outputs": [
         {
@@ -162,7 +175,20 @@
       "console": []
     },
     {
-      "id": "Kclp",
+      "id": "yQZn",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
       "code_hash": "cefd9fb4105f4ca556cfc0dc69895e7a",
       "outputs": [
         {
