@@ -136,21 +136,21 @@
       "console": []
     },
     {
-      "id": "mPuE",
-      "code_hash": null,
+      "id": "Kclp",
+      "code_hash": "897f6617ecfff6de25137085b2353243",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/plain": ""
+            "application/json": "[1, 60, 0, 12, 12, 0, 48, 0]"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "Kclp",
-      "code_hash": "6d9e0e7a69f3cb09386d93aa5f30df90",
+      "id": "yQZn",
+      "code_hash": "e9a42a7ec5a4d5745b3427e7473cb6fd",
       "outputs": [
         {
           "type": "data",
@@ -159,6 +159,19 @@
           }
         }
       ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " day  start  arrived  demand  sold  lost    end  ordered\n   1     60        0      12    12     0     48        0\n   2     48        0      15    15     0     33      100\n   3     33        0       9     9     0     24        0\n   4     24        0      14    14     0     10        0\n   5     10      100      18    18     0     92        0\n   6     92        0      11    11     0     81        0\n   7     81        0      10    10     0     71        0\n   8     71        0      16    16     0     55        0\n   9     55        0      13    13     0     42        0\n  10     42        0      17    17     0     25      100\n  11     25        0       8     8     0     17        0\n  12     17        0      12    12     0      5        0\n  13      5      100      20    20     0     85        0\n  14     85        0      14    14     0     71        0\n  15     71        0      11    11     0     60        0\n  16     60        0       9     9     0     51        0\n  17     51        0      15    15     0     36      100\n  18     36        0      13    13     0     23        0\n  19     23        0      16    16     0      7        0\n  20      7      100      12    12     0     95        0\n  21     95        0      10    10     0     85        0\n  22     85        0      14    14     0     71        0\n  23     71        0      19    19     0     52        0\n  24     52        0      11    11     0     41        0\n  25     41        0      13    13     0     28      100\n  26     28        0      15    15     0     13        0\n  27     13        0       9     9     0      4        0\n  28      4      100      12    12     0     92        0\n  29     92        0      17    17     0     75        0\n  30     75        0      14    14     0     61        0\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "DezB",
+      "code_hash": null,
+      "outputs": [],
       "console": []
     },
     {
@@ -169,19 +182,6 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"5-the-answer\">5. The Answer</h2>\n<span class=\"paragraph\"><em>A table of your results in the cell below, printed with <code>print</code> and f-strings, then one sentence here that answers the question in section 1, with the number in it.</em></span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "yQZn",
-      "code_hash": null,
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
           }
         }
       ],

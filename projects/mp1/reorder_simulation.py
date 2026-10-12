@@ -128,7 +128,7 @@ def _():
     reorder_points = [20, 30, 40, 50]
     daily_demand = [12, 15, 9, 14, 18, 11, 10, 16, 13, 17, 8, 12, 20, 14, 11,
                     9, 15, 13, 16, 12, 10, 14, 19, 11, 13, 15, 9, 12, 17, 14]
-    return (starting_stock,)
+    return daily_demand, lead_time_days, order_quantity, starting_stock
 
 
 @app.cell(hide_code=True)
@@ -142,19 +142,67 @@ def _(mo):
 
 
 @app.cell
-def _():
-    return
-
-
-@app.cell
-def _(starting_stock):
+def _(daily_demand, lead_time_days, order_quantity, starting_stock):
     #try with ROP = 40
     reorder_point_40 = 40
     stock = starting_stock
     outstanding_orders = []  # list of (arrival_day, quantity) tuples: orders placed but not yet delivered
     day_table = []           # one row per day: (day, starting stock, arrived, demand, sold, lost, ending stock, units ordered)
 
+    for day in range(30):
+        starting_today = stock
 
+        # 1. deliver any order whose arrival day is today
+        arrived = 0
+        still_outstanding = []
+        for arrival_day, qty in outstanding_orders:
+            if arrival_day == day:
+                arrived = arrived + qty
+            else:
+                still_outstanding.append((arrival_day, qty))
+        outstanding_orders = still_outstanding
+        stock = stock + arrived
+
+        # 2. sell what demand asks for, up to what is on the shelf
+        demand = daily_demand[day]
+        if stock >= demand:
+            sold = demand
+            lost = 0
+        else:
+            sold = stock
+            lost = demand - stock
+        stock = stock - sold
+        ending = stock
+
+        # 3. inventory position = ending stock plus whatever is still on order
+        outstanding_qty = 0
+        for arrival_day, qty in outstanding_orders:
+            outstanding_qty = outstanding_qty + qty
+        inventory_position = ending + outstanding_qty
+
+        # 4. reorder if the position has fallen to or below the reorder point
+        units_ordered = 0
+        if inventory_position <= reorder_point_40:
+            outstanding_orders.append((day + lead_time_days, order_quantity))
+            units_ordered = order_quantity
+
+        day_table.append((day + 1, starting_today, arrived, demand, sold, lost, ending, units_ordered))
+
+    day_table[0]   # peek at day 1's record
+    return (day_table,)
+
+
+@app.cell
+def _(day_table):
+    #check reporting table
+    print(f"{'day':>4} {'start':>6} {'arrived':>8} {'demand':>7} {'sold':>5} {'lost':>5} {'end':>6} {'ordered':>8}")
+    for _day_num, _start, _arrived, _demand, _sold, _lost, _end, _ordered in day_table:
+        print(f"{_day_num:>4} {_start:>6} {_arrived:>8} {_demand:>7} {_sold:>5} {_lost:>5} {_end:>6} {_ordered:>8}")
+    return
+
+
+@app.cell
+def _():
     return
 
 
@@ -165,11 +213,6 @@ def _(mo):
 
     *A table of your results in the cell below, printed with `print` and f-strings, then one sentence here that answers the question in section 1, with the number in it.*
     """)
-    return
-
-
-@app.cell
-def _():
     return
 
 
