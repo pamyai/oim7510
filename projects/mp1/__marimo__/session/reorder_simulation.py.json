@@ -182,6 +182,19 @@
       "console": []
     },
     {
+      "id": "rUPc",
+      "code_hash": "189948d98f771b65614d9dc06a5a3ea6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"5-the-answer\">5. The Answer</h2>\n<span class=\"paragraph\"><em>A table of your results in the cell below, printed with <code>print</code> and f-strings, then one sentence here that answers the question in section 1, with the number in it.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "bAax",
       "code_hash": "d933cd57de96c50c625c9df2aa4ed05e",
       "outputs": [
@@ -200,19 +213,6 @@
           "mimetype": "text/plain"
         }
       ]
-    },
-    {
-      "id": "rUPc",
-      "code_hash": "189948d98f771b65614d9dc06a5a3ea6",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"5-the-answer\">5. The Answer</h2>\n<span class=\"paragraph\"><em>A table of your results in the cell below, printed with <code>print</code> and f-strings, then one sentence here that answers the question in section 1, with the number in it.</em></span></span>"
-          }
-        }
-      ],
-      "console": []
     },
     {
       "id": "emfo",

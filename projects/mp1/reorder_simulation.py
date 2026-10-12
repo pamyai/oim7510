@@ -270,14 +270,6 @@ def _(
     return (comparison_table,)
 
 
-@app.cell
-def _(comparison_table):
-    print(f"{'reorder pt':>10} {'units lost':>10} {'days w/ lost sale':>17} {'orders placed':>14} {'avg end stock':>14}")
-    for rp_value, rp_lost, rp_days_lost, rp_orders, rp_avg_end in comparison_table:
-        print(f"{rp_value:>10} {rp_lost:>10} {rp_days_lost:>17} {rp_orders:>14} {rp_avg_end:>14.1f}")
-    return
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -285,6 +277,14 @@ def _(mo):
 
     *A table of your results in the cell below, printed with `print` and f-strings, then one sentence here that answers the question in section 1, with the number in it.*
     """)
+    return
+
+
+@app.cell
+def _(comparison_table):
+    print(f"{'reorder pt':>10} {'units lost':>10} {'days w/ lost sale':>17} {'orders placed':>14} {'avg end stock':>14}")
+    for rp_value, rp_lost, rp_days_lost, rp_orders, rp_avg_end in comparison_table:
+        print(f"{rp_value:>10} {rp_lost:>10} {rp_days_lost:>17} {rp_orders:>14} {rp_avg_end:>14.1f}")
     return
 
 
