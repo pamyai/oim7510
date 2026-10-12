@@ -215,7 +215,20 @@
       ]
     },
     {
-      "id": "emfo",
+      "id": "Wmhj",
+      "code_hash": "d6c26bd1b745a07fa0ccd5a8670b2fb4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">A reorder point of 40 is recommended: it is the lowest reorder point that avoids any lost sales (0 units lost over 30 days), while carrying less average stock (48.4 units) than reorder point 50 (58.4 units), which has the same zero lost sales.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "eyhN",
       "code_hash": "cefd9fb4105f4ca556cfc0dc69895e7a",
       "outputs": [
         {
@@ -226,6 +239,26 @@
         }
       ],
       "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "a3f9f753ae03f7e626d07b1dbc0e56c0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "reorder pt   demand   sold   lost  sold+lost   match\n        20      399    340     59        399    True\n        30      399    384     15        399    True\n        40      399    399      0        399    True\n        50      399    399      0        399    True\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "Hstk",
@@ -241,6 +274,19 @@
       "console": []
     },
     {
+      "id": "JIze",
+      "code_hash": "cd5f275dc1ba7bece0c096346e6e3cd6",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "syntax",
+          "evalue": "line 1\n    The first cell of section 4, ai kept trying to generate new reorder point as new list of different numbers. I had to keep reminding it to just pull the input from the previous cell.\n        ^^^^^\nSyntaxError: invalid syntax\n",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "nWHF",
       "code_hash": "9e11622311558f577bd7fefb4cd2c3ec",
       "outputs": [
@@ -248,6 +294,78 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"8-going-further\">8. Going Further</h2>\n<span class=\"paragraph\"><em>Take at least one step past the main task, in any direction, and use your agent as much as you like. It does not have to work. State what you tried, what you found, and where it is in this notebook.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qeNU",
+      "code_hash": "5e3a27bf7803db514a4ac54fc4322940",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Experiment 1: Full-year demand.</span>\n<span class=\"paragraph\">I tried generating a full year (365 days) of random daily demand instead of the fixed 30-day list, to see if reorder point 40 still holds up over a longer, noisier stretch of time.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "KYOt",
+      "code_hash": "dae0c4e68fd1775b882465387706f1d8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[18, 9, 8, 19, 12, 11, 11, 10, 19, 9]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PbGw",
+      "code_hash": "6b1c744bae3f8066ec398b8dae499c09",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "reorder pt units lost days w/ lost sale  orders placed  avg end stock\n        20        665                68             44           37.7\n        30        244                37             48           42.3\n        40         44                10             51           49.7\n        50          5                 2             51           59.3\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "XZWH",
+      "code_hash": "cb0a86f3416a3e8022d87b48469ccd0a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">result shows more lost sales from ROP = 40. in this case it might be up to operator's policy whether to prioritize reducing lost sales or minimizing inventory holding costs when deciding the appropriate reorder point. Otherwise they might have to calculate proper holding cost and lost sales cost to find the optimal balance between the two.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "jdOK",
+      "code_hash": "b23d967255fb4c198f186a240b30c0b8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Experiment2: Conduct linear programming model to find new reorder point that will give lost sales = 0 according to this new data set</span></span>"
           }
         }
       ],

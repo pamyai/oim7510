@@ -288,13 +288,87 @@ def _(comparison_table):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
+def _(mo):
+    mo.md(r"""
+    A reorder point of 40 is recommended: it is the lowest reorder point that avoids any lost sales (0 units lost over 30 days), while carrying less average stock (48.4 units) than reorder point 50 (58.4 units), which has the same zero lost sales.
+    """)
+    return
+
+
+@app.cell
 def _(mo):
     mo.md(r"""
     ## 6. How I Know These Numbers Are Right
 
     *At least one check that reaches a result a second, independent way. Name what you compared and what came out.*
     """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(
+    daily_demand,
+    lead_time_days,
+    order_quantity,
+    reorder_points,
+    starting_stock,
+):
+    # Check: total demand should equal total sold plus total lost sales, for every reorder point.
+    # This reruns the simulation independently, tracking sold and lost separately, to see if they add back up to demand.
+    check_results = []   # one row per reorder point: (reorder point, total demand, total sold, total lost, do they match)
+
+    for check_rp in reorder_points:
+        check_stock = starting_stock
+        check_outstanding = []   # list of (arrival_day, quantity) tuples: orders placed but not yet delivered
+
+        check_total_demand = 0
+        check_total_sold = 0
+        check_total_lost = 0
+
+        for check_day in range(30):
+            # deliver any order whose arrival day is today
+            check_arrived = 0
+            check_still_waiting = []
+            for check_arrival_day, check_qty in check_outstanding:
+                if check_arrival_day == check_day:
+                    check_arrived = check_arrived + check_qty
+                else:
+                    check_still_waiting.append((check_arrival_day, check_qty))
+            check_outstanding = check_still_waiting
+            check_stock = check_stock + check_arrived
+
+            # sell what demand asks for, up to what is on the shelf
+            check_demand = daily_demand[check_day]
+            check_total_demand = check_total_demand + check_demand
+            if check_stock >= check_demand:
+                check_sold = check_demand
+                check_lost = 0
+            else:
+                check_sold = check_stock
+                check_lost = check_demand - check_stock
+            check_stock = check_stock - check_sold
+            check_total_sold = check_total_sold + check_sold
+            check_total_lost = check_total_lost + check_lost
+
+            # inventory position = stock on hand plus stock still on order
+            check_still_on_order = 0
+            for check_arrival_day, check_qty in check_outstanding:
+                check_still_on_order = check_still_on_order + check_qty
+            check_inventory_position = check_stock + check_still_on_order
+
+            # reorder if the position has fallen to or below the reorder point
+            if check_inventory_position <= check_rp:
+                check_outstanding.append((check_day + lead_time_days, order_quantity))
+
+        check_sold_plus_lost = check_total_sold + check_total_lost
+        check_match = (check_total_demand == check_sold_plus_lost)
+        check_results.append((check_rp, check_total_demand, check_total_sold, check_total_lost, check_match))
+
+    print(f"{'reorder pt':>10} {'demand':>8} {'sold':>6} {'lost':>6} {'sold+lost':>10} {'match':>7}")
+    for check_rp_value, check_demand_total, check_sold_total, check_lost_total, check_is_match in check_results:
+        check_total = check_sold_total + check_lost_total
+        print(f"{check_rp_value:>10} {check_demand_total:>8} {check_sold_total:>6} {check_lost_total:>6} {check_total:>10} {str(check_is_match):>7}")
     return
 
 
@@ -310,12 +384,129 @@ def _(mo):
     return
 
 
+app._unparsable_cell(
+    r"""
+    The first cell of section 4, ai kept trying to generate new reorder point as new list of different numbers. I had to keep reminding it to just pull the input from the previous cell.
+
+    I verified results by manually calculating results if the first 2 days of ROP = 40 see if it match. 
+    """,
+    name="_"
+)
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
     ## 8. Going Further
 
     *Take at least one step past the main task, in any direction, and use your agent as much as you like. It does not have to work. State what you tried, what you found, and where it is in this notebook.*
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    Experiment 1: Full-year demand.
+
+    I tried generating a full year (365 days) of random daily demand instead of the fixed 30-day list, to see if reorder point 40 still holds up over a longer, noisier stretch of time.
+    """)
+    return
+
+
+@app.cell
+def _():
+    import random
+
+    # a fixed seed makes the "random" numbers the same every time this cell runs
+    random.seed(42)
+
+    year_demand = []
+    for _ in range(365):
+        year_demand.append(random.randint(8, 20))   # same range as the original 30-day demand numbers
+
+    year_demand[:10]   # peek at the first 10 days
+    return (year_demand,)
+
+
+@app.cell
+def _(
+    lead_time_days,
+    order_quantity,
+    reorder_points,
+    starting_stock,
+    year_demand,
+):
+    # rerun the same simulation logic as the comparison table, but over 365 days of random demand instead of 30 fixed days
+    year_comparison_table = []   # one row per reorder point: (reorder point, units lost, days with a lost sale, orders placed, average ending stock)
+
+    for year_rp in reorder_points:
+        year_stock = starting_stock
+        year_outstanding = []   # list of (arrival_day, quantity) tuples: orders placed but not yet delivered
+
+        year_units_lost = 0
+        year_days_with_lost_sale = 0
+        year_orders_placed = 0
+        year_ending_stock_sum = 0
+
+        for year_day in range(365):
+            # 1. deliver any order whose arrival day is today
+            year_arrived = 0
+            year_still_waiting = []
+            for year_arrival_day, year_qty in year_outstanding:
+                if year_arrival_day == year_day:
+                    year_arrived = year_arrived + year_qty
+                else:
+                    year_still_waiting.append((year_arrival_day, year_qty))
+            year_outstanding = year_still_waiting
+            year_stock = year_stock + year_arrived
+
+            # 2. sell what demand asks for, up to what is on the shelf
+            year_demand_today = year_demand[year_day]
+            if year_stock >= year_demand_today:
+                year_sold = year_demand_today
+                year_lost = 0
+            else:
+                year_sold = year_stock
+                year_lost = year_demand_today - year_stock
+            year_stock = year_stock - year_sold
+            year_units_lost = year_units_lost + year_lost
+            if year_lost > 0:
+                year_days_with_lost_sale = year_days_with_lost_sale + 1
+            year_ending_stock_sum = year_ending_stock_sum + year_stock
+
+            # 3. inventory position = ending stock plus whatever is still on order
+            year_still_on_order = 0
+            for year_arrival_day, year_qty in year_outstanding:
+                year_still_on_order = year_still_on_order + year_qty
+            year_inventory_position = year_stock + year_still_on_order
+
+            # 4. reorder if the position has fallen to or below the reorder point
+            if year_inventory_position <= year_rp:
+                year_outstanding.append((year_day + lead_time_days, order_quantity))
+                year_orders_placed = year_orders_placed + 1
+
+        year_average_ending_stock = year_ending_stock_sum / 365
+        year_comparison_table.append((year_rp, year_units_lost, year_days_with_lost_sale, year_orders_placed, year_average_ending_stock))
+
+    print(f"{'reorder pt':>10} {'units lost':>10} {'days w/ lost sale':>17} {'orders placed':>14} {'avg end stock':>14}")
+    for year_rp_value, year_lost_total, year_days_lost_total, year_orders_total, year_avg_end in year_comparison_table:
+        print(f"{year_rp_value:>10} {year_lost_total:>10} {year_days_lost_total:>17} {year_orders_total:>14} {year_avg_end:>14.1f}")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    result shows more lost sales from ROP = 40. in this case it might be up to operator's policy whether to prioritize reducing lost sales or minimizing inventory holding costs when deciding the appropriate reorder point. Otherwise they might have to calculate proper holding cost and lost sales cost to find the optimal balance between the two.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Experiment2: Conduct linear programming model to find new reorder point that will give lost sales = 0 according to this new data set
     """)
     return
 
