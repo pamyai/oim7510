@@ -122,8 +122,13 @@ def _(mo):
 
 @app.cell
 def _():
-    # Your inputs.
-    return
+    starting_stock = 60
+    order_quantity = 100
+    lead_time_days = 3
+    reorder_points = [20, 30, 40, 50]
+    daily_demand = [12, 15, 9, 14, 18, 11, 10, 16, 13, 17, 8, 12, 20, 14, 11,
+                    9, 15, 13, 16, 12, 10, 14, 19, 11, 13, 15, 9, 12, 17, 14]
+    return (starting_stock,)
 
 
 @app.cell(hide_code=True)
@@ -137,7 +142,18 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(starting_stock):
+    #declare tracking variables and lists
+    # Outstanding orders: each order is a record (we'll use a list of [day_placed, quantity, day_arrives])
+    order_placed = []
+    order_delivered = []
+
+    # Tracking variables and lists
+    stock = starting_stock
+    lost_sales = 0
+    total_lost_sales = []
+    orders_placed = []
+    ending_stock = []
     return
 
 
@@ -151,11 +167,6 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
-    return
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -163,11 +174,6 @@ def _(mo):
 
     *At least one check that reaches a result a second, independent way. Name what you compared and what came out.*
     """)
-    return
-
-
-@app.cell
-def _():
     return
 
 

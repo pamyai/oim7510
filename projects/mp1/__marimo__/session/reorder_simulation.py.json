@@ -8,7 +8,14 @@
     {
       "id": "Hbol",
       "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -39,8 +46,15 @@
     },
     {
       "id": "SPlF",
-      "code_hash": null,
-      "outputs": [],
+      "code_hash": "a758e16ef3fb064f97c2accea2fd76c7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Reorder simulation can be used by any small business owner / warehouse / inventory managers with a simple supply chain / stock flow that has any cost associated with holding, ordering, or stockouts of inventory. It helps determine stock ROP (Reorder Point) based on demand variability, lead time, and desired service level if applicable.</span></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -58,14 +72,28 @@
     },
     {
       "id": "pwax",
-      "code_hash": null,
-      "outputs": [],
+      "code_hash": "1c9e5bab6b2c6d5b5b5686c1d438e289",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">steps</span>\n<ol>\n<li>Declare list of reorder_points = [20, 30, 40, 50].</li>\n<li>For each reorder point:</li>\n</ol>\n<ul>\n<li>Set inventory = 60.</li>\n<li>Create an empty list of outstanding orders (orders placed but not yet delivered).</li>\n<li>Create variables/lists to track lost sales, orders placed, ending stock, etc.</li>\n</ul>\n<ol start=\"3\">\n<li>For each day:</li>\n</ol>\n<ul>\n<li>Check whether any order is due to arrive today. If yes, add it to inventory and remove it from outstanding orders.</li>\n<li>Record the day's starting inventory.</li>\n</ul>\n<ol start=\"4\">\n<li>Process demand:</li>\n</ol>\n<ul>\n<li>If inventory is at least demand, sell all demand.</li>\n<li>Else, sell all remaining inventory, set inventory to 0, and record the unmet demand as lost sales.</li>\n</ul>\n<ol start=\"5\">\n<li>Calculate ending inventory.</li>\n<li>inventory position = ending inventory + all outstanding orders.</li>\n<li>If inventory position is less than or equal to the reorder point:\nPlace an order for 100 cartons.\nSchedule it to arrive 3 days later.\nSave the day's results.</li>\n<li>Move to the next day, carrying forward the updated inventory and outstanding orders.</li>\n<li>After 30 days, calculate total units lost, days with lost sales, number of orders placed, and average ending inventory.</li>\n</ol></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "fPcP",
-      "code_hash": null,
-      "outputs": [],
+      "code_hash": "484429c60a9f7e9973e0e05c0279dc75",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>What does your loop carry from one step to the next, the way a running total carries its sum?</li>\n</ol>\n<span class=\"paragraph\">The loop </span>\n<ul>\n<li>Carries the current inventory level and any outstanding orders that have been placed but not yet delivered.</li>\n<li>Updates running totals of lost sales, orders placed, and ending inventory as it moves from one day to the next.</li>\n</ul>\n<ol start=\"2\">\n<li>Which check will you use in section 6, and which two numbers should agree?</li>\n</ol>\n<span class=\"paragraph\">Total Demand = Total Sold + Total Lost Sales</span></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -83,8 +111,15 @@
     },
     {
       "id": "PKri",
-      "code_hash": "54436c443c60319e53020cf945095f3d",
-      "outputs": [],
+      "code_hash": "f75a0c54507e12c9b5a59b1de12679b9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -101,9 +136,16 @@
       "console": []
     },
     {
-      "id": "SFPL",
-      "code_hash": null,
-      "outputs": [],
+      "id": "IXfC",
+      "code_hash": "e87f244d80e4ad7aaa86b6057b4ec9e3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -120,12 +162,6 @@
       "console": []
     },
     {
-      "id": "RGSE",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
-    },
-    {
       "id": "Kclp",
       "code_hash": "cefd9fb4105f4ca556cfc0dc69895e7a",
       "outputs": [
@@ -136,12 +172,6 @@
           }
         }
       ],
-      "console": []
-    },
-    {
-      "id": "emfo",
-      "code_hash": null,
-      "outputs": [],
       "console": []
     },
     {
