@@ -307,6 +307,14 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Check whether total demand is equal to sold + lost in all ROP cases. These two calculations should agree because every unit demanded must either be sold or counted as a lost sale.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
 def _(
     daily_demand,
     lead_time_days,

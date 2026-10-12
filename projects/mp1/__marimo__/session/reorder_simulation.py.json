@@ -149,7 +149,7 @@
       "console": []
     },
     {
-      "id": "xtNd",
+      "id": "emfo",
       "code_hash": "2ec03586a2ef2c400ec3f57ed783a5f5",
       "outputs": [
         {
@@ -169,7 +169,7 @@
       ]
     },
     {
-      "id": "UeLD",
+      "id": "Hstk",
       "code_hash": "032192685203f4e2636c3726d6c07a3f",
       "outputs": [
         {
@@ -182,7 +182,7 @@
       "console": []
     },
     {
-      "id": "rUPc",
+      "id": "nWHF",
       "code_hash": "189948d98f771b65614d9dc06a5a3ea6",
       "outputs": [
         {
@@ -195,7 +195,7 @@
       "console": []
     },
     {
-      "id": "bAax",
+      "id": "iLit",
       "code_hash": "d933cd57de96c50c625c9df2aa4ed05e",
       "outputs": [
         {
@@ -215,7 +215,7 @@
       ]
     },
     {
-      "id": "Wmhj",
+      "id": "ZHCJ",
       "code_hash": "d6c26bd1b745a07fa0ccd5a8670b2fb4",
       "outputs": [
         {
@@ -228,7 +228,7 @@
       "console": []
     },
     {
-      "id": "eyhN",
+      "id": "ROlb",
       "code_hash": "cefd9fb4105f4ca556cfc0dc69895e7a",
       "outputs": [
         {
@@ -241,7 +241,20 @@
       "console": []
     },
     {
-      "id": "emfo",
+      "id": "fmiH",
+      "code_hash": "7f355d12ac911af6e914c0077e7d1e4b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Check whether total demand is equal to sold + lost in all ROP cases. These two calculations should agree because every unit demanded must either be sold or counted as a lost sale.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
       "code_hash": "a3f9f753ae03f7e626d07b1dbc0e56c0",
       "outputs": [
         {
@@ -261,7 +274,7 @@
       ]
     },
     {
-      "id": "Hstk",
+      "id": "TqIu",
       "code_hash": "4fa513d08c761dfe89641eaef1357bc2",
       "outputs": [
         {
@@ -274,7 +287,7 @@
       "console": []
     },
     {
-      "id": "JIze",
+      "id": "Vxnm",
       "code_hash": "ad17c37941a8be2d708afd317f3e7e65",
       "outputs": [
         {
@@ -287,7 +300,7 @@
       "console": []
     },
     {
-      "id": "nWHF",
+      "id": "DnEU",
       "code_hash": "9e11622311558f577bd7fefb4cd2c3ec",
       "outputs": [
         {
@@ -300,7 +313,7 @@
       "console": []
     },
     {
-      "id": "qeNU",
+      "id": "ulZA",
       "code_hash": "5e3a27bf7803db514a4ac54fc4322940",
       "outputs": [
         {
@@ -313,7 +326,7 @@
       "console": []
     },
     {
-      "id": "KYOt",
+      "id": "ecfG",
       "code_hash": "dae0c4e68fd1775b882465387706f1d8",
       "outputs": [
         {
@@ -326,7 +339,7 @@
       "console": []
     },
     {
-      "id": "PbGw",
+      "id": "Pvdt",
       "code_hash": "6b1c744bae3f8066ec398b8dae499c09",
       "outputs": [
         {
@@ -346,7 +359,7 @@
       ]
     },
     {
-      "id": "XZWH",
+      "id": "ZBYS",
       "code_hash": "cb0a86f3416a3e8022d87b48469ccd0a",
       "outputs": [
         {
@@ -359,7 +372,7 @@
       "console": []
     },
     {
-      "id": "jdOK",
+      "id": "aLJB",
       "code_hash": "924701e868fc97f6726a6efcce0725d4",
       "outputs": [
         {
@@ -372,7 +385,7 @@
       "console": []
     },
     {
-      "id": "AnAv",
+      "id": "nHfw",
       "code_hash": "e4bcfde54fafe63b5e4aab43d8548b3e",
       "outputs": [
         {
@@ -392,7 +405,7 @@
       ]
     },
     {
-      "id": "qGCi",
+      "id": "xXTn",
       "code_hash": "d97c63748d64af5ec1dff4aa5acb241a",
       "outputs": [
         {
@@ -412,13 +425,13 @@
       ]
     },
     {
-      "id": "QbtL",
-      "code_hash": "ae8d594136973a01ad16905a10437bdf",
+      "id": "AjVT",
+      "code_hash": "a8a3682be7473ed156c609f2ab0b0b48",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Comparing the two approaches</strong></span>\n<span class=\"paragraph\">The formula-based approach (Approach 1) gives a reorder point between 50 and 62, depending on how much safety stock (service level) you choose \u2014 90% service level gives ROP \u2248 50, while 99.9% gives ROP \u2248 62. None of these are guaranteed to reach exactly zero lost sales, because the formula assumes demand follows a smooth bell curve and asks \"how safe do you want to be,\" rather than looking at what actually happened in this specific dataset.</span>\n<span class=\"paragraph\">The search approach (Approach 2) finds the exact answer for this dataset: a reorder point of 55 is the smallest one that gives zero lost sales over all 365 days. This lines up well with the formula's 99% service level estimate (57.0), but it is not a guess, it is the real smallest number that works for this exact year of demand.</span>\n<span class=\"paragraph\">So reorder point 40 (the original heuristic) was too low once a full year of noisier demand was simulated \u2014 it is closer to Approach 1's 90% service level estimate (50.1) than to the exact zero-lost-sales answer (55).</span>\n<span class=\"paragraph\">additional note: </span>\n<ul>\n<li>method 1 is more standardized and scalable but fits more to clients with some statistics background knowledge to truely understand the choice we're trying to make.</li>\n<li>adding more proper cost data (holding, ordering, sales lost) should give even more accurate optimization if data is available</li>\n</ul></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Comparing the two approaches</strong></span>\n<span class=\"paragraph\">The formula-based approach (Approach 1) gives a reorder point between 50 and 62, depending on how much safety stock (service level) you choose \u2014 90% service level gives ROP \u2248 50, while 99.9% gives ROP \u2248 62. None of these are guaranteed to reach exactly zero lost sales, because the formula assumes demand follows a smooth bell curve and asks \"how safe do you want to be,\" rather than looking at what actually happened in this specific dataset.</span>\n<span class=\"paragraph\">The search approach (Approach 2) finds the exact answer for this dataset: a reorder point of 55 is the smallest one that gives zero lost sales over all 365 days. This lines up well with the formula's 99% service level estimate (57.0), but it is not a guess, it is the real smallest number that works for this exact year of demand.</span>\n<span class=\"paragraph\">So reorder point 40 (the original heuristic) was too low once a full year of noisier demand was simulated \u2014 it is closer to Approach 1's 90% service level estimate (50.1) than to the exact zero-lost-sales answer (55).</span>\n<span class=\"paragraph\">additional note:</span>\n<ul>\n<li>method 1 is more standardized and scalable but fits more to clients with some statistics background knowledge to truely understand the choice we're trying to make.</li>\n<li>adding more proper cost data (holding, ordering, sales lost) should give even more accurate optimization if data is available</li>\n</ul></span>"
           }
         }
       ],
