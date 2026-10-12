@@ -384,14 +384,14 @@ def _(mo):
     return
 
 
-app._unparsable_cell(
-    r"""
+@app.cell
+def _(mo):
+    mo.md(r"""
     The first cell of section 4, ai kept trying to generate new reorder point as new list of different numbers. I had to keep reminding it to just pull the input from the previous cell.
 
-    I verified results by manually calculating results if the first 2 days of ROP = 40 see if it match. 
-    """,
-    name="_"
-)
+    I verified results by manually calculating results if the first 2 days of ROP = 40 see if it match.
+    """)
+    return
 
 
 @app.cell(hide_code=True)
@@ -506,7 +506,117 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    Experiment2: Conduct linear programming model to find new reorder point that will give lost sales = 0 according to this new data set
+    Experiment2: Determining more accurate reccommendations using more fine-tuned model / method than heuristics
+    """)
+    return
+
+
+@app.cell
+def _(lead_time_days, year_demand):
+    # Approach 1: the classic reorder point formula
+    # ROP = average daily demand * lead time + z * (standard deviation of daily demand) * sqrt(lead time)
+    # z comes from how much safety stock you want for a given service level (chance of not running out)
+
+    mean_demand = sum(year_demand) / len(year_demand)
+
+    squared_differences_sum = 0
+    for d in year_demand:
+        squared_differences_sum = squared_differences_sum + (d - mean_demand) ** 2
+    variance_demand = squared_differences_sum / len(year_demand)
+    std_demand = variance_demand ** 0.5   # ** 0.5 is the power operator; raising to the power 1/2 gives the square root
+
+    print(f"average daily demand: {mean_demand:.2f}")
+    print(f"standard deviation of daily demand: {std_demand:.2f}")
+    print()
+
+    # try a few common service levels and their z values
+    service_levels = [(0.90, 1.28), (0.95, 1.65), (0.99, 2.33), (0.999, 3.09)]
+
+    print(f"{'service level':>13} {'z':>5} {'formula ROP':>12}")
+    for level, z_value in service_levels:
+        formula_rop = mean_demand * lead_time_days + z_value * std_demand * (lead_time_days ** 0.5)
+        print(f"{level:>13.1%} {z_value:>5} {formula_rop:>12.1f}")
+    return
+
+
+@app.cell
+def _(lead_time_days, order_quantity, starting_stock, year_demand):
+    # Approach 2: search
+    # try a range of candidate reorder points, rerun the simulation on year_demand for each,
+    # and find the smallest one that gives zero lost sales
+
+    candidate_reorder_points = list(range(20, 121, 5))   # try 20, 25, 30, ..., 120
+    search_results = []   # one row per candidate: (candidate, units lost)
+
+    for candidate_rp in candidate_reorder_points:
+        search_stock = starting_stock
+        search_outstanding = []   # list of (arrival_day, quantity) tuples: orders placed but not yet delivered
+        search_units_lost = 0
+
+        for search_day in range(365):
+            # 1. deliver any order whose arrival day is today
+            search_arrived = 0
+            search_still_waiting = []
+            for search_arrival_day, search_qty in search_outstanding:
+                if search_arrival_day == search_day:
+                    search_arrived = search_arrived + search_qty
+                else:
+                    search_still_waiting.append((search_arrival_day, search_qty))
+            search_outstanding = search_still_waiting
+            search_stock = search_stock + search_arrived
+
+            # 2. sell what demand asks for, up to what is on the shelf
+            search_demand = year_demand[search_day]
+            if search_stock >= search_demand:
+                search_sold = search_demand
+                search_lost = 0
+            else:
+                search_sold = search_stock
+                search_lost = search_demand - search_stock
+            search_stock = search_stock - search_sold
+            search_units_lost = search_units_lost + search_lost
+
+            # 3. inventory position = ending stock plus whatever is still on order
+            search_still_on_order = 0
+            for search_arrival_day, search_qty in search_outstanding:
+                search_still_on_order = search_still_on_order + search_qty
+            search_inventory_position = search_stock + search_still_on_order
+
+            # 4. reorder if the position has fallen to or below the candidate reorder point
+            if search_inventory_position <= candidate_rp:
+                search_outstanding.append((search_day + lead_time_days, order_quantity))
+
+        search_results.append((candidate_rp, search_units_lost))
+
+    # find the smallest reorder point in the list that gave zero lost sales
+    search_best_rop = None
+    for candidate_rp, units_lost in search_results:
+        if units_lost == 0 and search_best_rop is None:
+            search_best_rop = candidate_rp
+
+    print(f"{'candidate rop':>14} {'units lost':>10}")
+    for candidate_rp, units_lost in search_results:
+        print(f"{candidate_rp:>14} {units_lost:>10}")
+
+    print()
+    print(f"smallest reorder point with zero lost sales (search): {search_best_rop}")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    **Comparing the two approaches**
+
+    The formula-based approach (Approach 1) gives a reorder point between 50 and 62, depending on how much safety stock (service level) you choose — 90% service level gives ROP ≈ 50, while 99.9% gives ROP ≈ 62. None of these are guaranteed to reach exactly zero lost sales, because the formula assumes demand follows a smooth bell curve and asks "how safe do you want to be," rather than looking at what actually happened in this specific dataset.
+
+    The search approach (Approach 2) finds the exact answer for this dataset: a reorder point of 55 is the smallest one that gives zero lost sales over all 365 days. This lines up well with the formula's 99% service level estimate (57.0), but it is not a guess, it is the real smallest number that works for this exact year of demand.
+
+    So reorder point 40 (the original heuristic) was too low once a full year of noisier demand was simulated — it is closer to Approach 1's 90% service level estimate (50.1) than to the exact zero-lost-sales answer (55).
+
+    additional note:
+    - method 1 is more standardized and scalable but fits more to clients with some statistics background knowledge to truely understand the choice we're trying to make.
+    - adding more proper cost data (holding, ordering, sales lost) should give even more accurate optimization if data is available
     """)
     return
 

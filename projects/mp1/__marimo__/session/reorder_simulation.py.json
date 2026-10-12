@@ -275,13 +275,13 @@
     },
     {
       "id": "JIze",
-      "code_hash": "cd5f275dc1ba7bece0c096346e6e3cd6",
+      "code_hash": "ad17c37941a8be2d708afd317f3e7e65",
       "outputs": [
         {
-          "type": "error",
-          "ename": "syntax",
-          "evalue": "line 1\n    The first cell of section 4, ai kept trying to generate new reorder point as new list of different numbers. I had to keep reminding it to just pull the input from the previous cell.\n        ^^^^^\nSyntaxError: invalid syntax\n",
-          "traceback": []
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">The first cell of section 4, ai kept trying to generate new reorder point as new list of different numbers. I had to keep reminding it to just pull the input from the previous cell.</span>\n<span class=\"paragraph\">I verified results by manually calculating results if the first 2 days of ROP = 40 see if it match.</span></span>"
+          }
         }
       ],
       "console": []
@@ -360,12 +360,65 @@
     },
     {
       "id": "jdOK",
-      "code_hash": "b23d967255fb4c198f186a240b30c0b8",
+      "code_hash": "924701e868fc97f6726a6efcce0725d4",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Experiment2: Conduct linear programming model to find new reorder point that will give lost sales = 0 according to this new data set</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Experiment2: Determining more accurate reccommendations using more fine-tuned model / method than heuristics</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AnAv",
+      "code_hash": "e4bcfde54fafe63b5e4aab43d8548b3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "average daily demand: 13.90\nstandard deviation of daily demand: 3.79\n\nservice level     z  formula ROP\n        90.0%  1.28         50.1\n        95.0%  1.65         52.5\n        99.0%  2.33         57.0\n        99.9%  3.09         62.0\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "qGCi",
+      "code_hash": "d97c63748d64af5ec1dff4aa5acb241a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " candidate rop units lost\n            20        665\n            25        444\n            30        244\n            35        129\n            40         44\n            45         10\n            50          5\n            55          0\n            60          0\n            65          0\n            70          0\n            75          0\n            80          0\n            85          0\n            90          0\n            95          0\n           100          0\n           105          0\n           110          0\n           115          0\n           120          0\n\nsmallest reorder point with zero lost sales (search): 55\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "QbtL",
+      "code_hash": "ae8d594136973a01ad16905a10437bdf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Comparing the two approaches</strong></span>\n<span class=\"paragraph\">The formula-based approach (Approach 1) gives a reorder point between 50 and 62, depending on how much safety stock (service level) you choose \u2014 90% service level gives ROP \u2248 50, while 99.9% gives ROP \u2248 62. None of these are guaranteed to reach exactly zero lost sales, because the formula assumes demand follows a smooth bell curve and asks \"how safe do you want to be,\" rather than looking at what actually happened in this specific dataset.</span>\n<span class=\"paragraph\">The search approach (Approach 2) finds the exact answer for this dataset: a reorder point of 55 is the smallest one that gives zero lost sales over all 365 days. This lines up well with the formula's 99% service level estimate (57.0), but it is not a guess, it is the real smallest number that works for this exact year of demand.</span>\n<span class=\"paragraph\">So reorder point 40 (the original heuristic) was too low once a full year of noisier demand was simulated \u2014 it is closer to Approach 1's 90% service level estimate (50.1) than to the exact zero-lost-sales answer (55).</span>\n<span class=\"paragraph\">additional note: </span>\n<ul>\n<li>method 1 is more standardized and scalable but fits more to clients with some statistics background knowledge to truely understand the choice we're trying to make.</li>\n<li>adding more proper cost data (holding, ordering, sales lost) should give even more accurate optimization if data is available</li>\n</ul></span>"
           }
         }
       ],
