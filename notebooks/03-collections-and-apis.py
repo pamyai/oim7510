@@ -417,10 +417,10 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    1. list
-    2. set
-    3. dict
-    4. tuple
+    1. list - many of the same thing, can change
+    2. set - only asking whether you have seen a value before
+    3. dict - key-value pairs, lookup by key
+    4. tuple - like a list, but can't change (immutable)
     """)
     return
 
@@ -453,7 +453,6 @@ def _():
         ("NVDA", 20, 410.17),
         ("TSLA", 150, 255.70),
     ]
-
     return (holdings,)
 
 

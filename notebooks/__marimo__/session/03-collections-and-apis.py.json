@@ -8,7 +8,14 @@
     {
       "id": "Hbol",
       "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -66,7 +73,14 @@
     {
       "id": "PKri",
       "code_hash": "3ec179977eb886c2c66062090edededa",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"Symbol\": \"GOOG\", \"Price\": \"text/plain+float:133.1\", \"Currency\": \"USD\"}"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -85,7 +99,14 @@
     {
       "id": "SFPL",
       "code_hash": "eea132fed27efd6f1db408185f7d665e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>True</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -104,7 +125,14 @@
     {
       "id": "RGSE",
       "code_hash": "d36c2544a9da3d7ca41366697fa9ad45",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>0</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -123,7 +151,14 @@
     {
       "id": "emfo",
       "code_hash": "c6eaa2401b0fa36823b5bb26bdb54aba",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"Symbol: GOOG\", \"Price: 133.1\", \"Currency: USD\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -142,7 +177,14 @@
     {
       "id": "nWHF",
       "code_hash": "a098e7088e3366c7409a5de0cd5ca558",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"shipped\": 4, \"pending\": 2, \"cancelled\": 1}"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -174,7 +216,14 @@
     {
       "id": "ROlb",
       "code_hash": "b3baada9d1fcfdd58bb210c538eb3881",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"AAPL\": \"text/plain+float:260.81\", \"NVDA\": \"text/plain+float:186.0\", \"MSFT\": \"text/plain+float:404.88\", \"GOOG\": \"text/plain+float:308.42\"}"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -193,7 +242,14 @@
     {
       "id": "TqIu",
       "code_hash": "cf013d266ae6857b91858009b7c8ab48",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>30</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -212,7 +268,14 @@
     {
       "id": "DnEU",
       "code_hash": "28bb1887819d424fa39aa23560629d78",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"GOOG\", 3]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -244,7 +307,14 @@
     {
       "id": "Pvdt",
       "code_hash": "8cb4b4c9b56148cf5915a10cbe0dd092",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;GOOG cost $13,136.00&#x27;</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -276,7 +346,14 @@
     {
       "id": "nHfw",
       "code_hash": "95a3924e5bdeb1262241b6861ecbb4f2",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[20, 10]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -295,7 +372,14 @@
     {
       "id": "AjVT",
       "code_hash": "f01f1fda7f571e14bf2a6509ace69186",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;Independence Day&#x27;</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -314,7 +398,14 @@
     {
       "id": "NCOB",
       "code_hash": "3ec454296bb0dc1ab5b1eba9bb86ad77",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[7, 4, [\"AAPL\", \"GOOG\", \"MSFT\", \"TSLA\"]]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -346,7 +437,14 @@
     {
       "id": "TXez",
       "code_hash": "fd30a3b2532bb06bb2b05ca93f53b70c",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[[\"AAPL\", \"GOOG\", \"MSFT\", \"TSLA\"], [\"AMZN\", \"NVDA\"]]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -390,12 +488,12 @@
     },
     {
       "id": "kqZH",
-      "code_hash": "7d538e8a344ca30f681073d26f227fe7",
+      "code_hash": "6003136e5f90258f8383e531b6340773",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>list</li>\n<li>set</li>\n<li>dict</li>\n<li>tuple</li>\n</ol></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>list - many of the same thing, can change</li>\n<li>set - only asking whether you have seen a value before</li>\n<li>dict - key-value pairs, lookup by key</li>\n<li>tuple - like a list, but can't change (immutable)</li>\n</ol></span>"
           }
         }
       ],
