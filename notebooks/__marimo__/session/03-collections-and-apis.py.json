@@ -189,12 +189,12 @@
     },
     {
       "id": "iLit",
-      "code_hash": "0ed0b20015dd4f265669cc94024fd60c",
+      "code_hash": "f3ecc2375faf803dd203fd1a99f03b6d",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Several questions below ask for a sentence. This cell is where they go. Click into it, write under the letter, and press <code>Ctrl+Enter</code> (Windows) or <code>Cmd+Enter</code> (macOS).</span>\n<span class=\"paragraph\"><strong>B \u00b7</strong></span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<ol>\n<li>list - many of the same thing, can change</li>\n<li>set - only asking whether you have seen a value before</li>\n<li>dict - key-value pairs, lookup by key</li>\n<li>tuple - like a list, but can't change (immutable)</li>\n</ol>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\">I prefer the tuple shape because the loop is easier to read and adjust \u2014 unpacking once (for symbol, shares, price in holdings:) avoids repeating key names \u2014 and tuples use less memory and are faster to loop through than dictionaries, which would be beneficial in case we're dealing with bigger datasets.</span>\n<span class=\"paragraph\"><strong>G \u00b7</strong></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Several questions below ask for a sentence. This cell is where they go. Click into it, write under the letter, and press <code>Ctrl+Enter</code> (Windows) or <code>Cmd+Enter</code> (macOS).</span>\n<span class=\"paragraph\"><strong>B \u00b7</strong></span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<ol>\n<li>list - many of the same thing, can change</li>\n<li>set - only asking whether you have seen a value before</li>\n<li>dict - key-value pairs, lookup by key</li>\n<li>tuple - like a list, but can't change (immutable)</li>\n</ol>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\">I prefer the tuple shape because the loop is easier to read and adjust \u2014 unpacking once (for symbol, shares, price in holdings:) avoids repeating key names \u2014 and tuples use less memory and are faster to loop through than dictionaries, which would be beneficial in case we're dealing with bigger datasets.</span>\n<span class=\"paragraph\"><strong>Advanced \u00b7 A year of trades \u00b7</strong></span>\n<span class=\"paragraph\">My version:</span>\n<ol>\n<li>create list of outstanding shares with price</li>\n<li>run for loop<ul>\n<li>if buy --&gt; add new line</li>\n<li>if sell --&gt; deduct amount from earliest date outstanding of each symbol, if deduction amount &gt; line amount --&gt; move deduction to the next line of the same symbol</li>\n</ul>\n</li>\n</ol>\n<span class=\"paragraph\">Refined version:</span>\n<ol>\n<li>For each ticker, keep a list of outstanding buy-lines in the order bought, each one holding the ticker, the shares remaining, and the price paid.</li>\n<li>Go through the trades in order:<ul>\n<li>If it's a buy, add a new line to that ticker's list.</li>\n<li>If it's a sell, take shares from that ticker's earliest remaining line first. For each line touched, record a gain of (sell price \u2212 that line's buy price) \u00d7 shares taken, add it to the running totals, and reduce that line's shares remaining. If the sale amount is more than one line can cover, move to the next-oldest line of the same ticker and keep going until the full sale amount is accounted for.</li>\n</ul>\n</li>\n</ol>\n<span class=\"paragraph\"><strong>G \u00b7</strong></span></span>"
           }
         }
       ],
@@ -589,6 +589,26 @@
         }
       ],
       "console": []
+    },
+    {
+      "id": "lHTb",
+      "code_hash": "09e2d54fefd97f9d5cb2809dc7f9f54d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "total gain: $7,900.00\nAAPL: $6,700.00\nMSFT: $1,200.00\n\nshares left:\nAAPL: 20 shares at $240.00\nMSFT: 10 shares at $380.00\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "yOPj",

@@ -168,6 +168,22 @@ def _(mo):
 
     I prefer the tuple shape because the loop is easier to read and adjust — unpacking once (for symbol, shares, price in holdings:) avoids repeating key names — and tuples use less memory and are faster to loop through than dictionaries, which would be beneficial in case we're dealing with bigger datasets.
 
+    **Advanced · A year of trades ·**
+
+    My version:
+
+    1. create list of outstanding shares with price
+    2. run for loop
+       - if buy --> add new line
+       - if sell --> deduct amount from earliest date outstanding of each symbol, if deduction amount > line amount --> move deduction to the next line of the same symbol
+
+    Refined version:
+
+    1. For each ticker, keep a list of outstanding buy-lines in the order bought, each one holding the ticker, the shares remaining, and the price paid.
+    2. Go through the trades in order:
+       - If it's a buy, add a new line to that ticker's list.
+       - If it's a sell, take shares from that ticker's earliest remaining line first. For each line touched, record a gain of (sell price − that line's buy price) × shares taken, add it to the running totals, and reduce that line's shares remaining. If the sale amount is more than one line can cover, move to the next-oldest line of the same ticker and keep going until the full sale amount is accounted for.
+
     **G ·**
     """)
     return
@@ -536,6 +552,52 @@ def _():
         ("2026-08-12", "AAPL", "sell", 40, 250.00),
     ]
     year_trades
+    return (year_trades,)
+
+
+@app.cell
+def _(year_trades):
+    # For each ticker, keep a list of batches bought, oldest first. Each batch is a record: shares remaining, price paid.
+    outstanding_batches = {}   # ticker -> list of batches, each batch a dict like {"shares": 100, "price": 180.00}
+
+    total_gain = 0
+    gain_by_ticker = {}
+
+    for _date, _ticker, _action, _trade_shares, _trade_price in year_trades:
+        if _ticker not in outstanding_batches:
+            outstanding_batches[_ticker] = []
+
+        if _action == "buy":
+            outstanding_batches[_ticker].append({"shares": _trade_shares, "price": _trade_price})
+        else:
+            # sell: take shares from the oldest batch first, moving to the next batch if one isn't enough
+            remaining_to_sell = _trade_shares
+            while remaining_to_sell > 0:
+                oldest_batch = outstanding_batches[_ticker][0]
+                if oldest_batch["shares"] <= remaining_to_sell:
+                    shares_taken = oldest_batch["shares"]
+                else:
+                    shares_taken = remaining_to_sell
+
+                gain = (_trade_price - oldest_batch["price"]) * shares_taken
+                total_gain = total_gain + gain
+                gain_by_ticker[_ticker] = gain_by_ticker.get(_ticker, 0) + gain
+
+                oldest_batch["shares"] = oldest_batch["shares"] - shares_taken
+                remaining_to_sell = remaining_to_sell - shares_taken
+
+                if oldest_batch["shares"] == 0:
+                    outstanding_batches[_ticker].pop(0)
+
+    print(f"total gain: ${total_gain:,.2f}")
+    for _ticker, _gain in gain_by_ticker.items():
+        print(f"{_ticker}: ${_gain:,.2f}")
+
+    print()
+    print("shares left:")
+    for _ticker, _batches in outstanding_batches.items():
+        for _batch in _batches:
+            print(f"{_ticker}: {_batch['shares']} shares at ${_batch['price']:,.2f}")
     return
 
 
