@@ -189,12 +189,12 @@
     },
     {
       "id": "iLit",
-      "code_hash": "f320ba7a179328f3a04bc6be3e357de0",
+      "code_hash": "0ed0b20015dd4f265669cc94024fd60c",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Several questions below ask for a sentence. This cell is where they go. Click into it, write under the letter, and press <code>Ctrl+Enter</code> (Windows) or <code>Cmd+Enter</code> (macOS).</span>\n<span class=\"paragraph\"><strong>B \u00b7</strong></span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\"><strong>G \u00b7</strong></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Several questions below ask for a sentence. This cell is where they go. Click into it, write under the letter, and press <code>Ctrl+Enter</code> (Windows) or <code>Cmd+Enter</code> (macOS).</span>\n<span class=\"paragraph\"><strong>B \u00b7</strong></span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<ol>\n<li>list - many of the same thing, can change</li>\n<li>set - only asking whether you have seen a value before</li>\n<li>dict - key-value pairs, lookup by key</li>\n<li>tuple - like a list, but can't change (immutable)</li>\n</ol>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\">I prefer the tuple shape because the loop is easier to read and adjust \u2014 unpacking once (for symbol, shares, price in holdings:) avoids repeating key names \u2014 and tuples use less memory and are faster to loop through than dictionaries, which would be beneficial in case we're dealing with bigger datasets.</span>\n<span class=\"paragraph\"><strong>G \u00b7</strong></span></span>"
           }
         }
       ],
@@ -515,13 +515,53 @@
     {
       "id": "rEll",
       "code_hash": "106ae057eca4a3a1ccc876d48b5e8b81",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "dGlV",
       "code_hash": "fd094cc6d6a62f2dbe2f85fba5c12dab",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>116302.7</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Jngl",
+      "code_hash": "ba91e5043a2e5f7302f3a3896ed56fbb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>116302.7</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NoNM",
+      "code_hash": "fe3bf8fa45ac960950bbc1bf98ec7ebd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"TSLA\", \"text/plain+float:38355.0\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -540,7 +580,14 @@
     {
       "id": "lgWD",
       "code_hash": "fa923984c3255ec447f3c2f9d1ae94e5",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[[\"2026-01-05\", \"AAPL\", \"buy\", 100, \"text/plain+float:180.0\"], [\"2026-02-10\", \"MSFT\", \"buy\", 40, \"text/plain+float:400.0\"], [\"2026-03-02\", \"AAPL\", \"buy\", 50, \"text/plain+float:210.0\"], [\"2026-04-15\", \"AAPL\", \"sell\", 120, \"text/plain+float:230.0\"], [\"2026-05-20\", \"MSFT\", \"buy\", 20, \"text/plain+float:380.0\"], [\"2026-06-08\", \"MSFT\", \"sell\", 50, \"text/plain+float:420.0\"], [\"2026-07-01\", \"AAPL\", \"buy\", 30, \"text/plain+float:240.0\"], [\"2026-08-12\", \"AAPL\", \"sell\", 40, \"text/plain+float:250.0\"]]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -559,7 +606,14 @@
     {
       "id": "fwwy",
       "code_hash": "8e41e132c0014809fc7c6d99010a66d6",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -578,7 +632,14 @@
     {
       "id": "urSm",
       "code_hash": "b0a00ff4650826e66e32fe0666f52a91",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>200</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -597,7 +658,14 @@
     {
       "id": "mWxS",
       "code_hash": "25e9c1190b53d7f608172bbf33825be4",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"latitude\": \"text/plain+float:42.299843\", \"longitude\": \"text/plain+float:-71.27756\", \"generationtime_ms\": \"text/plain+float:0.0591278076171875\", \"utc_offset_seconds\": -14400, \"timezone\": \"America/New_York\", \"timezone_abbreviation\": \"GMT-4\", \"elevation\": \"text/plain+float:49.0\", \"current_units\": {\"time\": \"iso8601\", \"interval\": \"seconds\", \"temperature_2m\": \"\\u00b0F\", \"wind_speed_10m\": \"mp/h\"}, \"current\": {\"time\": \"2026-10-25T21:00\", \"interval\": 900, \"temperature_2m\": \"text/plain+float:48.0\", \"wind_speed_10m\": \"text/plain+float:5.5\"}}"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -616,7 +684,14 @@
     {
       "id": "YWSi",
       "code_hash": "11b5f79650a5781c25cfe837407d6333",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>48.0</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -648,7 +723,14 @@
     {
       "id": "xvXZ",
       "code_hash": "80c6a8567fd12b007ce7e420740ff83e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[400, {\"error\": true, \"reason\": \"Latitude must be in range of -90 to 90\\u00b0. Given: 422.0.\"}]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -667,7 +749,14 @@
     {
       "id": "YECM",
       "code_hash": "5bd422ed104db59bf08fcd74f9c7c304",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[200, {\"generationtime_ms\": \"text/plain+float:0.06270409\"}]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -686,7 +775,14 @@
     {
       "id": "iXej",
       "code_hash": "9e24f0f5b2cd162f0e0a7f9d94eefd0c",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>True</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -718,8 +814,22 @@
     {
       "id": "vEBW",
       "code_hash": "50dce9bd07738e1bd3847393e9357ec7",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "'wind_mph'",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\napas\\AppData\\Local\\Temp\\marimo_9572\\__marimo__cell_vEBW_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">wind_speed</span> <span class=\"o\">=</span> <span class=\"n\">babson_weather</span><span class=\"p\">[</span><span class=\"s2\">\"wind_mph\"</span><span class=\"p\">]</span>\n<span class=\"w\">                 </span><span class=\"pm\">~~~~~~~~~~~~~~^^^^^^^^^^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">'wind_mph'</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
     },
     {
       "id": "kLmu",

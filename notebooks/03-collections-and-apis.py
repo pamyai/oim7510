@@ -159,7 +159,14 @@ def _(mo):
 
     **C ·**
 
+    1. list - many of the same thing, can change
+    2. set - only asking whether you have seen a value before
+    3. dict - key-value pairs, lookup by key
+    4. tuple - like a list, but can't change (immutable)
+
     **D ·**
+
+    I prefer the tuple shape because the loop is easier to read and adjust — unpacking once (for symbol, shares, price in holdings:) avoids repeating key names — and tuples use less memory and are faster to loop through than dictionaries, which would be beneficial in case we're dealing with bigger datasets.
 
     **G ·**
     """)
@@ -467,6 +474,36 @@ def _(holdings):
         total_cost += subtotal
 
     total_cost
+    return
+
+
+@app.cell
+def _(holdings):
+    # Agent's version - unpacking each holding into three names at once, instead of indexing with [1] and [2]
+    agent_total_cost = 0
+    for _symbol, _shares, _price in holdings:
+        agent_total_cost = agent_total_cost + _shares * _price
+
+    agent_total_cost
+    return
+
+
+@app.cell
+def _(holdings):
+    # build a dictionary: ticker -> cost of that holding
+    holding_costs = {}
+    for _symbol, _shares, _price in holdings:
+        holding_costs[_symbol] = _shares * _price
+
+    # find the ticker with the largest cost, the way MSFT was found for closing_prices
+    highest_ticker = None
+    highest_cost = 0
+    for _ticker, _cost in holding_costs.items():
+        if _cost > highest_cost:
+            highest_cost = _cost
+            highest_ticker = _ticker
+
+    highest_ticker, highest_cost
     return
 
 
