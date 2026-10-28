@@ -166,6 +166,22 @@ def _(from_date, get_orders, to_date):
 
 @app.cell
 def _(orders):
+    #save the fetched orders to a file, as the assignment requires
+
+    import json
+    import os
+
+    os.makedirs("projects/mp2/data", exist_ok=True)
+
+    with open("projects/mp2/data/orders.json", "w") as _file:
+        json.dump(orders, _file, indent=2)
+
+    print(f"Saved {len(orders)} orders to projects/mp2/data/orders.json")
+    return
+
+
+@app.cell
+def _(orders):
     #step4: order count, total revenue, revenue by country, unshipped orders
 
     order_count = len(orders)
@@ -482,7 +498,7 @@ def _(mo):
 
 @app.cell
 def _(alt, days, orders, pl):
-    #going further 1b: revenue by day, as a chart
+    #going further 1a: revenue by day, as a chart
 
     revenue_by_day = {}
 
@@ -514,8 +530,35 @@ def _(alt, days, orders, pl):
 
 
 @app.cell
+def _(orders):
+    #investigate: what does our already-collected data show for Oct 22?
+
+    _oct22_orders = []
+    for _order in orders:
+        if _order['order_date'][:10] == "2026-10-22":
+            _oct22_orders.append(_order)
+
+    print(f"Orders on 2026-10-22, from our collected 'orders' list: {len(_oct22_orders)}")
+    for _order in _oct22_orders:
+        print(f"  order {_order['order_id']}: ${_order['order_total_dollars']:.2f}, placed at {_order['order_date']}")
+    return
+
+
+@app.cell
+def _(get_orders):
+    #investigate: fetch 22 Oct 2026 fresh from the API, independent of our weekly pull
+
+    _oct22_fetched, _oct22_reported_total = get_orders("2026-10-22", "2026-10-22")
+
+    print(f"Orders on 2026-10-22, freshly fetched: {len(_oct22_fetched)} (API reports total: {_oct22_reported_total})")
+    for _order in _oct22_fetched:
+        print(f"  order {_order['order_id']}: ${_order['order_total_dollars']:.2f}, placed at {_order['order_date']}")
+    return
+
+
+@app.cell
 def _(days, orders):
-    #going further 1: orders and revenue by 2-hour time slot, as a clustered bar chart
+    #going further 1b: orders and revenue by 2-hour time slot, as a clustered bar chart
 
     import altair as alt
     import polars as pl
@@ -580,13 +623,13 @@ def _(days, orders):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    I first charted revenue by day (going further 1c), just to see which days in the week brought in the most money. Don't really find anything interesting as the chart is flat. So I tried the hourly pattern instead.
+    I first charted revenue by day (going further 1c), just to see which days in the week brought in the most money. The team might need further check on what happened on 22 October as the sale dropped significantly compared to other days. I check both the collected data and the newly fetched from the API. Both numbers agreed at $2743.65 so it is expected to be accurate.
 
-    I tried charting both orders and revenue by 2-hour time slot (going further 1), to see if there's any interesting pattern in when business happens during the day.
+    Then I get curious about what time of day the business operates most actively. So I tried charting both orders and revenue by 2-hour time slot (going further 1), to see if there's any interesting pattern in when business happens during the day.
 
-    I googled the company name, and this is supposed to be a B2B food business. In that case the spike at midnight (00-02) is pretty weird. What business shops for granola at midnight? Do their sales person not sleep? Or is it their logistics schedule? Or is it just a plot hole, since this is a fictional company anyway?
+    I googled the company name, and this is supposed to be a B2B food business. In that case the spike at midnight (00-02) is a bit weird. What business place orders at midnight? Do their sales person not sleep? Or is it their logistics schedule? Or is it just a plot hole, since this is a fictional company anyway?
 
-    Honestly this pattern look more like that of a 24-hour convenience store or an online retail platform than a typical B2B food supplier, as it spikes during lunch time, after work, morning, and late-night snack time.
+    This pattern look more like that of a 24-hour convenience store or an online retail platform than a typical B2B food supplier, as it spikes during lunch time, after work, morning, and late-night snack time.
     """)
     return
 

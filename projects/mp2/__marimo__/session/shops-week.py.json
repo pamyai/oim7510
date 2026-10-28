@@ -150,6 +150,26 @@
       ]
     },
     {
+      "id": "Doqs",
+      "code_hash": "e9299097daf7ef3b5a70fd924733b4d4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Saved 32 orders to projects/mp2/data/orders.json\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "vsaR",
       "code_hash": "d342d0d84c699372a3cba70edc65bd4f",
       "outputs": [
@@ -475,7 +495,7 @@
     },
     {
       "id": "xcnL",
-      "code_hash": "269e48d0bb3bb3430f422707b3747268",
+      "code_hash": "a01ea63496c629d6837ea1f2ae6ef932",
       "outputs": [
         {
           "type": "data",
@@ -487,8 +507,48 @@
       "console": []
     },
     {
+      "id": "VKCu",
+      "code_hash": "e9916879542e94b821107cf45a2800ed",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Orders on 2026-10-22, from our collected 'orders' list: 1\n  order 21646: $2743.65, placed at 2026-10-22T14:59:35\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "PoWU",
+      "code_hash": "17bc2eb49af92fe3436d894ac18ba6d9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Orders on 2026-10-22, freshly fetched: 1 (API reports total: 1)\n  order 21646: $2743.65, placed at 2026-10-22T14:59:35\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "Qaqs",
-      "code_hash": "8405b6c37231d56de729c34e605bf2b8",
+      "code_hash": "6586e0a01fc17d4a683b049f10cbfccf",
       "outputs": [
         {
           "type": "data",
@@ -501,12 +561,12 @@
     },
     {
       "id": "TEAa",
-      "code_hash": "5377ec3116bdb8d77347807e615126be",
+      "code_hash": "e7b2e9ee78e4c8004a09efcac97744cf",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">I first charted revenue by day (going further 1c), just to see which days in the week brought in the most money. Don't really find anything interesting as the chart is flat. So I tried the hourly pattern instead. </span>\n<span class=\"paragraph\">I tried charting both orders and revenue by 2-hour time slot (going further 1), to see if there's any interesting pattern in when business happens during the day.</span>\n<span class=\"paragraph\">I googled the company name, and this is supposed to be a B2B food business. In that case the spike at midnight (00-02) is pretty weird. What business shops for granola at midnight? Do their sales person not sleep? Or is it their logistics schedule? Or is it just a plot hole, since this is a fictional company anyway? </span>\n<span class=\"paragraph\">Honestly this pattern look more like that of a 24-hour convenience store or an online retail platform than a typical B2B food supplier, as it spikes during lunch time, after work, morning, and late-night snack time.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">I first charted revenue by day (going further 1c), just to see which days in the week brought in the most money. The team might need further check on what happened on 22 October as the sale dropped significantly compared to other days. I check both the collected data and the newly fetched from the API. Both numbers agreed at $2743.65 so it is expected to be accurate.  </span>\n<span class=\"paragraph\">Then I get curious about what time of day the business operates most actively. So I tried charting both orders and revenue by 2-hour time slot (going further 1), to see if there's any interesting pattern in when business happens during the day.</span>\n<span class=\"paragraph\">I googled the company name, and this is supposed to be a B2B food business. In that case the spike at midnight (00-02) is a bit weird. What business place orders at midnight? Do their sales person not sleep? Or is it their logistics schedule? Or is it just a plot hole, since this is a fictional company anyway? </span>\n<span class=\"paragraph\">This pattern look more like that of a 24-hour convenience store or an online retail platform than a typical B2B food supplier, as it spikes during lunch time, after work, morning, and late-night snack time.</span></span>"
           }
         }
       ],
