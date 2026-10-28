@@ -14,7 +14,7 @@ def _():
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    1. The Question
+    #1. The Question
 
     The operations manager would use this tool to understand what happened in the business over the past week. It gives a quick view of sales, popular products, and any orders that still need attention.
 
@@ -26,7 +26,8 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    2 - My Plan Before AI
+    #2. My Plan Before AI
+
     steps:
     1. Calculate the date range for the last 7 days.
     2. Connect to the API and request all orders in that date range.
@@ -82,6 +83,17 @@ def _(mo):
     - Continue requesting pages until those numbers match.
     4. Which check will you use in section 6, and which two numbers should agree?
     - A sum total amount from an order's line items should agree with the order’s total from /shop/orders.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    #3. Inputs
+
+    days = 7
+    base_url = "https://oim.zhili.dev/shop"
     """)
     return
 
