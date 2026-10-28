@@ -215,12 +215,64 @@
     },
     {
       "id": "ROlb",
-      "code_hash": "b3baada9d1fcfdd58bb210c538eb3881",
+      "code_hash": "d8bf82d58afab4c006ec223444a7d90d",
       "outputs": [
         {
           "type": "data",
           "data": {
             "application/json": "{\"AAPL\": \"text/plain+float:260.81\", \"NVDA\": \"text/plain+float:186.0\", \"MSFT\": \"text/plain+float:404.88\", \"GOOG\": \"text/plain+float:308.42\"}"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "UhKe",
+      "code_hash": "1ac612db125e3b2944b69318890e73bd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>260.81</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RkEi",
+      "code_hash": "2ddf3fb4656e8a3214374150b4edf057",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mNcC",
+      "code_hash": "21f104a03933eea5f0f723a2326c1c66",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"AAPL\", \"MSFT\", \"GOOG\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "sJhr",
+      "code_hash": "e2f6d3bc07a7540f5303d8ac9c07b15d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;MSFT&#x27;</pre>"
           }
         }
       ],
@@ -540,7 +592,7 @@
     },
     {
       "id": "dGlV",
-      "code_hash": "fd094cc6d6a62f2dbe2f85fba5c12dab",
+      "code_hash": "bc9d957deda60dc6a4794f2fb2205aa9",
       "outputs": [
         {
           "type": "data",

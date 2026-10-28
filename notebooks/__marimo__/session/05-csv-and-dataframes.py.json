@@ -558,6 +558,25 @@
       "console": []
     },
     {
+      "id": "syPG",
+      "code_hash": "08da17e210537a5327e2787e79173200",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "atZb",
+      "code_hash": "96e13fb82284e842caaf8219be4e0971",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Answer: Mostly yes. Each dot is one of the 351 Massachusetts towns. Towns with higher income per person tend to have higher average single-family tax bills, and most towns sit below $100,000 of income and $10,000 of bill. The pattern loosens at the top: a few towns with income above $300,000 pay no more than towns with a third of their income, so income alone doesn't set the bill.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "kqZH",
       "code_hash": "78ee299d1182f7ed622a5146c5c7bd34",
       "outputs": [

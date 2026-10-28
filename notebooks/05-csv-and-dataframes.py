@@ -498,6 +498,36 @@ def _(mo):
     return
 
 
+@app.cell
+def _(alt, mo, town_table):
+    #Do richer towns pay higher tax bills? (income vs bill, dots)
+
+    income_bill_chart = mo.ui.altair_chart(
+        town_table.plot.point(
+            x=alt.X(
+                "income_per_capita_dollars",
+                title="Income per person in the town",
+                axis=alt.Axis(format="$,.0f"),
+            ),
+            y=alt.Y(
+                "average_single_family_bill_dollars",
+                title="Average single-family tax bill",
+                axis=alt.Axis(format="$,.0f"),
+            ),
+        ).properties(title="Towns with higher income per person pay higher tax bills")
+    )
+    income_bill_chart
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Answer: Mostly yes. Each dot is one of the 351 Massachusetts towns. Towns with higher income per person tend to have higher average single-family tax bills, and most towns sit below $100,000 of income and $10,000 of bill. The pattern loosens at the top: a few towns with income above $300,000 pay no more than towns with a third of their income, so income alone doesn't set the bill.
+    """)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""

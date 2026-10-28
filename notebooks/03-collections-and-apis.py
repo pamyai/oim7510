@@ -214,8 +214,47 @@ def _(mo):
 
 @app.cell
 def _():
+    #1
     closing_prices = {"AAPL": 260.81, "NVDA": 186.00, "MSFT": 404.88, "GOOG": 308.42}
     closing_prices
+    return (closing_prices,)
+
+
+@app.cell
+def _(closing_prices):
+    closing_prices["AAPL"]
+    return
+
+
+@app.cell
+def _(closing_prices):
+    #2
+    closing_prices.get("TSLA")
+
+    return
+
+
+@app.cell
+def _(closing_prices):
+    #3
+    above_200 = []
+    for _ticker, _price in closing_prices.items():
+        if _price > 200:
+            above_200.append(_ticker)
+    above_200
+    return
+
+
+@app.cell
+def _(closing_prices):
+    #4
+    top_ticker = None
+    top_price = 0
+    for _ticker, _price in closing_prices.items():
+        if _price > top_price:
+            top_price = _price
+            top_ticker = _ticker
+    top_ticker
     return
 
 
@@ -496,13 +535,8 @@ def _():
 @app.cell
 def _(holdings):
     total_cost = 0
-    #use for loop to iterate every stock to get share price of each stock, then calculate subtotal then add subtotal to total_cost
-    for stock in holdings:
-        shares = stock[1]
-        price = stock[2]
-        subtotal = shares * price
-        total_cost += subtotal
-
+    for _symbol, _shares, _price in holdings:
+        total_cost += _shares * _price
     total_cost
     return
 
