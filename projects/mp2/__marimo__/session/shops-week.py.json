@@ -125,7 +125,7 @@
     },
     {
       "id": "yfQc",
-      "code_hash": "8d7347204b96601642107b1f6680c8ff",
+      "code_hash": "a1b8b20a9e9d052c2a23907782a92352",
       "outputs": [
         {
           "type": "data",
@@ -138,7 +138,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Collected 35 orders out of 35 reported\n",
+          "text": "Collected 36 orders out of 35 reported\n",
           "mimetype": "text/plain"
         }
       ]
@@ -158,7 +158,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Order count: 35\nTotal revenue: $779,663.08\nUnshipped orders: 25\n",
+          "text": "Order count: 36\nTotal revenue: $798,471.55\nUnshipped orders: 25\n",
           "mimetype": "text/plain"
         }
       ]
@@ -178,10 +178,235 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Collected 1065 line items from 35 orders\n",
+          "text": "Collected 1094 line items from 36 orders\n",
           "mimetype": "text/plain"
         }
       ]
+    },
+    {
+      "id": "NVXJ",
+      "code_hash": "d0f1996e1f78902fba18767e131b66e7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Counted sales for 77 different products\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Lvra",
+      "code_hash": "0bd526a66530e1246b2045c74effd2db",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Northwoods Cranberry Sauce: 540 units\nPavlova: 518 units\nQueso Manchego La Pastora: 503 units\nTh\u00fcringer Rostbratwurst: 465 units\nLakkalik\u00f6\u00f6ri: 463 units\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "nOhQ",
+      "code_hash": "f261c3b956e654b0f889bbb4cacaf5a2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"5-the-answer\">5. The Answer</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "cTZc",
+      "code_hash": "142d87a7a89ebeb6f46a18bf97471f0d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Product                                   Units sold\nNorthwoods Cranberry Sauce                       540\nPavlova                                          518\nQueso Manchego La Pastora                        503\nTh\u00fcringer Rostbratwurst                          465\nLakkalik\u00f6\u00f6ri                                     463\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Dwat",
+      "code_hash": "a31747fe0d8dc3109b6363e79ae78030",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Country                     Revenue\nMexico                    74,595.43\nGermany                  110,337.17\nFrance                   125,177.79\nBrazil                   182,917.91\nCanada                    38,775.20\nPortugal                   4,421.00\nUSA                       83,473.77\nPoland                     5,130.45\nFinland                   22,214.13\nVenezuela                 98,283.89\nSwitzerland                  414.24\nAustria                   23,536.94\nSpain                     12,859.50\nItaly                     16,334.13\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "dvlc",
+      "code_hash": "eaaca4a400af67ffbf935a9d403c0dca",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "In the 7 days ending 2026-10-27, Northwind received 36 orders worth $798,471.55; Northwoods Cranberry Sauce was the top seller with 540 units, and 25 orders have not shipped yet.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "kfOG",
+      "code_hash": "f81d820652fa2fa449150c14a45ef820",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"6-how-i-know-these-numbers-are-right\">6. How I Know These Numbers Are Right</h1>\n<span class=\"paragraph\">I checked four things a second way, all shown in the cells below:</span>\n<span class=\"paragraph\"><strong>1. Did I collect every order?</strong>\nIn step 3, the API's pagination said there were 35 orders total in this date range. I collected orders page by page and counted 35 orders in my <code>orders</code> list. 35 equals 35, so I have every order, not just the first page.</span>\n<span class=\"paragraph\"><strong>2. Does each order's line-item total agree with its reported order total?</strong>\nAn order's <code>order_total_dollars</code> (from <code>/shop/orders</code>) should equal the sum of its <code>line_total_dollars</code> values (from <code>/shop/orders/{order_id}</code>), since the order total is just all its lines added up. I checked this for all 35 orders: I summed each order's lines separately and compared that sum to the order's reported total, allowing a one-cent gap for rounding. 0 of 35 orders disagreed, so the revenue and line-item numbers in this report agree with each other.</span>\n<span class=\"paragraph\"><strong>3. Did I collect every line item?</strong>\nEach order in <code>/shop/orders</code> already reports its own <code>line_count</code>, a count of how many line items it has. I summed <code>line_count</code> across all 35 orders and compared it to the number of line items I actually collected in step 5. Both came to 1065, so step 6 and step 7, which depend on having every line item, are built on a complete set.</span>\n<span class=\"paragraph\"><strong>4. Does the units-sold total in <code>product_sales</code> agree with the raw line items?</strong>\nI summed the units two different ways: once by adding up every value already stored in the <code>product_sales</code> dictionary (built in step 6), and once by going back to <code>order_lines</code> directly and adding up every <code>quantity</code> field. Both came to 25,671 units, so building the dictionary did not drop or double-count anything.</span>\n<span class=\"paragraph\"><strong>5. Are the top 5 products really the top 5?</strong>\nThe picking method in step 7 works by repeatedly scanning for the highest remaining count, so it should be correct by construction, but I checked it a different way anyway: I took the 5th-place product's count (446 units) and scanned every other product not in the top 5 to see if any of them actually sold more. None did, which confirms the top 5 list is right.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yqTq",
+      "code_hash": "98d5be5cd728133862404c4d7b4c97a6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Checked 36 orders, 0 did not match\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "VeUK",
+      "code_hash": "0c98a383c34f129536750c768c0aeb08",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Line items collected in step 5: 1094\nLine counts reported by the API, summed across orders: 1094\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "scmq",
+      "code_hash": "ddbd62b89bb2de0ff26d58cdc6c94cb9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Total units, summed from product_sales: 26413\nTotal units, summed directly from order_lines: 26413\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "FuJo",
+      "code_hash": "5b52c65038413302491e9be49c184106",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "5th place count: 463\nProducts outside the top 5 that beat this count: 0\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "iNBE",
+      "code_hash": "d674f1226453863738bd2c239da14acc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"7-working-with-the-agent\">7. Working With the Agent</h1>\n<span class=\"paragraph\">I did one sanity check in step 3 as explained in section 6, then when we were at step 5, ai suggested doing the planned check right there instead of waiting until step 7 as originally planned. I agreed thus we knew at that point everything was fine. That was check #2.</span>\n<span class=\"paragraph\">But doing that also made me realized doing that as a check point left step 6 - 7 unaudited so I told ai to find a way to check those steps. It suggested check #3, which still did not help audit anything beyond step 5. So I had to tell it to try again and focus on step 6 - 7 which was how I got check #4 - 5. I kept check #3 anyway as it doesn't really hurt anything. </span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xuKq",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
     }
   ]
 }
