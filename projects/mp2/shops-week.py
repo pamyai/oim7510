@@ -99,12 +99,20 @@ def _(mo):
 def _():
     days = 7
     base_url = "https://oim.zhili.dev/shop"
-    return (days,)
+    return base_url, days
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    #4. the work
+    """)
+    return
 
 
 @app.cell
 def _(days):
-    #4. the work
+    #step1: date
 
     from datetime import date, timedelta
 
@@ -112,6 +120,37 @@ def _(days):
     from_date = to_date - timedelta(days=days - 1)
 
     print(f"Report covers {from_date} to {to_date}")
+    return from_date, to_date
+
+
+@app.cell
+def _(base_url, from_date, to_date):
+    #step2: request orders in the date range
+
+    import requests
+
+    response = requests.get(f"{base_url}/orders", params={"from_date": str(from_date), "to_date": str(to_date)})
+    reply = response.json()
+
+    print(f"This page has {len(reply['items'])} orders")
+    print(f"Total orders in the date range: {reply['pagination']['total']}")
+    return reply, requests
+
+
+@app.cell
+def _(base_url, from_date, reply, requests, to_date):
+    #step3: collect every page of orders
+
+    orders = []
+    total_pages = reply['pagination']['pages']
+
+    for page in range(1, total_pages + 1):
+        page_response = requests.get(f"{base_url}/orders", params={"from_date": str(from_date), "to_date": str(to_date), "page": page})
+        page_reply = page_response.json()
+        for _order in page_reply['items']:
+            orders.append(_order)
+
+    print(f"Collected {len(orders)} orders out of {reply['pagination']['total']} reported")
     return
 
 

@@ -71,8 +71,21 @@
       "console": []
     },
     {
+      "id": "YVpA",
+      "code_hash": "a734be4eecb2784794e71678c94347b9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"4-the-work\">4. the work</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "JWHK",
-      "code_hash": "1fc4e36f30158032b68fdbc5dbc00929",
+      "code_hash": "4d1a2b951b1df22daa7a50e8484a6817",
       "outputs": [
         {
           "type": "data",
@@ -86,6 +99,46 @@
           "type": "stream",
           "name": "stdout",
           "text": "Report covers 2026-10-21 to 2026-10-27\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "FPVS",
+      "code_hash": "9249b61afd3c9fada3c5db55f2438e24",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "This page has 35 orders\nTotal orders in the date range: 35\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "yfQc",
+      "code_hash": "8d7347204b96601642107b1f6680c8ff",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Collected 35 orders out of 35 reported\n",
           "mimetype": "text/plain"
         }
       ]
