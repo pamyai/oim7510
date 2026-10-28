@@ -207,20 +207,20 @@
       "console": []
     },
     {
-      "id": "mwaU",
+      "id": "ROlb",
       "code_hash": "8c8a9ed22e4eddf1ea797dc7c1da583e",
       "outputs": [
         {
           "type": "error",
-          "ename": "syntax",
+          "ename": "exception",
           "evalue": "line 1\n    def calculate_bmi(height,weight)\n                                    ^\nSyntaxError: expected ':'\n",
-          "traceback": []
+          "traceback": null
         }
       ],
       "console": []
     },
     {
-      "id": "ROlb",
+      "id": "qnkX",
       "code_hash": "30bc962c16a83e62af1603e2656f8ec1",
       "outputs": [
         {
@@ -233,7 +233,7 @@
       "console": []
     },
     {
-      "id": "qnkX",
+      "id": "TqIu",
       "code_hash": "056a1aa629d6f6d618e4be5ac43dae47",
       "outputs": [
         {
@@ -246,7 +246,7 @@
       "console": []
     },
     {
-      "id": "TqIu",
+      "id": "Vxnm",
       "code_hash": "ddcc597ad8d2a511c60b96b824e2527a",
       "outputs": [
         {
@@ -259,7 +259,7 @@
       "console": []
     },
     {
-      "id": "Vxnm",
+      "id": "DnEU",
       "code_hash": "554e289048502368930abe609e37acf7",
       "outputs": [
         {
@@ -272,19 +272,19 @@
       "console": []
     },
     {
-      "id": "DnEU",
+      "id": "ulZA",
       "code_hash": "8e41e132c0014809fc7c6d99010a66d6",
       "outputs": [],
       "console": []
     },
     {
-      "id": "ulZA",
+      "id": "ecfG",
       "code_hash": "afdea3774b798b782ef68b655c7e9fad",
       "outputs": [],
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "Pvdt",
       "code_hash": "4b5a93d2e8ce98582c6bbd2317ff5d1a",
       "outputs": [
         {
@@ -297,13 +297,13 @@
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "ZBYS",
       "code_hash": "14cde2c50bca4b2639420fbb27ccefe8",
       "outputs": [],
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "aLJB",
       "code_hash": "273ad27da5202e9987d8f1064ce63260",
       "outputs": [
         {
@@ -316,13 +316,13 @@
       "console": []
     },
     {
-      "id": "aLJB",
+      "id": "nHfw",
       "code_hash": "38507227e42cfbedc8c8954016b16b92",
       "outputs": [],
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "xXTn",
       "code_hash": "85d1e963f1492b3256b7696534a75f64",
       "outputs": [
         {
@@ -335,13 +335,13 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "AjVT",
       "code_hash": "a71705731d61b6a8136fd49323b520cb",
       "outputs": [],
       "console": []
     },
     {
-      "id": "AjVT",
+      "id": "pHFh",
       "code_hash": "42a13f4f3662c1b41e9650a0fcad9bf4",
       "outputs": [
         {
@@ -354,19 +354,19 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "NCOB",
       "code_hash": "4109b7e974f26a60556ee3f973cb12d3",
       "outputs": [],
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "aqbW",
       "code_hash": "887930193010547e7f6c8af54f576e31",
       "outputs": [],
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "TRpd",
       "code_hash": "2b42f203181527333e0b5e30e6c3ee36",
       "outputs": [
         {
@@ -379,7 +379,7 @@
       "console": []
     },
     {
-      "id": "TRpd",
+      "id": "TXez",
       "code_hash": "2c8b7518589165dd64e0ae0b892da438",
       "outputs": [
         {
@@ -392,7 +392,7 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "dNNg",
       "code_hash": "791d5450bb1270c077aadb7767186041",
       "outputs": [
         {
@@ -405,13 +405,13 @@
       "console": []
     },
     {
-      "id": "dNNg",
+      "id": "yCnT",
       "code_hash": "a8af7dc0d3029782a8e02b74a19d0330",
       "outputs": [],
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "wlCL",
       "code_hash": "f08188965e2ca3d6b7bae9b82363bb02",
       "outputs": [
         {
@@ -424,13 +424,13 @@
       "console": []
     },
     {
-      "id": "wlCL",
+      "id": "kqZH",
       "code_hash": "c7fc10556c32764f544faf48140c6d25",
       "outputs": [],
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "wAgl",
       "code_hash": "456896db175c75dd58608079c2c68df5",
       "outputs": [
         {
@@ -443,19 +443,19 @@
       "console": []
     },
     {
-      "id": "wAgl",
+      "id": "rEll",
       "code_hash": "6faf21dd04d541a6216521c2c7181fe4",
       "outputs": [],
       "console": []
     },
     {
-      "id": "rEll",
+      "id": "dGlV",
       "code_hash": "fac3aeaf89e0bdbcc0f9cfba304ef1c5",
       "outputs": [],
       "console": []
     },
     {
-      "id": "dGlV",
+      "id": "SdmI",
       "code_hash": "1a426f997ebbbda468b5b1b4a41f0795",
       "outputs": [
         {
@@ -468,7 +468,7 @@
       "console": []
     },
     {
-      "id": "SdmI",
+      "id": "lgWD",
       "code_hash": "dcb8df5206efe5e43e96963f6ebfa97d",
       "outputs": [
         {
@@ -481,7 +481,7 @@
       "console": []
     },
     {
-      "id": "lgWD",
+      "id": "yOPj",
       "code_hash": "581690e023997bfeb94e6fa4377a7396",
       "outputs": [
         {
@@ -494,7 +494,7 @@
       "console": []
     },
     {
-      "id": "yOPj",
+      "id": "fwwy",
       "code_hash": "f6db42935d7668e7cafa636b45f39caa",
       "outputs": [
         {
@@ -507,7 +507,7 @@
       "console": []
     },
     {
-      "id": "fwwy",
+      "id": "LJZf",
       "code_hash": "0d706c28f83befd260cc045b42689f83",
       "outputs": [
         {
@@ -520,7 +520,7 @@
       "console": []
     },
     {
-      "id": "LJZf",
+      "id": "urSm",
       "code_hash": "19549899e0e3b0cbc9e6733515af5a2b",
       "outputs": [
         {
@@ -533,7 +533,7 @@
       "console": []
     },
     {
-      "id": "urSm",
+      "id": "jxvo",
       "code_hash": "84938202538efdb9400af5c614f1d3e7",
       "outputs": [
         {

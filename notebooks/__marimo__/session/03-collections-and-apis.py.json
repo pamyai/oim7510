@@ -189,12 +189,12 @@
     },
     {
       "id": "iLit",
-      "code_hash": "f3ecc2375faf803dd203fd1a99f03b6d",
+      "code_hash": "a6867502977647a6895f54373eb68eab",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Several questions below ask for a sentence. This cell is where they go. Click into it, write under the letter, and press <code>Ctrl+Enter</code> (Windows) or <code>Cmd+Enter</code> (macOS).</span>\n<span class=\"paragraph\"><strong>B \u00b7</strong></span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<ol>\n<li>list - many of the same thing, can change</li>\n<li>set - only asking whether you have seen a value before</li>\n<li>dict - key-value pairs, lookup by key</li>\n<li>tuple - like a list, but can't change (immutable)</li>\n</ol>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\">I prefer the tuple shape because the loop is easier to read and adjust \u2014 unpacking once (for symbol, shares, price in holdings:) avoids repeating key names \u2014 and tuples use less memory and are faster to loop through than dictionaries, which would be beneficial in case we're dealing with bigger datasets.</span>\n<span class=\"paragraph\"><strong>Advanced \u00b7 A year of trades \u00b7</strong></span>\n<span class=\"paragraph\">My version:</span>\n<ol>\n<li>create list of outstanding shares with price</li>\n<li>run for loop<ul>\n<li>if buy --&gt; add new line</li>\n<li>if sell --&gt; deduct amount from earliest date outstanding of each symbol, if deduction amount &gt; line amount --&gt; move deduction to the next line of the same symbol</li>\n</ul>\n</li>\n</ol>\n<span class=\"paragraph\">Refined version:</span>\n<ol>\n<li>For each ticker, keep a list of outstanding buy-lines in the order bought, each one holding the ticker, the shares remaining, and the price paid.</li>\n<li>Go through the trades in order:<ul>\n<li>If it's a buy, add a new line to that ticker's list.</li>\n<li>If it's a sell, take shares from that ticker's earliest remaining line first. For each line touched, record a gain of (sell price \u2212 that line's buy price) \u00d7 shares taken, add it to the running totals, and reduce that line's shares remaining. If the sale amount is more than one line can cover, move to the next-oldest line of the same ticker and keep going until the full sale amount is accounted for.</li>\n</ul>\n</li>\n</ol>\n<span class=\"paragraph\"><strong>G \u00b7</strong></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Several questions below ask for a sentence. This cell is where they go. Click into it, write under the letter, and press <code>Ctrl+Enter</code> (Windows) or <code>Cmd+Enter</code> (macOS).</span>\n<span class=\"paragraph\"><strong>B \u00b7</strong></span>\n<span class=\"paragraph\">France, Germany, Brazil and USA tied for the most orders, each with 4.</span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<ol>\n<li>list - many of the same thing, can change</li>\n<li>set - only asking whether you have seen a value before</li>\n<li>dict - key-value pairs, lookup by key</li>\n<li>tuple - like a list, but can't change (immutable)</li>\n</ol>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\">I prefer the tuple shape because the loop is easier to read and adjust \u2014 unpacking once (for symbol, shares, price in holdings:) avoids repeating key names \u2014 and tuples use less memory and are faster to loop through than dictionaries, which would be beneficial in case we're dealing with bigger datasets.</span>\n<span class=\"paragraph\"><strong>Advanced \u00b7 A year of trades \u00b7</strong></span>\n<span class=\"paragraph\">My version:</span>\n<ol>\n<li>create list of outstanding shares with price</li>\n<li>run for loop<ul>\n<li>if buy --&gt; add new line</li>\n<li>if sell --&gt; deduct amount from earliest date outstanding of each symbol, if deduction amount &gt; line amount --&gt; move deduction to the next line of the same symbol</li>\n</ul>\n</li>\n</ol>\n<span class=\"paragraph\">Refined version:</span>\n<ol>\n<li>For each ticker, keep a list of outstanding buy-lines in the order bought, each one holding the ticker, the shares remaining, and the price paid.</li>\n<li>Go through the trades in order:<ul>\n<li>If it's a buy, add a new line to that ticker's list.</li>\n<li>If it's a sell, take shares from that ticker's earliest remaining line first. For each line touched, record a gain of (sell price \u2212 that line's buy price) \u00d7 shares taken, add it to the running totals, and reduce that line's shares remaining. If the sale amount is more than one line can cover, move to the next-oldest line of the same ticker and keep going until the full sale amount is accounted for.</li>\n</ul>\n</li>\n</ol>\n<span class=\"paragraph\"><strong>G \u00b7</strong></span>\n<span class=\"paragraph\">The first result for \"Babson Park\" is in Florida, not Massachusetts. Code that always takes <code>[0]</code> without checking <code>admin1</code> would have silently picked the wrong town \u2014 the Babson College campus is in Babson Park, Massachusetts, which isn't first in this search's ranking.</span></span>"
           }
         }
       ],
@@ -247,6 +247,19 @@
           "type": "data",
           "data": {
             "text/html": "<pre class='text-xs'>30</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "GeCs",
+      "code_hash": "3d67860eb639d0282e028a896a65dd94",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"France\": 4, \"Germany\": 4, \"Brazil\": 4, \"Belgium\": 1, \"Switzerland\": 2, \"Venezuela\": 3, \"Austria\": 3, \"Mexico\": 1, \"USA\": 4, \"Sweden\": 1, \"Finland\": 2, \"Argentina\": 1}"
           }
         }
       ],
@@ -878,6 +891,19 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>G \u00b7 The first result.</strong> Search for <code>Babson Park</code> and look at the first place in <code>results</code>. In the written answers cell, answer under <strong>G</strong>: which state is it in, and what would code that always takes <code>[0]</code> have done with it?</span>\n<span class=\"paragraph\"><strong>Going further.</strong> Use F's coordinates to ask for Wellesley's current temperature. Build the address with an f-string, so that changing the town changes the forecast.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "uyWF",
+      "code_hash": "5dc39a9b870bf56b3bcd97a8d4369241",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"Babson Park\", \"Florida\", \"United States\"]"
           }
         }
       ],

@@ -157,6 +157,8 @@ def _(mo):
 
     **B ·**
 
+    France, Germany, Brazil and USA tied for the most orders, each with 4.
+
     **C ·**
 
     1. list - many of the same thing, can change
@@ -185,6 +187,8 @@ def _(mo):
        - If it's a sell, take shares from that ticker's earliest remaining line first. For each line touched, record a gain of (sell price − that line's buy price) × shares taken, add it to the running totals, and reduce that line's shares remaining. If the sale amount is more than one line can cover, move to the next-oldest line of the same ticker and keep going until the full sale amount is accounted for.
 
     **G ·**
+
+    The first result for "Babson Park" is in Florida, not Massachusetts. Code that always takes `[0]` without checking `admin1` would have silently picked the wrong town — the Babson College campus is in Babson Park, Massachusetts, which isn't first in this search's ranking.
     """)
     return
 
@@ -239,6 +243,16 @@ def _():
         "Finland", "USA", "USA", "Germany", "France", "Austria", "Argentina", "Venezuela",
     ]
     len(ship_countries)
+    return (ship_countries,)
+
+
+@app.cell
+def _(ship_countries):
+    country_counts = {}
+    for _country in ship_countries:
+        country_counts[_country] = country_counts.get(_country, 0) + 1
+
+    country_counts
     return
 
 
@@ -802,6 +816,19 @@ def _(mo):
 
     **Going further.** Use F's coordinates to ask for Wellesley's current temperature. Build the address with an f-string, so that changing the town changes the forecast.
     """)
+    return
+
+
+@app.cell
+def _(requests):
+    babson_park_reply = requests.get(
+        "https://geocoding-api.open-meteo.com/v1/search?name=Babson Park&count=10",
+        timeout=10,
+    )
+    babson_park_results = babson_park_reply.json()["results"]
+    babson_park_first = babson_park_results[0]
+
+    babson_park_first["name"], babson_park_first["admin1"], babson_park_first["country"]
     return
 
 
