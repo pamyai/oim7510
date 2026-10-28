@@ -204,14 +204,31 @@ def _(towns_from_file):
     #1
     million_dollar_counts ={}
 
-    for town in towns_from_file:
-        if int(town['average_single_family_value_dollars']) > 1000000:
-            county = town['county']
-            if county not in million_dollar_counts:
-                million_dollar_counts[county] = 0
-            million_dollar_counts[county] += 1
+    for _town in towns_from_file:
+        if int(_town['average_single_family_value_dollars']) >= 1000000:
+            _county = _town['county']
+            if _county not in million_dollar_counts:
+                million_dollar_counts[_county] = 0
+            million_dollar_counts[_county] += 1
 
     million_dollar_counts
+    return
+
+
+@app.cell
+def _(towns_from_file):
+    #2
+    smallest = towns_from_file[0]
+    largest = towns_from_file[0]
+    for _town in towns_from_file:
+        if int(_town["population"]) < int(smallest["population"]):
+            smallest = _town
+
+    for _town in towns_from_file:
+        if int(_town["population"]) > int(largest["population"]):
+            largest = _town
+
+    smallest["name"], smallest["population"], largest["name"], largest["population"]
     return
 
 
@@ -335,6 +352,43 @@ def _(mo):
     return
 
 
+@app.cell
+def _(pl, town_table):
+    town_counts = (
+        town_table.group_by("county")
+        .agg(pl.len().alias("towns"))
+        .sort("county")
+    )
+    town_counts
+    return
+
+
+@app.cell
+def _(ma_counties, pl):
+    server_counts = pl.DataFrame(ma_counties).sort("name")
+    server_counts
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    B1 both agree
+    """)
+    return
+
+
+@app.cell
+def _(pl, town_table):
+    #B2 
+    (
+        town_table.filter(pl.col("population") > 50_000)
+        .sort("average_single_family_bill_dollars", descending=True)
+        .head(5)
+    )
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -378,6 +432,11 @@ def _(mo):
 
     **Going further.** Write a SQL query of your own on `town_table`, and check its answer in polars.
     """)
+    return
+
+
+@app.cell
+def _():
     return
 
 
