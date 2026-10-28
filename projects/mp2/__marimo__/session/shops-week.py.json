@@ -105,7 +105,7 @@
     },
     {
       "id": "FPVS",
-      "code_hash": "9249b61afd3c9fada3c5db55f2438e24",
+      "code_hash": "43b633ccd8a5b33f189c30101de124f0",
       "outputs": [
         {
           "type": "data",
@@ -114,18 +114,24 @@
           }
         }
       ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "This page has 35 orders\nTotal orders in the date range: 35\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "console": []
     },
     {
       "id": "yfQc",
-      "code_hash": "a1b8b20a9e9d052c2a23907782a92352",
+      "code_hash": "2db79271595fa19eee40429df6450dcf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "uqJo",
+      "code_hash": "34b35574b03f3abd9324b2fa755f71c4",
       "outputs": [
         {
           "type": "data",
@@ -138,7 +144,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Collected 36 orders out of 35 reported\n",
+          "text": "Collected 36 orders out of 36 reported\n",
           "mimetype": "text/plain"
         }
       ]
@@ -165,7 +171,20 @@
     },
     {
       "id": "eiHg",
-      "code_hash": "cf27eb649e9256056ec1b1b797b2a292",
+      "code_hash": "9ab7f4340c7dcf66090858516e6fd1ef",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Qkzo",
+      "code_hash": "4048d47d70f73c4a9e2d554e75caa540",
       "outputs": [
         {
           "type": "data",
@@ -311,7 +330,7 @@
     },
     {
       "id": "yqTq",
-      "code_hash": "98d5be5cd728133862404c4d7b4c97a6",
+      "code_hash": "85c03e19cb3b59bd5eb4abbe0d38be04",
       "outputs": [
         {
           "type": "data",
@@ -391,12 +410,12 @@
     },
     {
       "id": "iNBE",
-      "code_hash": "d674f1226453863738bd2c239da14acc",
+      "code_hash": "a0f0ab1219bd508a711ad6801e0ba78a",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"7-working-with-the-agent\">7. Working With the Agent</h1>\n<span class=\"paragraph\">I did one sanity check in step 3 as explained in section 6, then when we were at step 5, ai suggested doing the planned check right there instead of waiting until step 7 as originally planned. I agreed thus we knew at that point everything was fine. That was check #2.</span>\n<span class=\"paragraph\">But doing that also made me realized doing that as a check point left step 6 - 7 unaudited so I told ai to find a way to check those steps. It suggested check #3, which still did not help audit anything beyond step 5. So I had to tell it to try again and focus on step 6 - 7 which was how I got check #4 - 5. I kept check #3 anyway as it doesn't really hurt anything. </span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"7-working-with-the-agent\">7. Working With the Agent</h1>\n<span class=\"paragraph\">I did one sanity check in step 3 as explained in section 6, then when we were at step 5, ai suggested doing the planned check right there instead of waiting until step 7 as originally planned. I agreed thus we knew at that point everything was fine. That was check #2.\nBut doing that also made me realized doing that as a check point left step 6 - 7 unaudited so I told ai to find a way to check those steps. It suggested check #3, which still did not help audit anything beyond step 5. So I had to tell it to try again and focus on step 6 - 7 which was how I got check #4 - 5. I kept check #3 anyway as it doesn't really hurt anything. </span></span>"
           }
         }
       ],
@@ -404,8 +423,41 @@
     },
     {
       "id": "xuKq",
+      "code_hash": "54f0495f4c4e86e2d764a965f1280e01",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"8-reading-it-back\">8. Reading It Back</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "sWnw",
+      "code_hash": "6f229cdb338219801692ae4d7483a966",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>function 1</strong></span>\n<span class=\"paragraph\">def get_order_details(order_id):\n    _detail_response = requests.get(f\"{base_url}/orders/{order_id}\")\n    _detail = _detail_response.json()\n    return _detail['lines']</span>\n<span class=\"paragraph\"><strong>Goes in:</strong> one order_id (a number, like 14298).</span>\n<span class=\"paragraph\"><strong>Comes out:</strong> that order's list of line items (each one a record with product_name, quantity, line_total_dollars, etc.)</span>\n<span class=\"paragraph\"><strong>line asked:</strong> return _detail['lines'] \u2014 the function reaches into the order's reply, grabs just the lines list, and hands that back, instead of returning the whole order detail.</span>\n<span class=\"paragraph\"><strong>Function 2</strong></span>\n<span class=\"paragraph\">def get_orders(from_date, to_date):\n    _orders = []\n    _first_response = requests.get(f\"{base_url}/orders\", params={\"from_date\": str(from_date), \"to_date\": str(to_date)})\n    _first_reply = _first_response.json()\n    _total_pages = _first_reply['pagination']['pages']</span>\n<div class=\"language-scdoc highlight\"><pre><span></span><code>for _page in range(1, _total_pages + 1):\n    _page_response = requests.get(f\"{base_url}/orders\", params={\"from_date\": str(from_date), \"to_date\": str(to_date), \"page\": _page})\n    _page_reply = _page_response.json()\n    for _order in _page_reply['items']:\n        _orders.append(_order)\n\nreturn _orders, _first_reply['pagination']['total']\n</code></pre></div>\n<span class=\"paragraph\"><strong>Goes in:</strong> a start date and an end date (from_date, to_date).</span>\n<span class=\"paragraph\"><strong>Comes out:</strong> two things \u2014 the full list of orders in that date range, and the total number the API reports (so you can check they match).</span>\n<span class=\"paragraph\"><strong>line asked:</strong> return _orders, _first_reply['pagination']['total'] \u2014 returning two values at once, separated by a comma. Whoever calls this function gets both back together and can unpack them into two separate names, like orders, reported_total = get_orders(...).</span>\n<span class=\"paragraph\"><strong>Change:</strong> days input from 7 to 14 </span>\n<span class=\"paragraph\"><strong>Expected outcome:</strong> step 3 and 5b results both increase. as it shows result of 2 weeks instead of one</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wvLA",
       "code_hash": null,
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     }
   ]

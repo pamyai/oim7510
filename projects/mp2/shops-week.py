@@ -124,33 +124,43 @@ def _(days):
 
 
 @app.cell
-def _(base_url, from_date, to_date):
-    #step2: request orders in the date range
+def _():
+    #imports
 
     import requests
 
-    response = requests.get(f"{base_url}/orders", params={"from_date": str(from_date), "to_date": str(to_date)})
-    reply = response.json()
-
-    print(f"This page has {len(reply['items'])} orders")
-    print(f"Total orders in the date range: {reply['pagination']['total']}")
-    return reply, requests
+    return (requests,)
 
 
 @app.cell
-def _(base_url, from_date, reply, requests, to_date):
-    #step3: collect every page of orders
+def _(base_url, requests):
+    #step2-3: a function that fetches every order in a date range, page by page
 
-    orders = []
-    total_pages = reply['pagination']['pages']
+    def get_orders(from_date, to_date):
+        _orders = []
+        _first_response = requests.get(f"{base_url}/orders", params={"from_date": str(from_date), "to_date": str(to_date)})
+        _first_reply = _first_response.json()
+        _total_pages = _first_reply['pagination']['pages']
 
-    for page in range(1, total_pages + 1):
-        page_response = requests.get(f"{base_url}/orders", params={"from_date": str(from_date), "to_date": str(to_date), "page": page})
-        page_reply = page_response.json()
-        for _order in page_reply['items']:
-            orders.append(_order)
-    #check1
-    print(f"Collected {len(orders)} orders out of {reply['pagination']['total']} reported")
+        for _page in range(1, _total_pages + 1):
+            _page_response = requests.get(f"{base_url}/orders", params={"from_date": str(from_date), "to_date": str(to_date), "page": _page})
+            _page_reply = _page_response.json()
+            for _order in _page_reply['items']:
+                _orders.append(_order)
+
+        return _orders, _first_reply['pagination']['total']
+
+    return (get_orders,)
+
+
+@app.cell
+def _(from_date, get_orders, to_date):
+    #call the function to get this week's orders
+
+    orders, reported_total = get_orders(from_date, to_date)
+
+    #check1: does the number of orders collected agree with the API's reported total?
+    print(f"Collected {len(orders)} orders out of {reported_total} reported")
     return (orders,)
 
 
@@ -182,15 +192,27 @@ def _(orders):
 
 
 @app.cell
-def _(base_url, orders, requests):
-    #step5: get line items for each order
+def _(base_url, requests):
+    #step5a: a function that fetches one order's line items
+
+    def get_order_details(order_id):
+        _detail_response = requests.get(f"{base_url}/orders/{order_id}")
+        _detail = _detail_response.json()
+        return _detail['lines']
+
+
+    return (get_order_details,)
+
+
+@app.cell
+def _(get_order_details, orders):
+    #step5b: use the function to collect every order's line items
 
     order_lines = []
 
     for _order in orders:
-        _detail_response = requests.get(f"{base_url}/orders/{_order['order_id']}")
-        _detail = _detail_response.json()
-        for _line in _detail['lines']:
+        _lines = get_order_details(_order['order_id'])
+        for _line in _lines:
             order_lines.append(_line)
 
     print(f"Collected {len(order_lines)} line items from {len(orders)} orders")
@@ -306,17 +328,16 @@ def _(mo):
 
 
 @app.cell
-def _(base_url, orders, requests):
+def _(get_order_details, orders):
     #check2: does the sum of an order's lines agree with its order_total_dollars?
 
     mismatch_count = 0
 
     for _order in orders:
-        _detail_response = requests.get(f"{base_url}/orders/{_order['order_id']}")
-        _detail = _detail_response.json()
+        _lines = get_order_details(_order['order_id'])
 
         _line_sum = 0
-        for _line in _detail['lines']:
+        for _line in _lines:
             _line_sum += _line['line_total_dollars']
 
         if abs(_line_sum - _order['order_total_dollars']) > 0.01:
@@ -379,8 +400,62 @@ def _(mo):
     #7. Working With the Agent
 
     I did one sanity check in step 3 as explained in section 6, then when we were at step 5, ai suggested doing the planned check right there instead of waiting until step 7 as originally planned. I agreed thus we knew at that point everything was fine. That was check #2.
-
     But doing that also made me realized doing that as a check point left step 6 - 7 unaudited so I told ai to find a way to check those steps. It suggested check #3, which still did not help audit anything beyond step 5. So I had to tell it to try again and focus on step 6 - 7 which was how I got check #4 - 5. I kept check #3 anyway as it doesn't really hurt anything.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    #8. Reading It Back
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **function 1**
+
+    def get_order_details(order_id):
+        _detail_response = requests.get(f"{base_url}/orders/{order_id}")
+        _detail = _detail_response.json()
+        return _detail['lines']
+
+    **Goes in:** one order_id (a number, like 14298).
+
+    **Comes out:** that order's list of line items (each one a record with product_name, quantity, line_total_dollars, etc.)
+
+    **line asked:** return _detail['lines'] — the function reaches into the order's reply, grabs just the lines list, and hands that back, instead of returning the whole order detail.
+
+
+    **Function 2**
+
+    def get_orders(from_date, to_date):
+        _orders = []
+        _first_response = requests.get(f"{base_url}/orders", params={"from_date": str(from_date), "to_date": str(to_date)})
+        _first_reply = _first_response.json()
+        _total_pages = _first_reply['pagination']['pages']
+
+        for _page in range(1, _total_pages + 1):
+            _page_response = requests.get(f"{base_url}/orders", params={"from_date": str(from_date), "to_date": str(to_date), "page": _page})
+            _page_reply = _page_response.json()
+            for _order in _page_reply['items']:
+                _orders.append(_order)
+
+        return _orders, _first_reply['pagination']['total']
+
+    **Goes in:** a start date and an end date (from_date, to_date).
+
+    **Comes out:** two things — the full list of orders in that date range, and the total number the API reports (so you can check they match).
+
+    **line asked:** return _orders, _first_reply['pagination']['total'] — returning two values at once, separated by a comma. Whoever calls this function gets both back together and can unpack them into two separate names, like orders, reported_total = get_orders(...).
+
+
+    **Change:** days input from 7 to 14
+
+    **Expected outcome:** step 3 and 5b results both increase. as it shows result of 2 weeks instead of one
     """)
     return
 
