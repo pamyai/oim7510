@@ -682,7 +682,7 @@
         {
           "type": "data",
           "data": {
-            "application/json": "{\"latitude\": \"text/plain+float:42.299843\", \"longitude\": \"text/plain+float:-71.27756\", \"generationtime_ms\": \"text/plain+float:0.0591278076171875\", \"utc_offset_seconds\": -14400, \"timezone\": \"America/New_York\", \"timezone_abbreviation\": \"GMT-4\", \"elevation\": \"text/plain+float:49.0\", \"current_units\": {\"time\": \"iso8601\", \"interval\": \"seconds\", \"temperature_2m\": \"\\u00b0F\", \"wind_speed_10m\": \"mp/h\"}, \"current\": {\"time\": \"2026-10-25T21:00\", \"interval\": 900, \"temperature_2m\": \"text/plain+float:48.0\", \"wind_speed_10m\": \"text/plain+float:5.5\"}}"
+            "application/json": "{\"latitude\": \"text/plain+float:42.299843\", \"longitude\": \"text/plain+float:-71.27756\", \"generationtime_ms\": \"text/plain+float:0.05269050598144531\", \"utc_offset_seconds\": -14400, \"timezone\": \"America/New_York\", \"timezone_abbreviation\": \"GMT-4\", \"elevation\": \"text/plain+float:49.0\", \"current_units\": {\"time\": \"iso8601\", \"interval\": \"seconds\", \"temperature_2m\": \"\\u00b0F\", \"wind_speed_10m\": \"mp/h\"}, \"current\": {\"time\": \"2026-10-28T04:00\", \"interval\": 900, \"temperature_2m\": \"text/plain+float:31.2\", \"wind_speed_10m\": \"text/plain+float:4.0\"}}"
           }
         }
       ],
@@ -708,7 +708,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>48.0</pre>"
+            "text/html": "<pre class='text-xs'>31.2</pre>"
           }
         }
       ],
@@ -747,7 +747,7 @@
         {
           "type": "data",
           "data": {
-            "application/json": "[400, {\"error\": true, \"reason\": \"Latitude must be in range of -90 to 90\\u00b0. Given: 422.0.\"}]"
+            "application/json": "[400, {\"reason\": \"Latitude must be in range of -90 to 90\\u00b0. Given: 422.0.\", \"error\": true}]"
           }
         }
       ],
@@ -773,7 +773,7 @@
         {
           "type": "data",
           "data": {
-            "application/json": "[200, {\"generationtime_ms\": \"text/plain+float:0.06270409\"}]"
+            "application/json": "[200, {\"generationtime_ms\": \"text/plain+float:0.059247017\"}]"
           }
         }
       ],
@@ -833,23 +833,16 @@
     },
     {
       "id": "dxZZ",
-      "code_hash": "50dce9bd07738e1bd3847393e9357ec7",
+      "code_hash": "c8d588a86bb240ff6f290e79e4f76dc7",
       "outputs": [
         {
-          "type": "error",
-          "ename": "exception",
-          "evalue": "'wind_mph'",
-          "traceback": null
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;The wind speed is 4.0 mp/h.&#x27;</pre>"
+          }
         }
       ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"C:\\Users\\napas\\AppData\\Local\\Temp\\marimo_9572\\__marimo__cell_vEBW_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">wind_speed</span> <span class=\"o\">=</span> <span class=\"n\">babson_weather</span><span class=\"p\">[</span><span class=\"s2\">\"wind_mph\"</span><span class=\"p\">]</span>\n<span class=\"w\">                 </span><span class=\"pm\">~~~~~~~~~~~~~~^^^^^^^^^^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">'wind_mph'</span>\n</pre></div>\n</span>",
-          "mimetype": "application/vnd.marimo+traceback"
-        }
-      ]
+      "console": []
     },
     {
       "id": "dlnW",
@@ -859,6 +852,19 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>F \u00b7 Another town.</strong> Search for <code>Wellesley</code> the way the misspelled search did, with the correct spelling. Take the first place out of <code>results</code>, then its <code>latitude</code>, <code>longitude</code> and <code>admin1</code>. <em>Check yourself: latitude 42.29649, in Massachusetts.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "IVHd",
+      "code_hash": "75ed1e8a382cb24f608c7d3266bebc91",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain+float:42.29649\", \"text/plain+float:-71.29256\", \"Massachusetts\"]"
           }
         }
       ],

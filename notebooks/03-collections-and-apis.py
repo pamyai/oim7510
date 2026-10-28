@@ -762,8 +762,8 @@ def _(mo):
 
 @app.cell
 def _(babson_weather):
-    wind_speed = babson_weather["wind_mph"]
-    wind_unit = babson_weather["wind_unit"]
+    wind_speed = babson_weather["current"]["wind_speed_10m"]
+    wind_unit = babson_weather["current_units"]["wind_speed_10m"]
 
     sentence = f"The wind speed is {wind_speed} {wind_unit}."
     sentence
@@ -775,6 +775,23 @@ def _(mo):
     mo.md(r"""
     **F · Another town.** Search for `Wellesley` the way the misspelled search did, with the correct spelling. Take the first place out of `results`, then its `latitude`, `longitude` and `admin1`. *Check yourself: latitude 42.29649, in Massachusetts.*
     """)
+    return
+
+
+@app.cell
+def _(requests):
+    wellesley_reply = requests.get(
+        "https://geocoding-api.open-meteo.com/v1/search?name=Wellesley&count=1",
+        timeout=10,
+    )
+    wellesley_results = wellesley_reply.json()["results"]
+    wellesley_first = wellesley_results[0]
+
+    wellesley_latitude = wellesley_first["latitude"]
+    wellesley_longitude = wellesley_first["longitude"]
+    wellesley_state = wellesley_first["admin1"]
+
+    wellesley_latitude, wellesley_longitude, wellesley_state
     return
 
 
