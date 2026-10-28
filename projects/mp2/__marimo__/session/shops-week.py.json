@@ -1,0 +1,48 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.24.2",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "jfAL",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "zgpZ",
+      "code_hash": "721f41cf94fd25da60483c13991d4cc1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>The Question</li>\n</ol>\n<span class=\"paragraph\">The operations manager would use this tool to understand what happened in the business over the past week. It gives a quick view of sales, popular products, and any orders that still need attention.</span>\n<span class=\"paragraph\">The tool helps the manager decide whether sales are performing well, which products are driving demand, and whether there are unshipped orders that need follow-up.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xKES",
+      "code_hash": "4a2e8c7f0c48cb53d46376790461dab1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">2 - My Plan Before AI\nsteps: </span>\n<ol>\n<li>Calculate the date range for the last 7 days.</li>\n<li>Connect to the API and request all orders in that date range.</li>\n<li>Check pagination and keep requesting pages until all orders are collected.</li>\n<li>Loop through the orders to calculate total orders, total revenue, revenue by country, and unshipped orders.</li>\n<li>Connect to the API again for each order to get its line items.</li>\n<li>Loop through the line items to count units sold by product.</li>\n<li>Find the top 5 products.</li>\n<li>Build the report and write the manager summary sentence.</li>\n</ol>\n<span class=\"paragraph\">questions:</span>\n<ol>\n<li>Which functions will your tool need? For each, what goes in and what comes out?</li>\n</ol>\n<span class=\"paragraph\">suggested from the problem:</span>\n<ul>\n<li>date.today()\nInput: none\nOutput: today's date</li>\n<li>timedelta(days=6)\nInput: number of days\nOutput: a time difference used to calculate the start date</li>\n<li>str(date)\nInput: a date object\nOutput: a date string in the format YYYY-MM-DD</li>\n<li>get_orders(from_date, to_date)\nInput: start date, end date\nOutput: list of orders</li>\n</ul>\n<span class=\"paragraph\">Additional:</span>\n<ul>\n<li>get_order_details(order_id)\nInput: order ID\nOutput: order line items</li>\n<li>summarize_orders(orders)\nInput: list of orders\nOutput:\norder count\ntotal revenue\nrevenue by country\nunshipped orders</li>\n<li>count_product_sales(order_details)\nInput: order line items\nOutput: units sold by product</li>\n<li>get_top_products(product_sales)\nInput: product sales totals\nOutput: top 5 products</li>\n</ul>\n<ol start=\"2\">\n<li>Which addresses will they request?</li>\n</ol>\n<ul>\n<li>/shop/orders to get all orders in the date range</li>\n<li>/shop/orders/{order_id} to get the line items for each order</li>\n</ul>\n<ol start=\"3\">\n<li>How will you know you have every record?</li>\n</ol>\n<ul>\n<li>Check the pagination information returned by the API.</li>\n<li>Compare the number of orders collected with the total number of orders reported in pagination.</li>\n<li>Continue requesting pages until those numbers match.</li>\n</ul>\n<ol start=\"4\">\n<li>Which check will you use in section 6, and which two numbers should agree?</li>\n</ol>\n<ul>\n<li>A sum total amount from an order's line items should agree with the order\u2019s total from /shop/orders.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}
