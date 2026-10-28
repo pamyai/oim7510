@@ -681,6 +681,91 @@ def _(mo):
     return
 
 
+@app.cell
+def _(requests):
+    _town_reply = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={"name": "Wellesley"},
+        timeout=10,
+    )
+    _town = _town_reply.json()["items"][0]
+    town_name = _town["name"]
+    town_bill = _town["average_single_family_bill_dollars"]
+    town_name, town_bill
+    return town_bill, town_name
+
+
+@app.cell
+def _(requests, town_bill, town_name):
+    board_reply = requests.post(
+        "https://oim.zhili.dev/message",
+        headers={"x-token": "pamyai"},
+        json={"message": f"{town_name}: ${town_bill:,}"},
+        timeout=10,
+    )
+    board_reply.status_code, board_reply.json()
+    return
+
+
+@app.cell
+def _(requests, town_bill, town_name):
+    no_token_reply = requests.post(
+        "https://oim.zhili.dev/message",
+        json={"message": f"{town_name}: ${town_bill:,}"},
+        timeout=10,
+    )
+    no_token_reply.status_code, no_token_reply.json()
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    The server answered 401 with "Missing x-token header", and nothing was written to the board because the system was unable to identify the sender.
+    Reason: The board keeps one line per student so the server needs to know who is posting to decide whose line to write or replace.
+    """)
+    return
+
+
+@app.cell
+def _(town_history):
+    #Going further
+    ##How much has Wellesley’s average tax bill grown in the last 10 years?
+
+    _years = town_history("Wellesley")["years"]
+
+    bill_2016 = None
+    bill_2026 = None
+    for _record in _years:
+        if _record["fiscal_year"] == 2016:
+            bill_2016 = _record["average_single_family_bill_dollars"]
+        if _record["fiscal_year"] == 2026:
+            bill_2026 = _record["average_single_family_bill_dollars"]
+
+    growth_pct = round((bill_2026 - bill_2016) / bill_2016 * 100, 1)
+    bill_2016, bill_2026, growth_pct
+    return bill_2016, bill_2026, growth_pct
+
+
+@app.cell
+def _(bill_2016, bill_2026, growth_pct):
+    short_message = f"Wellesley's avg single-family tax bill rose {growth_pct}% in 10 yrs: ${bill_2016:,} (FY2016) to ${bill_2026:,} (FY2026)."
+    len(short_message), short_message
+    return (short_message,)
+
+
+@app.cell
+def _(requests, short_message):
+    going_further_reply = requests.post(
+        "https://oim.zhili.dev/message",
+        headers={"x-token": "pamyai"},
+        json={"message": short_message},
+        timeout=10,
+    )
+    going_further_reply.status_code, going_further_reply.json()
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""

@@ -858,6 +858,97 @@
       "console": []
     },
     {
+      "id": "Pddq",
+      "code_hash": "7f276e34dacdd4b06e839467107f85dd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"Wellesley\", 20551]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "VPAM",
+      "code_hash": "aeafbc48b41d369b5c789ca0be45d906",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[201, {\"author\": \"Pam\", \"message\": \"Wellesley: $20,551\", \"timestamp\": \"2026-10-28T09:12:45.214710+00:00\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iFAr",
+      "code_hash": "7dfb81fd651b36d7edc013344750c80a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[401, {\"detail\": \"Missing x-token header\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "HkoN",
+      "code_hash": "fda2967ab936802769d9b29c81d54b30",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">The server answered 401 with \"Missing x-token header\", and nothing was written to the board because the system was unable to identify the sender. \nReason: The board keeps one line per student so the server needs to know who is posting to decide whose line to write or replace.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kjlv",
+      "code_hash": "434d468e428b4f168df4e394fb40b367",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[13971, 20551, \"text/plain+float:47.1\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RMaR",
+      "code_hash": "8ba786c5bb1e97833c549475478a13cf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[98, \"Wellesley's avg single-family tax bill rose 47.1% in 10 yrs: $13,971 (FY2016) to $20,551 (FY2026).\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "cigy",
+      "code_hash": "6295a99fb59e4c124ea22e050e13bd07",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[201, {\"author\": \"Pam\", \"message\": \"Wellesley's avg single-family tax bill rose 47.1% in 10 yrs: $13,971 (FY2016) to $20,551 (FY2026).\", \"timestamp\": \"2026-10-28T16:23:37.289916+00:00\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "LJZf",
       "code_hash": "0d706c28f83befd260cc045b42689f83",
       "outputs": [
