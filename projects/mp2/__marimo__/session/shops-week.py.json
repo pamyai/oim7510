@@ -59,7 +59,7 @@
     },
     {
       "id": "ZBZe",
-      "code_hash": "0471bc555f8af151b3a275ad2f620f6f",
+      "code_hash": "cb868fa7e32b9b35fe85cdd3a1a4fdf5",
       "outputs": [
         {
           "type": "data",
@@ -98,7 +98,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Report covers 2026-10-15 to 2026-10-28\n",
+          "text": "Report covers 2026-10-22 to 2026-10-28\n",
           "mimetype": "text/plain"
         }
       ]
@@ -144,7 +144,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Collected 52 orders out of 52 reported\n",
+          "text": "Collected 32 orders out of 32 reported\n",
           "mimetype": "text/plain"
         }
       ]
@@ -164,7 +164,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Order count: 52\nTotal revenue: $1,254,109.71\nUnshipped orders: 33\n",
+          "text": "Order count: 32\nTotal revenue: $746,250.30\nUnshipped orders: 22\n",
           "mimetype": "text/plain"
         }
       ]
@@ -197,7 +197,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Collected 1705 line items from 52 orders\n",
+          "text": "Collected 1015 line items from 32 orders\n",
           "mimetype": "text/plain"
         }
       ]
@@ -237,7 +237,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Queso Cabrales: 767 units\nNorthwoods Cranberry Sauce: 736 units\nRh\u00f6nbr\u00e4u Klosterbier: 735 units\nTarte au sucre: 693 units\nGenen Shouyu: 692 units\n",
+          "text": "Northwoods Cranberry Sauce: 475 units\nPavlova: 470 units\nTh\u00fcringer Rostbratwurst: 463 units\nQueso Manchego La Pastora: 461 units\nTarte au sucre: 458 units\n",
           "mimetype": "text/plain"
         }
       ]
@@ -270,7 +270,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Product                                   Units sold\nQueso Cabrales                                   767\nNorthwoods Cranberry Sauce                       736\nRh\u00f6nbr\u00e4u Klosterbier                             735\nTarte au sucre                                   693\nGenen Shouyu                                     692\n",
+          "text": "Product                                   Units sold\nNorthwoods Cranberry Sauce                       475\nPavlova                                          470\nTh\u00fcringer Rostbratwurst                          463\nQueso Manchego La Pastora                        461\nTarte au sucre                                   458\n",
           "mimetype": "text/plain"
         }
       ]
@@ -290,7 +290,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Country                     Revenue\nMexico                   105,168.76\nGermany                  143,389.08\nFrance                   125,177.79\nBrazil                   242,269.87\nCanada                    74,740.96\nPortugal                 100,144.41\nUSA                       83,473.77\nPoland                     5,130.45\nFinland                   55,903.59\nVenezuela                149,619.23\nSwitzerland                  414.24\nAustria                   23,536.94\nSpain                     12,859.50\nItaly                     16,334.13\nArgentina                 63,980.22\nUK                        15,705.85\nDenmark                   36,260.92\n",
+          "text": "Country                     Revenue\nMexico                    74,595.43\nGermany                  110,337.17\nFrance                   108,089.07\nBrazil                   168,360.51\nCanada                    38,775.20\nPortugal                     180.00\nUSA                       83,473.77\nPoland                     5,130.45\nFinland                   22,214.13\nVenezuela                 98,283.89\nSwitzerland                  414.24\nAustria                   23,536.94\nSpain                     12,859.50\n",
           "mimetype": "text/plain"
         }
       ]
@@ -310,7 +310,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "In the 14 days ending 2026-10-28, Northwind received 52 orders worth $1,254,109.71; Queso Cabrales was the top seller with 767 units, and 33 orders have not shipped yet.\n",
+          "text": "In the 7 days ending 2026-10-28, Northwind received 32 orders worth $746,250.30; Northwoods Cranberry Sauce was the top seller with 475 units, and 22 orders have not shipped yet.\n",
           "mimetype": "text/plain"
         }
       ]
@@ -343,7 +343,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Checked 52 orders, 0 did not match\n",
+          "text": "Checked 32 orders, 0 did not match\n",
           "mimetype": "text/plain"
         }
       ]
@@ -363,7 +363,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Line items collected in step 5: 1705\nLine counts reported by the API, summed across orders: 1705\n",
+          "text": "Line items collected in step 5: 1015\nLine counts reported by the API, summed across orders: 1015\n",
           "mimetype": "text/plain"
         }
       ]
@@ -383,7 +383,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Total units, summed from product_sales: 42110\nTotal units, summed directly from order_lines: 42110\n",
+          "text": "Total units, summed from product_sales: 24764\nTotal units, summed directly from order_lines: 24764\n",
           "mimetype": "text/plain"
         }
       ]
@@ -403,7 +403,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "5th place count: 692\nProducts outside the top 5 that beat this count: 0\n",
+          "text": "5th place count: 458\nProducts outside the top 5 that beat this count: 0\n",
           "mimetype": "text/plain"
         }
       ]
@@ -449,12 +449,12 @@
     },
     {
       "id": "wvLA",
-      "code_hash": "f7cc755cb013d8d05149312a49bf7f73",
+      "code_hash": "1de80fcb4c2c97d0de3067c11444c278",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>result:</strong>\ncollected orders from 36 --&gt; 52 \ncollected line items 1094 --&gt; 1705</span>\n<span class=\"paragraph\">match. woohoo!</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>result:</strong>\ncollected orders from 32 --&gt; 52 \ncollected line items 101 --&gt; 1705</span>\n<span class=\"paragraph\">match. woohoo!</span></span>"
           }
         }
       ],
@@ -462,8 +462,67 @@
     },
     {
       "id": "lICw",
-      "code_hash": null,
-      "outputs": [],
+      "code_hash": "226cecc14f8aa22d0981178e8a76a8db",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"9-going-further\">9. Going Further</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xcnL",
+      "code_hash": "269e48d0bb3bb3430f422707b3747268",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/vnd.vegalite.v6+json": "{\n  \"$schema\": \"https://vega.github.io/schema/vega-lite/v6.4.1.json\",\n  \"config\": {\n    \"view\": {\n      \"continuousHeight\": 300,\n      \"continuousWidth\": 300\n    }\n  },\n  \"data\": {\n    \"name\": \"data-88efb54b42a24e344c81f2653fcbde36\"\n  },\n  \"datasets\": {\n    \"data-88efb54b42a24e344c81f2653fcbde36\": [\n      {\n        \"day\": \"2026-10-22\",\n        \"revenue\": 2743.65\n      },\n      {\n        \"day\": \"2026-10-23\",\n        \"revenue\": 187355.68000000002\n      },\n      {\n        \"day\": \"2026-10-24\",\n        \"revenue\": 146865.50999999998\n      },\n      {\n        \"day\": \"2026-10-25\",\n        \"revenue\": 154589.99\n      },\n      {\n        \"day\": \"2026-10-26\",\n        \"revenue\": 136081.15\n      },\n      {\n        \"day\": \"2026-10-27\",\n        \"revenue\": 118614.31999999999\n      }\n    ]\n  },\n  \"encoding\": {\n    \"tooltip\": [\n      {\n        \"field\": \"day\",\n        \"type\": \"nominal\"\n      },\n      {\n        \"field\": \"revenue\",\n        \"type\": \"quantitative\"\n      }\n    ],\n    \"x\": {\n      \"field\": \"day\",\n      \"title\": \"Day\",\n      \"type\": \"ordinal\"\n    },\n    \"y\": {\n      \"field\": \"revenue\",\n      \"title\": \"Revenue ($)\",\n      \"type\": \"quantitative\"\n    }\n  },\n  \"height\": 300,\n  \"mark\": {\n    \"type\": \"bar\"\n  },\n  \"title\": \"Revenue by day, last 7 days\",\n  \"usermeta\": {\n    \"embedOptions\": {}\n  },\n  \"width\": 500\n}"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Qaqs",
+      "code_hash": "8405b6c37231d56de729c34e605bf2b8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/vnd.vegalite.v6+json": "{\n  \"$schema\": \"https://vega.github.io/schema/vega-lite/v6.4.1.json\",\n  \"config\": {\n    \"view\": {\n      \"continuousHeight\": 300,\n      \"continuousWidth\": 300\n    }\n  },\n  \"data\": {\n    \"name\": \"data-cd224158f1fbaf4d9e3cbc93b5675413\"\n  },\n  \"datasets\": {\n    \"data-cd224158f1fbaf4d9e3cbc93b5675413\": [\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 18.75,\n        \"time_slot\": \"00-02\"\n      },\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 9.375,\n        \"time_slot\": \"02-04\"\n      },\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 3.125,\n        \"time_slot\": \"04-06\"\n      },\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 12.5,\n        \"time_slot\": \"06-08\"\n      },\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 3.125,\n        \"time_slot\": \"08-10\"\n      },\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 12.5,\n        \"time_slot\": \"10-12\"\n      },\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 12.5,\n        \"time_slot\": \"12-14\"\n      },\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 6.25,\n        \"time_slot\": \"14-16\"\n      },\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 3.125,\n        \"time_slot\": \"16-18\"\n      },\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 3.125,\n        \"time_slot\": \"18-20\"\n      },\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 6.25,\n        \"time_slot\": \"20-22\"\n      },\n      {\n        \"metric\": \"orders\",\n        \"share_percent\": 9.375,\n        \"time_slot\": \"22-24\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 20.714977267010816,\n        \"time_slot\": \"00-02\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 7.839318791563634,\n        \"time_slot\": \"02-04\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 3.154027542769497,\n        \"time_slot\": \"04-06\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 22.11702025446422,\n        \"time_slot\": \"06-08\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 2.070919100468033,\n        \"time_slot\": \"08-10\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 7.086712058943225,\n        \"time_slot\": \"10-12\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 8.572929216912877,\n        \"time_slot\": \"12-14\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 0.39177873697337207,\n        \"time_slot\": \"14-16\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 5.799783263068705,\n        \"time_slot\": \"16-18\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 2.0453325110891076,\n        \"time_slot\": \"18-20\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 9.540715762526325,\n        \"time_slot\": \"20-22\"\n      },\n      {\n        \"metric\": \"revenue\",\n        \"share_percent\": 10.666485494210187,\n        \"time_slot\": \"22-24\"\n      }\n    ]\n  },\n  \"encoding\": {\n    \"color\": {\n      \"field\": \"metric\",\n      \"title\": \"Metric\",\n      \"type\": \"nominal\"\n    },\n    \"tooltip\": [\n      {\n        \"field\": \"time_slot\",\n        \"type\": \"nominal\"\n      },\n      {\n        \"field\": \"metric\",\n        \"type\": \"nominal\"\n      },\n      {\n        \"field\": \"share_percent\",\n        \"type\": \"quantitative\"\n      }\n    ],\n    \"x\": {\n      \"field\": \"time_slot\",\n      \"sort\": null,\n      \"title\": \"Time slot (Boston time)\",\n      \"type\": \"ordinal\"\n    },\n    \"xOffset\": {\n      \"field\": \"metric\",\n      \"type\": \"nominal\"\n    },\n    \"y\": {\n      \"field\": \"share_percent\",\n      \"title\": \"Share of the week's total (%)\",\n      \"type\": \"quantitative\"\n    }\n  },\n  \"height\": 350,\n  \"mark\": {\n    \"type\": \"bar\"\n  },\n  \"title\": \"When orders and revenue happen, last 7 days\",\n  \"usermeta\": {\n    \"embedOptions\": {}\n  },\n  \"width\": 600\n}"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TEAa",
+      "code_hash": "5377ec3116bdb8d77347807e615126be",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">I first charted revenue by day (going further 1c), just to see which days in the week brought in the most money. Don't really find anything interesting as the chart is flat. So I tried the hourly pattern instead. </span>\n<span class=\"paragraph\">I tried charting both orders and revenue by 2-hour time slot (going further 1), to see if there's any interesting pattern in when business happens during the day.</span>\n<span class=\"paragraph\">I googled the company name, and this is supposed to be a B2B food business. In that case the spike at midnight (00-02) is pretty weird. What business shops for granola at midnight? Do their sales person not sleep? Or is it their logistics schedule? Or is it just a plot hole, since this is a fictional company anyway? </span>\n<span class=\"paragraph\">Honestly this pattern look more like that of a 24-hour convenience store or an online retail platform than a typical B2B food supplier, as it spikes during lunch time, after work, morning, and late-night snack time.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nttb",
+      "code_hash": "124b43c07d0a1a29687487c90bfe04f7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"10-time-spent\">10. Time spent</h1>\n<span class=\"paragraph\">5 hours.</span></span>"
+          }
+        }
+      ],
       "console": []
     }
   ]

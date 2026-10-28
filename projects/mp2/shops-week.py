@@ -97,7 +97,7 @@ def _(mo):
 
 @app.cell
 def _():
-    days = 14
+    days = 7
     base_url = "https://oim.zhili.dev/shop"
     return base_url, days
 
@@ -464,16 +464,140 @@ def _(mo):
 def _(mo):
     mo.md(r"""
     **result:**
-    collected orders from 36 --> 52
-    collected line items 1094 --> 1705
+    collected orders from 32 --> 52
+    collected line items 1015 --> 1705
 
     match. woohoo!
     """)
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    #9. Going Further
+    """)
+    return
+
+
 @app.cell
-def _():
+def _(alt, days, orders, pl):
+    #going further 1b: revenue by day, as a chart
+
+    revenue_by_day = {}
+
+    for _order in orders:
+        _day = _order['order_date'][:10]
+        if _day in revenue_by_day:
+            revenue_by_day[_day] += _order['order_total_dollars']
+        else:
+            revenue_by_day[_day] = _order['order_total_dollars']
+
+    _days_list = []
+    _revenue_list = []
+    for _day in revenue_by_day:
+        _days_list.append(_day)
+        _revenue_list.append(revenue_by_day[_day])
+
+    revenue_by_day_df = pl.DataFrame({"day": _days_list, "revenue": _revenue_list}).sort("day")
+
+    alt.Chart(revenue_by_day_df).mark_bar().encode(
+        x=alt.X("day:O", title="Day"),
+        y=alt.Y("revenue:Q", title="Revenue ($)"),
+        tooltip=["day", "revenue"]
+    ).properties(
+        title=f"Revenue by day, last {days} days",
+        width=500,
+        height=300
+    )
+    return
+
+
+@app.cell
+def _(days, orders):
+    #going further 1: orders and revenue by 2-hour time slot, as a clustered bar chart
+
+    import altair as alt
+    import polars as pl
+
+    slot_order_count = {}
+    slot_revenue = {}
+
+    for _slot in range(12):
+        _label = f"{_slot * 2:02d}-{_slot * 2 + 2:02d}"
+        slot_order_count[_label] = 0
+        slot_revenue[_label] = 0
+
+    for _order in orders:
+        _hour = int(_order['order_date'][11:13])
+        _slot = _hour // 2
+        _label = f"{_slot * 2:02d}-{_slot * 2 + 2:02d}"
+        slot_order_count[_label] += 1
+        slot_revenue[_label] += _order['order_total_dollars']
+
+    #orders and revenue are on very different scales (a count vs. dollars),
+    #so each is turned into a share of the week's total, which puts them both on a 0-100 scale
+
+    _total_orders = len(orders)
+    _total_revenue = 0
+    for _order in orders:
+        _total_revenue += _order['order_total_dollars']
+
+    _slot_labels = []
+    _metric_names = []
+    _shares = []
+
+    for _label in slot_order_count:
+        _slot_labels.append(_label)
+        _metric_names.append("orders")
+        _shares.append(slot_order_count[_label] / _total_orders * 100)
+
+    for _label in slot_revenue:
+        _slot_labels.append(_label)
+        _metric_names.append("revenue")
+        _shares.append(slot_revenue[_label] / _total_revenue * 100)
+
+    slot_df = pl.DataFrame({
+        "time_slot": _slot_labels,
+        "metric": _metric_names,
+        "share_percent": _shares
+    })
+
+    alt.Chart(slot_df).mark_bar().encode(
+        x=alt.X("time_slot:O", title="Time slot (Boston time)", sort=None),
+        xOffset="metric:N",
+        y=alt.Y("share_percent:Q", title="Share of the week's total (%)"),
+        color=alt.Color("metric:N", title="Metric"),
+        tooltip=["time_slot", "metric", "share_percent"]
+    ).properties(
+        title=f"When orders and revenue happen, last {days} days",
+        width=600,
+        height=350
+    )
+    return alt, pl
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    I first charted revenue by day (going further 1c), just to see which days in the week brought in the most money. Don't really find anything interesting as the chart is flat. So I tried the hourly pattern instead.
+
+    I tried charting both orders and revenue by 2-hour time slot (going further 1), to see if there's any interesting pattern in when business happens during the day.
+
+    I googled the company name, and this is supposed to be a B2B food business. In that case the spike at midnight (00-02) is pretty weird. What business shops for granola at midnight? Do their sales person not sleep? Or is it their logistics schedule? Or is it just a plot hole, since this is a fictional company anyway?
+
+    Honestly this pattern look more like that of a 24-hour convenience store or an online retail platform than a typical B2B food supplier, as it spikes during lunch time, after work, morning, and late-night snack time.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    #10. Time spent
+
+    5 hours.
+    """)
     return
 
 
