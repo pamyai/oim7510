@@ -59,7 +59,7 @@
     },
     {
       "id": "ZBZe",
-      "code_hash": "cb868fa7e32b9b35fe85cdd3a1a4fdf5",
+      "code_hash": "0471bc555f8af151b3a275ad2f620f6f",
       "outputs": [
         {
           "type": "data",
@@ -98,7 +98,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Report covers 2026-10-21 to 2026-10-27\n",
+          "text": "Report covers 2026-10-15 to 2026-10-28\n",
           "mimetype": "text/plain"
         }
       ]
@@ -144,7 +144,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Collected 36 orders out of 36 reported\n",
+          "text": "Collected 52 orders out of 52 reported\n",
           "mimetype": "text/plain"
         }
       ]
@@ -164,7 +164,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Order count: 36\nTotal revenue: $798,471.55\nUnshipped orders: 25\n",
+          "text": "Order count: 52\nTotal revenue: $1,254,109.71\nUnshipped orders: 33\n",
           "mimetype": "text/plain"
         }
       ]
@@ -197,7 +197,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Collected 1094 line items from 36 orders\n",
+          "text": "Collected 1705 line items from 52 orders\n",
           "mimetype": "text/plain"
         }
       ]
@@ -237,7 +237,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Northwoods Cranberry Sauce: 540 units\nPavlova: 518 units\nQueso Manchego La Pastora: 503 units\nTh\u00fcringer Rostbratwurst: 465 units\nLakkalik\u00f6\u00f6ri: 463 units\n",
+          "text": "Queso Cabrales: 767 units\nNorthwoods Cranberry Sauce: 736 units\nRh\u00f6nbr\u00e4u Klosterbier: 735 units\nTarte au sucre: 693 units\nGenen Shouyu: 692 units\n",
           "mimetype": "text/plain"
         }
       ]
@@ -270,7 +270,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Product                                   Units sold\nNorthwoods Cranberry Sauce                       540\nPavlova                                          518\nQueso Manchego La Pastora                        503\nTh\u00fcringer Rostbratwurst                          465\nLakkalik\u00f6\u00f6ri                                     463\n",
+          "text": "Product                                   Units sold\nQueso Cabrales                                   767\nNorthwoods Cranberry Sauce                       736\nRh\u00f6nbr\u00e4u Klosterbier                             735\nTarte au sucre                                   693\nGenen Shouyu                                     692\n",
           "mimetype": "text/plain"
         }
       ]
@@ -290,7 +290,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Country                     Revenue\nMexico                    74,595.43\nGermany                  110,337.17\nFrance                   125,177.79\nBrazil                   182,917.91\nCanada                    38,775.20\nPortugal                   4,421.00\nUSA                       83,473.77\nPoland                     5,130.45\nFinland                   22,214.13\nVenezuela                 98,283.89\nSwitzerland                  414.24\nAustria                   23,536.94\nSpain                     12,859.50\nItaly                     16,334.13\n",
+          "text": "Country                     Revenue\nMexico                   105,168.76\nGermany                  143,389.08\nFrance                   125,177.79\nBrazil                   242,269.87\nCanada                    74,740.96\nPortugal                 100,144.41\nUSA                       83,473.77\nPoland                     5,130.45\nFinland                   55,903.59\nVenezuela                149,619.23\nSwitzerland                  414.24\nAustria                   23,536.94\nSpain                     12,859.50\nItaly                     16,334.13\nArgentina                 63,980.22\nUK                        15,705.85\nDenmark                   36,260.92\n",
           "mimetype": "text/plain"
         }
       ]
@@ -310,7 +310,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "In the 7 days ending 2026-10-27, Northwind received 36 orders worth $798,471.55; Northwoods Cranberry Sauce was the top seller with 540 units, and 25 orders have not shipped yet.\n",
+          "text": "In the 14 days ending 2026-10-28, Northwind received 52 orders worth $1,254,109.71; Queso Cabrales was the top seller with 767 units, and 33 orders have not shipped yet.\n",
           "mimetype": "text/plain"
         }
       ]
@@ -343,7 +343,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Checked 36 orders, 0 did not match\n",
+          "text": "Checked 52 orders, 0 did not match\n",
           "mimetype": "text/plain"
         }
       ]
@@ -363,7 +363,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Line items collected in step 5: 1094\nLine counts reported by the API, summed across orders: 1094\n",
+          "text": "Line items collected in step 5: 1705\nLine counts reported by the API, summed across orders: 1705\n",
           "mimetype": "text/plain"
         }
       ]
@@ -383,7 +383,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Total units, summed from product_sales: 26413\nTotal units, summed directly from order_lines: 26413\n",
+          "text": "Total units, summed from product_sales: 42110\nTotal units, summed directly from order_lines: 42110\n",
           "mimetype": "text/plain"
         }
       ]
@@ -403,7 +403,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "5th place count: 463\nProducts outside the top 5 that beat this count: 0\n",
+          "text": "5th place count: 692\nProducts outside the top 5 that beat this count: 0\n",
           "mimetype": "text/plain"
         }
       ]
@@ -449,15 +449,21 @@
     },
     {
       "id": "wvLA",
-      "code_hash": null,
+      "code_hash": "f7cc755cb013d8d05149312a49bf7f73",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/plain": ""
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>result:</strong>\ncollected orders from 36 --&gt; 52 \ncollected line items 1094 --&gt; 1705</span>\n<span class=\"paragraph\">match. woohoo!</span></span>"
           }
         }
       ],
+      "console": []
+    },
+    {
+      "id": "lICw",
+      "code_hash": null,
+      "outputs": [],
       "console": []
     }
   ]

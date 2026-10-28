@@ -97,7 +97,7 @@ def _(mo):
 
 @app.cell
 def _():
-    days = 7
+    days = 14
     base_url = "https://oim.zhili.dev/shop"
     return base_url, days
 
@@ -456,6 +456,18 @@ def _(mo):
     **Change:** days input from 7 to 14
 
     **Expected outcome:** step 3 and 5b results both increase. as it shows result of 2 weeks instead of one
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **result:**
+    collected orders from 36 --> 52
+    collected line items 1094 --> 1705
+
+    match. woohoo!
     """)
     return
 
