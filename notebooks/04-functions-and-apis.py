@@ -465,6 +465,38 @@ def _(wellesley_2026):
     return
 
 
+@app.cell
+def _(requests):
+    def town_history(name):
+        town_reply = requests.get(
+            "https://oim.zhili.dev/ma/towns",
+            params={"name": name},
+            timeout=10,
+        )
+        dor_code = town_reply.json()["items"][0]["dor_code"]
+
+        history_reply = requests.get(
+            f"https://oim.zhili.dev/ma/towns/{dor_code}/history",
+            timeout=10,
+        )
+        return history_reply.json()
+
+    return (town_history,)
+
+
+@app.cell
+def _(town_history):
+    town_history("Wellesley")["years"][-1]
+    return
+
+
+@app.cell
+def _(town_history):
+    needham_history = town_history("Needham")
+    needham_history["name"], len(needham_history["years"])
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""

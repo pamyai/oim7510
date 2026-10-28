@@ -611,6 +611,45 @@
       "console": []
     },
     {
+      "id": "wTdR",
+      "code_hash": "29302ed88c4e2d0faa8582afbda60942",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "XmDa",
+      "code_hash": "24e7501d49138efa7cb0e758859e1006",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"fiscal_year\": 2026, \"residential_rate_per_thousand\": \"text/plain+float:10.17\", \"commercial_rate_per_thousand\": \"text/plain+float:10.17\", \"single_family_parcels\": 7319, \"average_single_family_value_dollars\": 2020758, \"average_single_family_bill_dollars\": 20551}"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ztJC",
+      "code_hash": "ae296a691f61f6a4e773a7d92937d5e8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"Needham\", 39]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "dNNg",
       "code_hash": "791d5450bb1270c077aadb7767186041",
       "outputs": [
@@ -639,7 +678,14 @@
     {
       "id": "FBys",
       "code_hash": null,
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
