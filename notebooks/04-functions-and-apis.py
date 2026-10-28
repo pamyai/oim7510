@@ -583,6 +583,55 @@ def _(mo):
     return
 
 
+@app.cell
+def _(get_page):
+    def get_all_towns():
+        first_page = get_page(1)
+        all_towns = first_page["items"]
+        pages = first_page["pagination"]["pages"]
+        for page_number in range(2, pages + 1):
+            next_page = get_page(page_number)
+            all_towns = all_towns + next_page["items"]
+        return all_towns
+
+    return (get_all_towns,)
+
+
+@app.cell
+def _(get_all_towns):
+    every_town = get_all_towns()
+    len(every_town), every_town[0]["name"], every_town[-1]["name"]
+    return (every_town,)
+
+
+@app.cell
+def _(every_town, get_page):
+    len(every_town) == get_page(1)["pagination"]["total"]
+    return
+
+
+@app.cell
+def _(every_town):
+    highest_town = None
+    highest_bill = 0
+    lowest_town = None
+    lowest_bill = None
+
+    for _town in every_town:
+        _bill = _town["average_single_family_bill_dollars"]
+        if _bill is None:
+            continue
+        if _bill > highest_bill:
+            highest_bill = _bill
+            highest_town = _town["name"]
+        if lowest_bill is None or _bill < lowest_bill:
+            lowest_bill = _bill
+            lowest_town = _town["name"]
+
+    (highest_town, highest_bill), (lowest_town, lowest_bill)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
