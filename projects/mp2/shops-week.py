@@ -346,7 +346,7 @@ def _(mo):
     mo.md(r"""
     #6. How I Know These Numbers Are Right
 
-    I checked four things a second way, all shown in the cells below. The specific counts below are from when I ran this on Oct 28, 2026; since the API's data changes daily, running this notebook again on another day will show different counts, but the checks themselves will still agree with each other.
+    I checked 5 things a second way, all shown in the cells below. The specific counts below are from when I ran this on Oct 28, 2026; since the API's data changes daily, running this notebook again on another day will show different counts, but the checks themselves will still agree with each other.
 
     **check1. Did I collect every order?**
     In step 3, the API's pagination reported a total number of orders in this date range. I collected orders page by page and compared the count in my `orders` list against that reported total. When I ran it on Oct 28, both came to 32, so I have every order, not just the first page.
@@ -438,8 +438,13 @@ def _(mo):
     mo.md(r"""
     #7. Working With the Agent
 
-    I did one sanity check in step 3 as explained in section 6 (cell `RGSE`, check1), then when we were at step 5 (cell `nWHF`), ai suggested doing the planned check right there instead of waiting until step 7 as originally planned. I agreed thus we knew at that point everything was fine. That was check #2, now in cell `ulZA`.
-    But doing that also made me realized doing that as a check point left step 6 - 7 (cells `iLit` and `ZHCJ`) unaudited so I told ai to find a way to check those steps. It suggested check #3 (cell `ecfG`), which still did not help audit anything beyond step 5. So I had to tell it to try again and focus on step 6 - 7 which was how I got check #4 (cell `Pvdt`) and check #5 (cell `ZBYS`). I kept check #3 anyway as it doesn't really hurt anything.
+    [#check1 in section 5 step 2 - 3, #check2 - #check5 in section 6]
+
+    I did one sanity check in step 3 (#check1) as explained in section 6, then when we were at step 5, ai suggested doing the planned check right there instead of waiting until step 7 as originally planned. I agreed thus we knew at that point everything was fine. That was #check2.
+
+    But doing that also made me realized doing that as a check point left step 6 - 7 unaudited so I told ai to find a way to check those steps. It suggested #check3, which still did not help audit anything beyond step 5. So I had to tell it to try again and focus on step 6 - 7 which was how I got #check4 and #check5 .
+
+    I kept #check3 anyway as it doesn't really hurt anything.
     """)
     return
 
