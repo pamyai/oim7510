@@ -6,7 +6,7 @@
   },
   "cells": [
     {
-      "id": "jfAL",
+      "id": "Hbol",
       "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
       "outputs": [
         {
@@ -19,7 +19,7 @@
       "console": []
     },
     {
-      "id": "zgpZ",
+      "id": "MJUe",
       "code_hash": "276d31e2bd277025a5ad010b91cd3bf8",
       "outputs": [
         {
@@ -32,20 +32,20 @@
       "console": []
     },
     {
-      "id": "xKES",
-      "code_hash": "328e958612bcf8863d138fabb59c7449",
+      "id": "vblA",
+      "code_hash": "46b04331af2fa64b33c122f42ecd8d1f",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"2-my-plan-before-ai\">2. My Plan Before AI</h1>\n<span class=\"paragraph\">steps: </span>\n<ol>\n<li>Calculate the date range for the last 7 days.</li>\n<li>Connect to the API and request all orders in that date range.</li>\n<li>Check pagination and keep requesting pages until all orders are collected.</li>\n<li>Loop through the orders to calculate total orders, total revenue, revenue by country, and unshipped orders.</li>\n<li>Connect to the API again for each order to get its line items.</li>\n<li>Loop through the line items to count units sold by product.</li>\n<li>Find the top 5 products.</li>\n<li>Build the report and write the manager summary sentence.</li>\n</ol>\n<span class=\"paragraph\">questions:</span>\n<ol>\n<li>Which functions will your tool need? For each, what goes in and what comes out?</li>\n</ol>\n<span class=\"paragraph\">suggested from the problem:</span>\n<ul>\n<li>date.today()\nInput: none\nOutput: today's date</li>\n<li>timedelta(days=6)\nInput: number of days\nOutput: a time difference used to calculate the start date</li>\n<li>str(date)\nInput: a date object\nOutput: a date string in the format YYYY-MM-DD</li>\n<li>get_orders(from_date, to_date)\nInput: start date, end date\nOutput: list of orders</li>\n</ul>\n<span class=\"paragraph\">Additional:</span>\n<ul>\n<li>get_order_details(order_id)\nInput: order ID\nOutput: order line items</li>\n<li>summarize_orders(orders)\nInput: list of orders\nOutput:\norder count\ntotal revenue\nrevenue by country\nunshipped orders</li>\n<li>count_product_sales(order_details)\nInput: order line items\nOutput: units sold by product</li>\n<li>get_top_products(product_sales)\nInput: product sales totals\nOutput: top 5 products</li>\n</ul>\n<ol start=\"2\">\n<li>Which addresses will they request?</li>\n</ol>\n<ul>\n<li>/shop/orders to get all orders in the date range</li>\n<li>/shop/orders/{order_id} to get the line items for each order</li>\n</ul>\n<ol start=\"3\">\n<li>How will you know you have every record?</li>\n</ol>\n<ul>\n<li>Check the pagination information returned by the API.</li>\n<li>Compare the number of orders collected with the total number of orders reported in pagination.</li>\n<li>Continue requesting pages until those numbers match.</li>\n</ul>\n<ol start=\"4\">\n<li>Which check will you use in section 6, and which two numbers should agree?</li>\n</ol>\n<ul>\n<li>A sum total amount from an order's line items should agree with the order\u2019s total from /shop/orders.</li>\n</ul></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"2-my-plan-before-ai\">2. My Plan Before AI</h1>\n<span class=\"paragraph\">steps:</span>\n<ol>\n<li>Calculate the date range for the last 7 days.</li>\n<li>Connect to the API and request all orders in that date range.</li>\n<li>Check pagination and keep requesting pages until all orders are collected.</li>\n<li>Loop through the orders to calculate total orders, total revenue, revenue by country, and unshipped orders.</li>\n<li>Connect to the API again for each order to get its line items.</li>\n<li>Loop through the line items to count units sold by product.</li>\n<li>Find the top 5 products.</li>\n<li>Build the report and write the manager summary sentence.</li>\n</ol>\n<span class=\"paragraph\">questions:</span>\n<ol>\n<li>Which functions will your tool need? For each, what goes in and what comes out?</li>\n</ol>\n<span class=\"paragraph\">suggested from the problem:</span>\n<ul>\n<li>date.today()\nInput: none\nOutput: today's date</li>\n<li>timedelta(days=6)\nInput: number of days\nOutput: a time difference used to calculate the start date</li>\n<li>str(date)\nInput: a date object\nOutput: a date string in the format YYYY-MM-DD</li>\n<li>get_orders(from_date, to_date)\nInput: start date, end date\nOutput: list of orders</li>\n</ul>\n<span class=\"paragraph\">Additional:</span>\n<ul>\n<li>get_order_details(order_id)\nInput: order ID\nOutput: order line items</li>\n<li>summarize_orders(orders)\nInput: list of orders\nOutput:\norder count\ntotal revenue\nrevenue by country\nunshipped orders</li>\n<li>count_product_sales(order_details)\nInput: order line items\nOutput: units sold by product</li>\n<li>get_top_products(product_sales)\nInput: product sales totals\nOutput: top 5 products</li>\n</ul>\n<ol start=\"2\">\n<li>Which addresses will they request?</li>\n</ol>\n<ul>\n<li>/shop/orders to get all orders in the date range</li>\n<li>/shop/orders/{order_id} to get the line items for each order</li>\n</ul>\n<ol start=\"3\">\n<li>How will you know you have every record?</li>\n</ol>\n<ul>\n<li>Check the pagination information returned by the API.</li>\n<li>Compare the number of orders collected with the total number of orders reported in pagination.</li>\n<li>Continue requesting pages until those numbers match.</li>\n</ul>\n<ol start=\"4\">\n<li>Which check will you use in section 6, and which two numbers should agree?</li>\n</ol>\n<ul>\n<li>A sum total amount from an order's line items should agree with the order\u2019s total from /shop/orders.</li>\n</ul></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "uKBR",
+      "id": "bkHC",
       "code_hash": "c65d3c0b28343d9e996a0687f71453c5",
       "outputs": [
         {
@@ -58,7 +58,7 @@
       "console": []
     },
     {
-      "id": "ZBZe",
+      "id": "lEQa",
       "code_hash": "cb868fa7e32b9b35fe85cdd3a1a4fdf5",
       "outputs": [
         {
@@ -71,7 +71,7 @@
       "console": []
     },
     {
-      "id": "YVpA",
+      "id": "PKri",
       "code_hash": "a734be4eecb2784794e71678c94347b9",
       "outputs": [
         {
@@ -84,7 +84,7 @@
       "console": []
     },
     {
-      "id": "JWHK",
+      "id": "Xref",
       "code_hash": "4d1a2b951b1df22daa7a50e8484a6817",
       "outputs": [
         {
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "id": "FPVS",
+      "id": "SFPL",
       "code_hash": "43b633ccd8a5b33f189c30101de124f0",
       "outputs": [
         {
@@ -117,7 +117,7 @@
       "console": []
     },
     {
-      "id": "yfQc",
+      "id": "BYtC",
       "code_hash": "2db79271595fa19eee40429df6450dcf",
       "outputs": [
         {
@@ -130,7 +130,7 @@
       "console": []
     },
     {
-      "id": "uqJo",
+      "id": "RGSE",
       "code_hash": "34b35574b03f3abd9324b2fa755f71c4",
       "outputs": [
         {
@@ -150,7 +150,7 @@
       ]
     },
     {
-      "id": "Doqs",
+      "id": "Kclp",
       "code_hash": "e9299097daf7ef3b5a70fd924733b4d4",
       "outputs": [
         {
@@ -170,7 +170,7 @@
       ]
     },
     {
-      "id": "vsaR",
+      "id": "emfo",
       "code_hash": "d342d0d84c699372a3cba70edc65bd4f",
       "outputs": [
         {
@@ -190,7 +190,7 @@
       ]
     },
     {
-      "id": "eiHg",
+      "id": "Hstk",
       "code_hash": "9ab7f4340c7dcf66090858516e6fd1ef",
       "outputs": [
         {
@@ -203,7 +203,7 @@
       "console": []
     },
     {
-      "id": "Qkzo",
+      "id": "nWHF",
       "code_hash": "4048d47d70f73c4a9e2d554e75caa540",
       "outputs": [
         {
@@ -223,7 +223,27 @@
       ]
     },
     {
-      "id": "NVXJ",
+      "id": "BQMY",
+      "code_hash": "531b42bd452c43cfa2b128b4434ed973",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Saved 1015 line items to projects/mp2/data/order_lines.json\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "iLit",
       "code_hash": "d0f1996e1f78902fba18767e131b66e7",
       "outputs": [
         {
@@ -243,7 +263,7 @@
       ]
     },
     {
-      "id": "Lvra",
+      "id": "ZHCJ",
       "code_hash": "0bd526a66530e1246b2045c74effd2db",
       "outputs": [
         {
@@ -263,7 +283,7 @@
       ]
     },
     {
-      "id": "nOhQ",
+      "id": "ROlb",
       "code_hash": "f261c3b956e654b0f889bbb4cacaf5a2",
       "outputs": [
         {
@@ -276,7 +296,7 @@
       "console": []
     },
     {
-      "id": "cTZc",
+      "id": "qnkX",
       "code_hash": "142d87a7a89ebeb6f46a18bf97471f0d",
       "outputs": [
         {
@@ -296,7 +316,7 @@
       ]
     },
     {
-      "id": "Dwat",
+      "id": "TqIu",
       "code_hash": "a31747fe0d8dc3109b6363e79ae78030",
       "outputs": [
         {
@@ -316,7 +336,27 @@
       ]
     },
     {
-      "id": "dvlc",
+      "id": "YERB",
+      "code_hash": "e282f3b852e6780a9f094f09789b8209",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Order ID  Order date          Country         Order total\n23276     2026-10-27T23:52:55 Mexico            18,808.47\n14298     2026-10-27T12:59:13 Germany           11,721.38\n17538     2026-10-27T08:23:46 France            15,454.24\n24521     2026-10-27T06:44:49 Brazil            33,855.03\n22275     2026-10-27T02:37:01 Canada            38,775.20\n25203     2026-10-26T18:56:19 Mexico            15,263.30\n12487     2026-10-26T14:10:34 Portugal             180.00\n17049     2026-10-26T07:37:38 Brazil            49,228.65\n26403     2026-10-26T06:26:30 France            25,714.53\n15770     2026-10-26T01:31:05 France            12,024.65\n12223     2026-10-26T00:07:16 USA               33,670.02\n17257     2026-10-25T23:00:43 Brazil            33,897.66\n16037     2026-10-25T21:11:33 France            30,673.96\n12873     2026-10-25T12:46:00 Poland             5,130.45\n15630     2026-10-25T01:47:08 Brazil            20,317.61\n17181     2026-10-24T23:21:55 Brazil            26,892.55\n13034     2026-10-24T13:19:35 France            24,221.69\n20909     2026-10-24T11:45:03 USA                3,779.20\n25730     2026-10-24T10:09:36 Venezuela         42,033.77\n18868     2026-10-23T13:38:44 Germany           22,901.99\n22521     2026-10-23T01:36:47 Germany           30,869.23\n21646     2026-10-22T14:59:35 USA                2,743.65\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Vxnm",
       "code_hash": "eaaca4a400af67ffbf935a9d403c0dca",
       "outputs": [
         {
@@ -336,7 +376,7 @@
       ]
     },
     {
-      "id": "kfOG",
+      "id": "DnEU",
       "code_hash": "f81d820652fa2fa449150c14a45ef820",
       "outputs": [
         {
@@ -349,7 +389,7 @@
       "console": []
     },
     {
-      "id": "yqTq",
+      "id": "ulZA",
       "code_hash": "85c03e19cb3b59bd5eb4abbe0d38be04",
       "outputs": [
         {
@@ -369,7 +409,7 @@
       ]
     },
     {
-      "id": "VeUK",
+      "id": "ecfG",
       "code_hash": "0c98a383c34f129536750c768c0aeb08",
       "outputs": [
         {
@@ -389,7 +429,7 @@
       ]
     },
     {
-      "id": "scmq",
+      "id": "Pvdt",
       "code_hash": "ddbd62b89bb2de0ff26d58cdc6c94cb9",
       "outputs": [
         {
@@ -409,7 +449,7 @@
       ]
     },
     {
-      "id": "FuJo",
+      "id": "ZBYS",
       "code_hash": "5b52c65038413302491e9be49c184106",
       "outputs": [
         {
@@ -429,20 +469,20 @@
       ]
     },
     {
-      "id": "iNBE",
-      "code_hash": "a0f0ab1219bd508a711ad6801e0ba78a",
+      "id": "aLJB",
+      "code_hash": "4d14c338e712e126af5315973333c955",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"7-working-with-the-agent\">7. Working With the Agent</h1>\n<span class=\"paragraph\">I did one sanity check in step 3 as explained in section 6, then when we were at step 5, ai suggested doing the planned check right there instead of waiting until step 7 as originally planned. I agreed thus we knew at that point everything was fine. That was check #2.\nBut doing that also made me realized doing that as a check point left step 6 - 7 unaudited so I told ai to find a way to check those steps. It suggested check #3, which still did not help audit anything beyond step 5. So I had to tell it to try again and focus on step 6 - 7 which was how I got check #4 - 5. I kept check #3 anyway as it doesn't really hurt anything. </span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"7-working-with-the-agent\">7. Working With the Agent</h1>\n<span class=\"paragraph\">I did one sanity check in step 3 as explained in section 6, then when we were at step 5, ai suggested doing the planned check right there instead of waiting until step 7 as originally planned. I agreed thus we knew at that point everything was fine. That was check #2.\nBut doing that also made me realized doing that as a check point left step 6 - 7 unaudited so I told ai to find a way to check those steps. It suggested check #3, which still did not help audit anything beyond step 5. So I had to tell it to try again and focus on step 6 - 7 which was how I got check #4 - 5. I kept check #3 anyway as it doesn't really hurt anything.</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "xuKq",
+      "id": "nHfw",
       "code_hash": "54f0495f4c4e86e2d764a965f1280e01",
       "outputs": [
         {
@@ -455,33 +495,33 @@
       "console": []
     },
     {
-      "id": "sWnw",
-      "code_hash": "6f229cdb338219801692ae4d7483a966",
+      "id": "xXTn",
+      "code_hash": "28302cf43c700ba42ba0bec28df440af",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>function 1</strong></span>\n<span class=\"paragraph\">def get_order_details(order_id):\n    _detail_response = requests.get(f\"{base_url}/orders/{order_id}\")\n    _detail = _detail_response.json()\n    return _detail['lines']</span>\n<span class=\"paragraph\"><strong>Goes in:</strong> one order_id (a number, like 14298).</span>\n<span class=\"paragraph\"><strong>Comes out:</strong> that order's list of line items (each one a record with product_name, quantity, line_total_dollars, etc.)</span>\n<span class=\"paragraph\"><strong>line asked:</strong> return _detail['lines'] \u2014 the function reaches into the order's reply, grabs just the lines list, and hands that back, instead of returning the whole order detail.</span>\n<span class=\"paragraph\"><strong>Function 2</strong></span>\n<span class=\"paragraph\">def get_orders(from_date, to_date):\n    _orders = []\n    _first_response = requests.get(f\"{base_url}/orders\", params={\"from_date\": str(from_date), \"to_date\": str(to_date)})\n    _first_reply = _first_response.json()\n    _total_pages = _first_reply['pagination']['pages']</span>\n<div class=\"language-scdoc highlight\"><pre><span></span><code>for _page in range(1, _total_pages + 1):\n    _page_response = requests.get(f\"{base_url}/orders\", params={\"from_date\": str(from_date), \"to_date\": str(to_date), \"page\": _page})\n    _page_reply = _page_response.json()\n    for _order in _page_reply['items']:\n        _orders.append(_order)\n\nreturn _orders, _first_reply['pagination']['total']\n</code></pre></div>\n<span class=\"paragraph\"><strong>Goes in:</strong> a start date and an end date (from_date, to_date).</span>\n<span class=\"paragraph\"><strong>Comes out:</strong> two things \u2014 the full list of orders in that date range, and the total number the API reports (so you can check they match).</span>\n<span class=\"paragraph\"><strong>line asked:</strong> return _orders, _first_reply['pagination']['total'] \u2014 returning two values at once, separated by a comma. Whoever calls this function gets both back together and can unpack them into two separate names, like orders, reported_total = get_orders(...).</span>\n<span class=\"paragraph\"><strong>Change:</strong> days input from 7 to 14 </span>\n<span class=\"paragraph\"><strong>Expected outcome:</strong> step 3 and 5b results both increase. as it shows result of 2 weeks instead of one</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>function 1</strong></span>\n<span class=\"paragraph\">def get_order_details(order_id):\n    _detail_response = requests.get(f\"{base_url}/orders/{order_id}\")\n    _detail = _detail_response.json()\n    return _detail['lines']</span>\n<span class=\"paragraph\"><strong>Goes in:</strong> one order_id (a number, like 14298).</span>\n<span class=\"paragraph\"><strong>Comes out:</strong> that order's list of line items (each one a record with product_name, quantity, line_total_dollars, etc.)</span>\n<span class=\"paragraph\"><strong>line asked:</strong> return _detail['lines'] \u2014 the function reaches into the order's reply, grabs just the lines list, and hands that back, instead of returning the whole order detail.</span>\n<span class=\"paragraph\"><strong>Function 2</strong></span>\n<span class=\"paragraph\">def get_orders(from_date, to_date):\n    _orders = []\n    _first_response = requests.get(f\"{base_url}/orders\", params={\"from_date\": str(from_date), \"to_date\": str(to_date)})\n    _first_reply = _first_response.json()\n    _total_pages = _first_reply['pagination']['pages']</span>\n<div class=\"language-scdoc highlight\"><pre><span></span><code>for _page in range(1, _total_pages + 1):\n    _page_response = requests.get(f\"{base_url}/orders\", params={\"from_date\": str(from_date), \"to_date\": str(to_date), \"page\": _page})\n    _page_reply = _page_response.json()\n    for _order in _page_reply['items']:\n        _orders.append(_order)\n\nreturn _orders, _first_reply['pagination']['total']\n</code></pre></div>\n<span class=\"paragraph\"><strong>Goes in:</strong> a start date and an end date (from_date, to_date).</span>\n<span class=\"paragraph\"><strong>Comes out:</strong> two things \u2014 the full list of orders in that date range, and the total number the API reports (so you can check they match).</span>\n<span class=\"paragraph\"><strong>line asked:</strong> return _orders, _first_reply['pagination']['total'] \u2014 returning two values at once, separated by a comma. Whoever calls this function gets both back together and can unpack them into two separate names, like orders, reported_total = get_orders(...).</span>\n<span class=\"paragraph\"><strong>Change:</strong> days input from 7 to 14</span>\n<span class=\"paragraph\"><strong>Expected outcome:</strong> step 3 and 5b results both increase. as it shows result of 2 weeks instead of one</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "wvLA",
-      "code_hash": "1de80fcb4c2c97d0de3067c11444c278",
+      "id": "AjVT",
+      "code_hash": "a500d20150349975551ba51e59c27e1d",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>result:</strong>\ncollected orders from 32 --&gt; 52 \ncollected line items 101 --&gt; 1705</span>\n<span class=\"paragraph\">match. woohoo!</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>result:</strong>\ncollected orders from 32 --&gt; 52\ncollected line items 1015 --&gt; 1705</span>\n<span class=\"paragraph\">match. woohoo!</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "lICw",
+      "id": "pHFh",
       "code_hash": "226cecc14f8aa22d0981178e8a76a8db",
       "outputs": [
         {
@@ -494,7 +534,7 @@
       "console": []
     },
     {
-      "id": "xcnL",
+      "id": "NCOB",
       "code_hash": "a01ea63496c629d6837ea1f2ae6ef932",
       "outputs": [
         {
@@ -507,7 +547,7 @@
       "console": []
     },
     {
-      "id": "VKCu",
+      "id": "aqbW",
       "code_hash": "e9916879542e94b821107cf45a2800ed",
       "outputs": [
         {
@@ -527,7 +567,7 @@
       ]
     },
     {
-      "id": "PoWU",
+      "id": "TRpd",
       "code_hash": "17bc2eb49af92fe3436d894ac18ba6d9",
       "outputs": [
         {
@@ -547,7 +587,7 @@
       ]
     },
     {
-      "id": "Qaqs",
+      "id": "TXez",
       "code_hash": "6586e0a01fc17d4a683b049f10cbfccf",
       "outputs": [
         {
@@ -560,20 +600,20 @@
       "console": []
     },
     {
-      "id": "TEAa",
-      "code_hash": "e7b2e9ee78e4c8004a09efcac97744cf",
+      "id": "dNNg",
+      "code_hash": "a1b65abf293fc3bf690bd1148b237ace",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">I first charted revenue by day (going further 1c), just to see which days in the week brought in the most money. The team might need further check on what happened on 22 October as the sale dropped significantly compared to other days. I check both the collected data and the newly fetched from the API. Both numbers agreed at $2743.65 so it is expected to be accurate.  </span>\n<span class=\"paragraph\">Then I get curious about what time of day the business operates most actively. So I tried charting both orders and revenue by 2-hour time slot (going further 1), to see if there's any interesting pattern in when business happens during the day.</span>\n<span class=\"paragraph\">I googled the company name, and this is supposed to be a B2B food business. In that case the spike at midnight (00-02) is a bit weird. What business place orders at midnight? Do their sales person not sleep? Or is it their logistics schedule? Or is it just a plot hole, since this is a fictional company anyway? </span>\n<span class=\"paragraph\">This pattern look more like that of a 24-hour convenience store or an online retail platform than a typical B2B food supplier, as it spikes during lunch time, after work, morning, and late-night snack time.</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">I first charted revenue by day (going further 1c), just to see which days in the week brought in the most money. The team might need further check on what happened on 22 October as the sale dropped significantly compared to other days. I check both the collected data and the newly fetched from the API. Both numbers agreed at $2743.65 so it is expected to be accurate.</span>\n<span class=\"paragraph\">Then I get curious about what time of day the business operates most actively. So I tried charting both orders and revenue by 2-hour time slot (going further 1), to see if there's any interesting pattern in when business happens during the day.</span>\n<span class=\"paragraph\">I googled the company name, and this is supposed to be a B2B food business. In that case the spike at midnight (00-02) is a bit weird. What business place orders at midnight? Do their sales person not sleep? Or is it their logistics schedule? Or is it just a plot hole, since this is a fictional company anyway?</span>\n<span class=\"paragraph\">This pattern look more like that of a 24-hour convenience store or an online retail platform than a typical B2B food supplier, as it spikes during lunch time, after work, morning, and late-night snack time.</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "nttb",
+      "id": "yCnT",
       "code_hash": "124b43c07d0a1a29687487c90bfe04f7",
       "outputs": [
         {

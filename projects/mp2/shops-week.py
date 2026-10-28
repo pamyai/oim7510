@@ -177,7 +177,7 @@ def _(orders):
         json.dump(orders, _file, indent=2)
 
     print(f"Saved {len(orders)} orders to projects/mp2/data/orders.json")
-    return
+    return (json,)
 
 
 @app.cell
@@ -233,6 +233,17 @@ def _(get_order_details, orders):
 
     print(f"Collected {len(order_lines)} line items from {len(orders)} orders")
     return (order_lines,)
+
+
+@app.cell
+def _(json, order_lines):
+    #save the fetched line items to a file too, as the assignment requires
+
+    with open("projects/mp2/data/order_lines.json", "w") as _file:
+        json.dump(order_lines, _file, indent=2)
+
+    print(f"Saved {len(order_lines)} line items to projects/mp2/data/order_lines.json")
+    return
 
 
 @app.cell
@@ -299,6 +310,16 @@ def _(revenue_by_country):
     print(f"{'Country':<20}{'Revenue':>15}")
     for _country in revenue_by_country:
         print(f"{_country:<20}{revenue_by_country[_country]:>15,.2f}")
+    return
+
+
+@app.cell
+def _(unshipped_orders):
+    #unshipped orders, printed as a lined-up table
+
+    print(f"{'Order ID':<10}{'Order date':<20}{'Country':<15}{'Order total':>12}")
+    for _order in unshipped_orders:
+        print(f"{_order['order_id']:<10}{_order['order_date']:<20}{_order['ship_country']:<15}{_order['order_total_dollars']:>12,.2f}")
     return
 
 
