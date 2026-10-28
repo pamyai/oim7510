@@ -378,6 +378,27 @@ def _(mo):
     return
 
 
+@app.cell
+def _(requests):
+    top_income_reply = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={
+            "county": "Norfolk",
+            "sort": "income",
+            "order": "desc",
+            "per_page": 5,
+        },
+        timeout=10,
+    )
+    top_income_towns = top_income_reply.json()["items"]
+
+    top_income_names = []
+    for town in top_income_towns:
+        top_income_names.append(town["name"])
+    top_income_names
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""

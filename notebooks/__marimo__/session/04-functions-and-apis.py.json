@@ -533,6 +533,19 @@
       "console": []
     },
     {
+      "id": "PRaV",
+      "code_hash": "2adf01b3dfbb06ab09ff04b7b4d82323",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"Dover\", \"Wellesley\", \"Cohasset\", \"Needham\", \"Westwood\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "TXez",
       "code_hash": "2c8b7518589165dd64e0ae0b892da438",
       "outputs": [
