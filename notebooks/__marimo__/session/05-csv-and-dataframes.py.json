@@ -462,12 +462,12 @@
     },
     {
       "id": "NCOB",
-      "code_hash": "115f927dba8c6aeca7b70fd70241cbd2",
+      "code_hash": "14cecc1d96f5ccd42416d84f003f596e",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='NCOB-0' random-id='d1b181d6-867e-00ee-9055-f3b01d634a71'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:14},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:10},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:8},{&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;towns&#92;&quot;:7},{&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;towns&#92;&quot;:7},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;towns&#92;&quot;:5},{&#92;&quot;county&#92;&quot;:&#92;&quot;Nantucket&#92;&quot;,&#92;&quot;towns&#92;&quot;:1},{&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;towns&#92;&quot;:1}]&quot;' data-total-rows='8' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='NCOB-0' random-id='b1a25ad6-570e-8cd7-a6dd-9aad69760655'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:2},{&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;towns&#92;&quot;:2},{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:2},{&#92;&quot;county&#92;&quot;:&#92;&quot;Nantucket&#92;&quot;,&#92;&quot;towns&#92;&quot;:1}]&quot;' data-total-rows='4' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
           }
         }
       ],
@@ -501,8 +501,15 @@
     },
     {
       "id": "urmQ",
-      "code_hash": null,
-      "outputs": [],
+      "code_hash": "9a21989e89bde03a1ec8b0fbea40f3e1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">prediction - all goes down as filter is narrower</span>\n<span class=\"paragraph\">correct woohoo!</span></span>"
+          }
+        }
+      ],
       "console": []
     },
     {

@@ -407,7 +407,7 @@ def _(mo, town_table):
         f"""
         SELECT county, COUNT(*) AS towns
         FROM town_table
-        WHERE average_single_family_value_dollars >= 1000000
+        WHERE average_single_family_value_dollars >= 2000000
         GROUP BY county
         ORDER BY towns DESC
         """
@@ -435,8 +435,13 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    prediction - all goes down as filter is narrower
+
+    correct woohoo!
+    """)
     return
 
 
