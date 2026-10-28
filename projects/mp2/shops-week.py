@@ -91,10 +91,27 @@ def _(mo):
 def _(mo):
     mo.md(r"""
     #3. Inputs
+    """)
+    return
 
+
+@app.cell
+def _():
     days = 7
     base_url = "https://oim.zhili.dev/shop"
-    """)
+    return (days,)
+
+
+@app.cell
+def _(days):
+    #4. the work
+
+    from datetime import date, timedelta
+
+    to_date = date.today()
+    from_date = to_date - timedelta(days=days - 1)
+
+    print(f"Report covers {from_date} to {to_date}")
     return
 
 

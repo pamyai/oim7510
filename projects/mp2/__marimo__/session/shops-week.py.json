@@ -46,16 +46,49 @@
     },
     {
       "id": "uKBR",
-      "code_hash": "c0073cefdde3455b713ace8581691a50",
+      "code_hash": "c65d3c0b28343d9e996a0687f71453c5",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"3-inputs\">3. Inputs</h1>\n<span class=\"paragraph\">days = 7\nbase_url = \"<a href=\"https://oim.zhili.dev/shop\" rel=\"noopener noreferrer\" target=\"_blank\">https://oim.zhili.dev/shop</a>\"</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"3-inputs\">3. Inputs</h1></span>"
           }
         }
       ],
       "console": []
+    },
+    {
+      "id": "ZBZe",
+      "code_hash": "cb868fa7e32b9b35fe85cdd3a1a4fdf5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "JWHK",
+      "code_hash": "1fc4e36f30158032b68fdbc5dbc00929",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Report covers 2026-10-21 to 2026-10-27\n",
+          "mimetype": "text/plain"
+        }
+      ]
     }
   ]
 }
