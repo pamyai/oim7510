@@ -158,14 +158,10 @@ def _(mo):
     return
 
 
-app._unparsable_cell(
-    r"""
-    def calculate_bmi(height,weight)
+@app.function
+def calculate_bmi(height, weight):
     bmi = weight / (height**2)
     return bmi
-    """,
-    name="_"
-)
 
 
 @app.cell(hide_code=True)
@@ -181,12 +177,72 @@ def _(mo):
     return
 
 
+@app.function
+def count_shares(portfolio):
+    total_shares = 0
+    for symbol, shares, price in portfolio:
+        total_shares = total_shares + shares
+    return total_shares
+
+
+@app.cell
+def _(holdings, retirement_holdings):
+    count_shares(holdings), count_shares(retirement_holdings)
+    return
+
+
+@app.function
+def find_largest(portfolio):
+    largest_ticker = None
+    largest_cost = 0
+    for symbol, shares, price in portfolio:
+        cost = round(shares * price, 2)
+        if cost > largest_cost:
+            largest_cost = cost
+            largest_ticker = symbol
+    return largest_ticker, largest_cost
+
+
+@app.cell
+def _(holdings, retirement_holdings):
+    find_largest(holdings), find_largest(retirement_holdings)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
     ## ✏️ B · Without `return`
 
     Copy `count_shares` into a new cell under a new name, and put `print(...)` where the `return` was. Call it and keep the result in a name. In a markdown cell under it, answer: what does that name hold, and what could the next cell do with it?
+    """)
+    return
+
+
+@app.function
+def print_shares(portfolio):
+    total_shares = 0
+    for symbol, shares, price in portfolio:
+        total_shares = total_shares + shares
+    print(total_shares)
+
+
+@app.cell
+def _(holdings):
+    printed_result = print_shares(holdings)
+    printed_result
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    printed_result + 1
+
+    --> TypeError
+    unsupported operand type(s) for +: 'NoneType' and 'int'
+
+    string and int type not match
     """)
     return
 

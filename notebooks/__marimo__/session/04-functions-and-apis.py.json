@@ -8,7 +8,14 @@
     {
       "id": "Hbol",
       "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -208,13 +215,13 @@
     },
     {
       "id": "ROlb",
-      "code_hash": "8c8a9ed22e4eddf1ea797dc7c1da583e",
+      "code_hash": "e27f104c9bc6bd9b46daaf70bb77fda3",
       "outputs": [
         {
-          "type": "error",
-          "ename": "exception",
-          "evalue": "line 1\n    def calculate_bmi(height,weight)\n                                    ^\nSyntaxError: expected ':'\n",
-          "traceback": null
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
         }
       ],
       "console": []
@@ -233,6 +240,58 @@
       "console": []
     },
     {
+      "id": "UaiE",
+      "code_hash": "dffb131a9dffc59e6008b8cc0054c556",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ffdd",
+      "code_hash": "4ad300f7ed4a3c97f351be7e1b386aa4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[600, 460]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dUOb",
+      "code_hash": "9d83b1e2aab7ece0ae2b9ab753cb31b8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Estl",
+      "code_hash": "c7ae37eea93a791da828858594fcb296",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[[\"TSLA\", \"text/plain+float:38355.0\"], [\"VTI\", \"text/plain+float:27408.0\"]]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "TqIu",
       "code_hash": "056a1aa629d6f6d618e4be5ac43dae47",
       "outputs": [
@@ -240,6 +299,52 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"b-without-return\">\u270f\ufe0f B \u00b7 Without <code>return</code></h2>\n<span class=\"paragraph\">Copy <code>count_shares</code> into a new cell under a new name, and put <code>print(...)</code> where the <code>return</code> was. Call it and keep the result in a name. In a markdown cell under it, answer: what does that name hold, and what could the next cell do with it?</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Suvt",
+      "code_hash": "e4bfd6d72eb9ce5630e80690f1f52894",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mKeR",
+      "code_hash": "f23c5eab4ebb7dd32dc9f5dd31aaf873",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "600\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "OXKi",
+      "code_hash": "b6cdd6db183b3462e7fa79738075ddfc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">printed_result + 1</span>\n<span class=\"paragraph\">--&gt; TypeError\nunsupported operand type(s) for +: 'NoneType' and 'int'</span>\n<span class=\"paragraph\">string and int type not match</span></span>"
           }
         }
       ],
@@ -274,13 +379,27 @@
     {
       "id": "ulZA",
       "code_hash": "8e41e132c0014809fc7c6d99010a66d6",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "ecfG",
       "code_hash": "afdea3774b798b782ef68b655c7e9fad",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"source\": \"Massachusetts Department of Revenue, Division of Local Services, Municipal Databank (https://www.mass.gov/info-details/division-of-local-services-municipal-databank)\", \"endpoints\": {\"/ma/towns\": \"Every town with its latest single-family value and bill, 50 to a page. Query: county, name, max_bill, max_value, sort (name, population, income, value, bill), order (asc, desc), page, per_page\", \"/ma/towns/{dor_code}\": \"One town and its latest finances\", \"/ma/towns/{dor_code}/history\": \"Tax rates and single-family bills by fiscal year. Query: from_year, to_year\", \"/ma/counties\": \"The 14 counties: their number of towns and population, federal code, seats, founding year and, where it ended, their government\", \"/ma/votes\": \"Override and underride ballot votes. Query: dor_code, from_year, to_year, page, per_page\"}}"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -299,7 +418,14 @@
     {
       "id": "ZBYS",
       "code_hash": "14cde2c50bca4b2639420fbb27ccefe8",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[200, \"https://oim.zhili.dev/ma/towns?county=Norfolk\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -318,7 +444,14 @@
     {
       "id": "nHfw",
       "code_hash": "38507227e42cfbedc8c8954016b16b92",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"page\": 1, \"per_page\": 50, \"total\": 28, \"pages\": 1, \"has_next\": false, \"has_prev\": false}"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -337,7 +470,14 @@
     {
       "id": "AjVT",
       "code_hash": "a71705731d61b6a8136fd49323b520cb",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"dor_code\": \"018\", \"name\": \"Avon\", \"county\": \"Norfolk\", \"type\": \"town\", \"area_square_miles\": \"text/plain+float:5.1\", \"founded_year\": 1888, \"population\": 4801, \"income_per_capita_dollars\": 44742, \"equalized_value_dollars\": 1239903800, \"equalized_value_per_capita_dollars\": 258259, \"data_fiscal_year\": 2027, \"average_single_family_value_dollars\": 572492, \"average_single_family_bill_dollars\": 7643, \"finances_fiscal_year\": 2026}"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -356,13 +496,27 @@
     {
       "id": "NCOB",
       "code_hash": "4109b7e974f26a60556ee3f973cb12d3",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "aqbW",
       "code_hash": "887930193010547e7f6c8af54f576e31",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[{\"dor_code\": \"035\", \"name\": \"Boston\", \"county\": \"Suffolk\", \"type\": \"city\", \"area_square_miles\": \"text/plain+float:48.4\", \"founded_year\": 1630, \"population\": 673458, \"income_per_capita_dollars\": 65287, \"equalized_value_dollars\": 241761863000, \"equalized_value_per_capita_dollars\": 358986, \"data_fiscal_year\": 2027, \"average_single_family_value_dollars\": 615084, \"average_single_family_bill_dollars\": 7627, \"finances_fiscal_year\": 2026}, {\"dor_code\": \"057\", \"name\": \"Chelsea\", \"county\": \"Suffolk\", \"type\": \"city\", \"area_square_miles\": \"text/plain+float:2.2\", \"founded_year\": 1739, \"population\": 40245, \"income_per_capita_dollars\": 27806, \"equalized_value_dollars\": 6348238400, \"equalized_value_per_capita_dollars\": 157740, \"data_fiscal_year\": 2027, \"average_single_family_value_dollars\": 367078, \"average_single_family_bill_dollars\": 4214, \"finances_fiscal_year\": 2026}, {\"dor_code\": \"248\", \"name\": \"Revere\", \"county\": \"Suffolk\", \"type\": \"city\", \"area_square_miles\": \"text/plain+float:5.9\", \"founded_year\": 1871, \"population\": 60702, \"income_per_capita_dollars\": 33133, \"equalized_value_dollars\": 12020129000, \"equalized_value_per_capita_dollars\": 198019, \"data_fiscal_year\": 2027, \"average_single_family_value_dollars\": 623461, \"average_single_family_bill_dollars\": 5574, \"finances_fiscal_year\": 2026}, {\"dor_code\": \"346\", \"name\": \"Winthrop\", \"county\": \"Suffolk\", \"type\": \"town\", \"area_square_miles\": \"text/plain+float:2.0\", \"founded_year\": 1852, \"population\": 18739, \"income_per_capita_dollars\": 47434, \"equalized_value_dollars\": 3873447100, \"equalized_value_per_capita_dollars\": 206705, \"data_fiscal_year\": 2027, \"average_single_family_value_dollars\": 744423, \"average_single_family_bill_dollars\": 8293, \"finances_fiscal_year\": 2026}]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -407,7 +561,14 @@
     {
       "id": "yCnT",
       "code_hash": "a8af7dc0d3029782a8e02b74a19d0330",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[50, {\"page\": 1, \"per_page\": 50, \"total\": 351, \"pages\": 8, \"has_next\": true, \"has_prev\": false}]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -426,7 +587,14 @@
     {
       "id": "kqZH",
       "code_hash": "c7fc10556c32764f544faf48140c6d25",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[422, {\"detail\": [{\"type\": \"less_than_equal\", \"loc\": [\"query\", \"per_page\"], \"msg\": \"Input should be less than or equal to 100\", \"input\": \"500\", \"ctx\": {\"le\": 100}}]}]"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -445,13 +613,27 @@
     {
       "id": "rEll",
       "code_hash": "6faf21dd04d541a6216521c2c7181fe4",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "dGlV",
       "code_hash": "fac3aeaf89e0bdbcc0f9cfba304ef1c5",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"page\": 1, \"per_page\": 100, \"total\": 351, \"pages\": 4, \"has_next\": true, \"has_prev\": false}"
+          }
+        }
+      ],
       "console": []
     },
     {
