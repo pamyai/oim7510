@@ -314,12 +314,14 @@ def _(revenue_by_country):
 
 
 @app.cell
-def _(unshipped_orders):
-    #unshipped orders, printed as a lined-up table
+def _(to_date, unshipped_orders):
+    #unshipped orders, printed as a lined-up table, with whether each is actually past its required ship date
 
-    print(f"{'Order ID':<10}{'Order date':<20}{'Country':<15}{'Order total':>12}")
+    print(f"{'Order ID':<10}{'Order date':<20}{'Required date':<22}{'Country':<15}{'Order total':>12}  {'Late?'}")
     for _order in unshipped_orders:
-        print(f"{_order['order_id']:<10}{_order['order_date']:<20}{_order['ship_country']:<15}{_order['order_total_dollars']:>12,.2f}")
+        _is_late = str(_order['required_date']) < str(to_date)
+        _late_flag = "LATE" if _is_late else "not yet due"
+        print(f"{_order['order_id']:<10}{_order['order_date']:<20}{_order['required_date']:<22}{_order['ship_country']:<15}{_order['order_total_dollars']:>12,.2f}  {_late_flag}")
     return
 
 
@@ -344,22 +346,22 @@ def _(mo):
     mo.md(r"""
     #6. How I Know These Numbers Are Right
 
-    I checked four things a second way, all shown in the cells below:
+    I checked four things a second way, all shown in the cells below. The specific counts below are from when I ran this on Oct 28, 2026; since the API's data changes daily, running this notebook again on another day will show different counts, but the checks themselves will still agree with each other.
 
     **check1. Did I collect every order?**
-    In step 3, the API's pagination said there were 35 orders total in this date range. I collected orders page by page and counted 35 orders in my `orders` list. 35 equals 35, so I have every order, not just the first page.
+    In step 3, the API's pagination reported a total number of orders in this date range. I collected orders page by page and compared the count in my `orders` list against that reported total. When I ran it on Oct 28, both came to 32, so I have every order, not just the first page.
 
     **check2. Does each order's line-item total agree with its reported order total?**
-    An order's `order_total_dollars` (from `/shop/orders`) should equal the sum of its `line_total_dollars` values (from `/shop/orders/{order_id}`), since the order total is just all its lines added up. I checked this for all 35 orders: I summed each order's lines separately and compared that sum to the order's reported total, allowing a one-cent gap for rounding. 0 of 35 orders disagreed, so the revenue and line-item numbers in this report agree with each other.
+    An order's `order_total_dollars` (from `/shop/orders`) should equal the sum of its `line_total_dollars` values (from `/shop/orders/{order_id}`), since the order total is just all its lines added up. I checked this for every order collected: I summed each order's lines separately and compared that sum to the order's reported total, allowing a one-cent gap for rounding. When I ran it on Oct 28, 0 of 32 orders disagreed, so the revenue and line-item numbers in this report agree with each other.
 
     **check3. Did I collect every line item?**
-    Each order in `/shop/orders` already reports its own `line_count`, a count of how many line items it has. I summed `line_count` across all 35 orders and compared it to the number of line items I actually collected in step 5. Both came to 1065, so step 6 and step 7, which depend on having every line item, are built on a complete set.
+    Each order in `/shop/orders` already reports its own `line_count`, a count of how many line items it has. I summed `line_count` across all orders and compared it to the number of line items I actually collected in step 5. When I ran it on Oct 28, both came to 1015, so step 6 and step 7, which depend on having every line item, are built on a complete set.
 
     **check4. Does the units-sold total in `product_sales` agree with the raw line items?**
-    I summed the units two different ways: once by adding up every value already stored in the `product_sales` dictionary (built in step 6), and once by going back to `order_lines` directly and adding up every `quantity` field. Both came to 25,671 units, so building the dictionary did not drop or double-count anything.
+    I summed the units two different ways: once by adding up every value already stored in the `product_sales` dictionary (built in step 6), and once by going back to `order_lines` directly and adding up every `quantity` field. When I ran it on Oct 28, both came to 24,764 units, so building the dictionary did not drop or double-count anything.
 
     **check5. Are the top 5 products really the top 5?**
-    The picking method in step 7 works by repeatedly scanning for the highest remaining count, so it should be correct by construction, but I checked it a different way anyway: I took the 5th-place product's count (446 units) and scanned every other product not in the top 5 to see if any of them actually sold more. None did, which confirms the top 5 list is right.
+    The picking method in step 7 works by repeatedly scanning for the highest remaining count, so it should be correct by construction, but I checked it a different way anyway: I took the 5th-place product's count and scanned every other product not in the top 5 to see if any of them actually sold more. When I ran it on Oct 28, none did, which confirms the top 5 list is right.
     """)
     return
 
@@ -436,8 +438,8 @@ def _(mo):
     mo.md(r"""
     #7. Working With the Agent
 
-    I did one sanity check in step 3 as explained in section 6, then when we were at step 5, ai suggested doing the planned check right there instead of waiting until step 7 as originally planned. I agreed thus we knew at that point everything was fine. That was check #2.
-    But doing that also made me realized doing that as a check point left step 6 - 7 unaudited so I told ai to find a way to check those steps. It suggested check #3, which still did not help audit anything beyond step 5. So I had to tell it to try again and focus on step 6 - 7 which was how I got check #4 - 5. I kept check #3 anyway as it doesn't really hurt anything.
+    I did one sanity check in step 3 as explained in section 6 (cell `RGSE`, check1), then when we were at step 5 (cell `nWHF`), ai suggested doing the planned check right there instead of waiting until step 7 as originally planned. I agreed thus we knew at that point everything was fine. That was check #2, now in cell `ulZA`.
+    But doing that also made me realized doing that as a check point left step 6 - 7 (cells `iLit` and `ZHCJ`) unaudited so I told ai to find a way to check those steps. It suggested check #3 (cell `ecfG`), which still did not help audit anything beyond step 5. So I had to tell it to try again and focus on step 6 - 7 which was how I got check #4 (cell `Pvdt`) and check #5 (cell `ZBYS`). I kept check #3 anyway as it doesn't really hurt anything.
     """)
     return
 
@@ -644,11 +646,11 @@ def _(days, orders):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    I first charted revenue by day (going further 1c), just to see which days in the week brought in the most money. The team might need further check on what happened on 22 October as the sale dropped significantly compared to other days. I check both the collected data and the newly fetched from the API. Both numbers agreed at $2743.65 so it is expected to be accurate.
+    I first charted revenue by day (going further 1a), just to see which days in the week brought in the most money. The team might need further check on what happened on 22 October as the sale dropped significantly compared to other days. I check both the collected data and the newly fetched from the API. Both numbers agreed at $2743.65 so it is expected to be accurate.
 
-    Then I get curious about what time of day the business operates most actively. So I tried charting both orders and revenue by 2-hour time slot (going further 1), to see if there's any interesting pattern in when business happens during the day.
+    Then I get curious about what time of day the business operates most actively. So I tried charting both orders and revenue by 2-hour time slot (going further 1b), to see if there's any interesting pattern in when business happens during the day.
 
-    I googled the company name, and this is supposed to be a B2B food business. In that case the spike at midnight (00-02) is a bit weird. What business place orders at midnight? Do their sales person not sleep? Or is it their logistics schedule? Or is it just a plot hole, since this is a fictional company anyway?
+    I googled the company name, and this is supposed to be a B2B food business. In that case the spike at midnight (00-02) is a bit weird. What business place orders at midnight? Do their sales person not sleep? They operate globally in different time zones? Or is it their logistics schedule? Or is it just a plot hole, since this is a fictional company anyway?
 
     This pattern look more like that of a 24-hour convenience store or an online retail platform than a typical B2B food supplier, as it spikes during lunch time, after work, morning, and late-night snack time.
     """)
