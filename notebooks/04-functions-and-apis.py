@@ -209,6 +209,24 @@ def _(holdings, retirement_holdings):
     return
 
 
+@app.cell
+def _(holdings, retirement_holdings):
+    #going further
+
+    def find_largest_n(portfolio, n):
+        costs = []
+        for symbol, shares, price in portfolio:
+            costs.append((round(shares * price, 2), symbol))
+        costs = sorted(costs, reverse=True)
+        largest = []
+        for cost, symbol in costs[:n]:
+            largest.append((symbol, cost))
+        return largest
+
+    find_largest_n(holdings, 3), find_largest_n(retirement_holdings, 2)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -242,7 +260,7 @@ def _(mo):
     --> TypeError
     unsupported operand type(s) for +: 'NoneType' and 'int'
 
-    string and int type not match
+    Previous function ends without a return, so it hands back None, so the next cell can't get the data to process
     """)
     return
 
@@ -434,7 +452,7 @@ def _(requests, wellesley_code):
     #2
     history_reply = requests.get(
         f"https://oim.zhili.dev/ma/towns/{wellesley_code}/history",
-        params={"<year parameter>": 2026},
+        params={"from_year": 2026,"to_year": 2026},
         timeout=10,
     )
     history_reply.status_code, history_reply.json()
