@@ -415,6 +415,56 @@ def _(mo):
     return
 
 
+@app.cell
+def _(requests):
+    #1
+    wellesley_reply = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={"name": "Wellesley"},
+        timeout=10,
+    )
+    wellesley_town = wellesley_reply.json()["items"][0]
+    wellesley_code = wellesley_town["dor_code"]
+    wellesley_code
+    return (wellesley_code,)
+
+
+@app.cell
+def _(requests, wellesley_code):
+    #2
+    history_reply = requests.get(
+        f"https://oim.zhili.dev/ma/towns/{wellesley_code}/history",
+        params={"<year parameter>": 2026},
+        timeout=10,
+    )
+    history_reply.status_code, history_reply.json()
+    return (history_reply,)
+
+
+@app.cell
+def _(history_reply):
+    #3
+    wellesley_2026 = None
+    for year_record in history_reply.json()["years"]:
+        if year_record["fiscal_year"] == 2026:
+            wellesley_2026 = year_record
+    wellesley_2026
+
+
+    return (wellesley_2026,)
+
+
+@app.cell
+def _(wellesley_2026):
+    check_bill = (
+        wellesley_2026["average_single_family_value_dollars"]
+        * wellesley_2026["residential_rate_per_thousand"]
+        / 1000
+    )
+    round(check_bill, 2), wellesley_2026["average_single_family_bill_dollars"]
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -429,6 +479,11 @@ def _(mo):
 def _(requests):
     state_first_page = requests.get("https://oim.zhili.dev/ma/towns", timeout=10).json()
     len(state_first_page["items"]), state_first_page["pagination"]
+    return
+
+
+@app.cell
+def _():
     return
 
 
