@@ -346,19 +346,19 @@ def _(mo):
 
     I checked four things a second way, all shown in the cells below:
 
-    **1. Did I collect every order?**
+    **check1. Did I collect every order?**
     In step 3, the API's pagination said there were 35 orders total in this date range. I collected orders page by page and counted 35 orders in my `orders` list. 35 equals 35, so I have every order, not just the first page.
 
-    **2. Does each order's line-item total agree with its reported order total?**
+    **check2. Does each order's line-item total agree with its reported order total?**
     An order's `order_total_dollars` (from `/shop/orders`) should equal the sum of its `line_total_dollars` values (from `/shop/orders/{order_id}`), since the order total is just all its lines added up. I checked this for all 35 orders: I summed each order's lines separately and compared that sum to the order's reported total, allowing a one-cent gap for rounding. 0 of 35 orders disagreed, so the revenue and line-item numbers in this report agree with each other.
 
-    **3. Did I collect every line item?**
+    **check3. Did I collect every line item?**
     Each order in `/shop/orders` already reports its own `line_count`, a count of how many line items it has. I summed `line_count` across all 35 orders and compared it to the number of line items I actually collected in step 5. Both came to 1065, so step 6 and step 7, which depend on having every line item, are built on a complete set.
 
-    **4. Does the units-sold total in `product_sales` agree with the raw line items?**
+    **check4. Does the units-sold total in `product_sales` agree with the raw line items?**
     I summed the units two different ways: once by adding up every value already stored in the `product_sales` dictionary (built in step 6), and once by going back to `order_lines` directly and adding up every `quantity` field. Both came to 25,671 units, so building the dictionary did not drop or double-count anything.
 
-    **5. Are the top 5 products really the top 5?**
+    **check5. Are the top 5 products really the top 5?**
     The picking method in step 7 works by repeatedly scanning for the highest remaining count, so it should be correct by construction, but I checked it a different way anyway: I took the 5th-place product's count (446 units) and scanned every other product not in the top 5 to see if any of them actually sold more. None did, which confirms the top 5 list is right.
     """)
     return
