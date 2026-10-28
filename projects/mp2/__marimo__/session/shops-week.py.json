@@ -142,6 +142,46 @@
           "mimetype": "text/plain"
         }
       ]
+    },
+    {
+      "id": "vsaR",
+      "code_hash": "d342d0d84c699372a3cba70edc65bd4f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Order count: 35\nTotal revenue: $779,663.08\nUnshipped orders: 25\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "eiHg",
+      "code_hash": "cf27eb649e9256056ec1b1b797b2a292",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Collected 1065 line items from 35 orders\n",
+          "mimetype": "text/plain"
+        }
+      ]
     }
   ]
 }

@@ -151,6 +151,49 @@ def _(base_url, from_date, reply, requests, to_date):
             orders.append(_order)
 
     print(f"Collected {len(orders)} orders out of {reply['pagination']['total']} reported")
+    return (orders,)
+
+
+@app.cell
+def _(orders):
+    #step4: order count, total revenue, revenue by country, unshipped orders
+
+    order_count = len(orders)
+    total_revenue = 0
+    revenue_by_country = {}
+    unshipped_orders = []
+
+    for _order in orders:
+        total_revenue += _order['order_total_dollars']
+
+        _country = _order['ship_country']
+        if _country in revenue_by_country:
+            revenue_by_country[_country] += _order['order_total_dollars']
+        else:
+            revenue_by_country[_country] = _order['order_total_dollars']
+
+        if _order['shipped_date'] is None:
+            unshipped_orders.append(_order)
+
+    print(f"Order count: {order_count}")
+    print(f"Total revenue: ${total_revenue:,.2f}")
+    print(f"Unshipped orders: {len(unshipped_orders)}")
+    return
+
+
+@app.cell
+def _(base_url, orders, requests):
+    #step5: get line items for each order
+
+    order_lines = []
+
+    for _order in orders:
+        _detail_response = requests.get(f"{base_url}/orders/{_order['order_id']}")
+        _detail = _detail_response.json()
+        for _line in _detail['lines']:
+            order_lines.append(_line)
+
+    print(f"Collected {len(order_lines)} line items from {len(orders)} orders")
     return
 
 
