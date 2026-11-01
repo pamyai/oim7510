@@ -291,11 +291,14 @@ def _(mo):
     it, write under the letter, and press `Ctrl+Enter`. Code still goes in cells of your
     own, added with the **+** button.
 
-    **A ·**
+    **A ·** if the input satisfies all criterias, result returns that of whatever code happens first in the line
 
-    **C ·**
+    **C ·** how many items does append add - 1 which is ["stapler", "tape"]
 
     **D ·**
+    sorted(tickers) is a function you call on tickers. A function like this builds a brand new list, sorted, and returns it — that return value is what print() then shows. tickers itself is untouched.
+    tickers.sort() is different — it's a method, called with a dot on the list itself, and it works in place: it rearranges the items inside the existing tickers list directly, rather than building a new one. Since it already did its job by changing tickers, it has nothing new to report back, so by Python's convention, it returns None
+
 
     **E ·**
     """)
@@ -415,7 +418,7 @@ def _(mo):
 @app.cell
 def _():
     order_lines = ["notebook", "pen"]
-    order_lines.append(["stapler", "tape"])
+    order_lines.extend(["stapler", "tape"])
     len(order_lines)
     return (order_lines,)
 
@@ -424,6 +427,11 @@ def _():
 def _(order_lines):
     order_lines[2]
     print(order_lines)
+    return
+
+
+@app.cell
+def _():
     return
 
 
@@ -462,6 +470,15 @@ def _():
     print(sorted(tickers))
     print(tickers.sort())
     tickers
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    `tickers.sort()` sorts the list **in place** and returns `None` (the convention for mutating methods in Python), whereas `sorted(tickers)` returns a **new sorted list** without modifying the original, so printing its result shows the actual list.
+    ```
+    """)
     return
 
 

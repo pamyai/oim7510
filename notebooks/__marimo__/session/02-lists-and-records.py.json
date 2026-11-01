@@ -59,7 +59,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Enter the cost:  10\nEnter tax:  2\n",
+          "text": "Enter the cost:  500\nEnter tax:  12\n",
           "mimetype": "text/plain"
         }
       ]
@@ -79,7 +79,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Total cost: $10.00\n",
+          "text": "Total cost: $500.00\n",
           "mimetype": "text/plain"
         }
       ]
@@ -91,7 +91,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>20.0</pre>"
+            "text/html": "<pre class='text-xs'>1000.0</pre>"
           }
         }
       ],
@@ -104,7 +104,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>12.0</pre>"
+            "text/html": "<pre class='text-xs'>512.0</pre>"
           }
         }
       ],
@@ -210,12 +210,12 @@
     },
     {
       "id": "iLit",
-      "code_hash": "19fcbdf4ffd48826b1d19dcc06b0483d",
+      "code_hash": "c0c1ba6c8307485dac10d289dc77ecaa",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Four of the drills below ask for a sentence. This cell is where they go. Click into\nit, write under the letter, and press <code>Ctrl+Enter</code>. Code still goes in cells of your\nown, added with the <strong>+</strong> button.</span>\n<span class=\"paragraph\"><strong>A \u00b7</strong></span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\"><strong>E \u00b7</strong></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Four of the drills below ask for a sentence. This cell is where they go. Click into\nit, write under the letter, and press <code>Ctrl+Enter</code>. Code still goes in cells of your\nown, added with the <strong>+</strong> button.</span>\n<span class=\"paragraph\"><strong>A \u00b7</strong> if the input satisfies all criterias, result returns that of whatever code happens first in the line</span>\n<span class=\"paragraph\"><strong>C \u00b7</strong> how many items does append add - 1 which is [\"stapler\", \"tape\"]</span>\n<span class=\"paragraph\"><strong>D \u00b7</strong>\nsorted(tickers) is a function you call on tickers. A function like this builds a brand new list, sorted, and returns it \u2014 that return value is what print() then shows. tickers itself is untouched.\ntickers.sort() is different \u2014 it's a method, called with a dot on the list itself, and it works in place: it rearranges the items inside the existing tickers list directly, rather than building a new one. Since it already did its job by changing tickers, it has nothing new to report back, so by Python's convention, it returns None </span>\n<span class=\"paragraph\"><strong>E \u00b7</strong></span></span>"
           }
         }
       ],
@@ -257,7 +257,14 @@
     {
       "id": "qnkX",
       "code_hash": null,
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -347,12 +354,12 @@
     },
     {
       "id": "ZBYS",
-      "code_hash": "d7f1e30a273b00c372f58d2c77801a99",
+      "code_hash": "c85449df5aaeecfdcb957912380535a2",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>3</pre>"
+            "text/html": "<pre class='text-xs'>4</pre>"
           }
         }
       ],
@@ -373,10 +380,23 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "['notebook', 'pen', ['stapler', 'tape']]\n",
+          "text": "['notebook', 'pen', 'stapler', 'tape']\n",
           "mimetype": "text/plain"
         }
       ]
+    },
+    {
+      "id": "yiyb",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
     },
     {
       "id": "nHfw",
@@ -423,6 +443,19 @@
           "mimetype": "text/plain"
         }
       ]
+    },
+    {
+      "id": "YMBi",
+      "code_hash": "2cc489fa209edd5314cf4af1b1158a38",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><code>tickers.sort()</code> sorts the list <strong>in place</strong> and returns <code>None</code> (the convention for mutating methods in Python), whereas <code>sorted(tickers)</code> returns a <strong>new sorted list</strong> without modifying the original, so printing its result shows the actual list.\n```</span></span>"
+          }
+        }
+      ],
+      "console": []
     },
     {
       "id": "pHFh",
