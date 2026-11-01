@@ -210,12 +210,12 @@
     },
     {
       "id": "iLit",
-      "code_hash": "c0c1ba6c8307485dac10d289dc77ecaa",
+      "code_hash": "f88ebc5d0d6a525934e3eb7d0503743f",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Four of the drills below ask for a sentence. This cell is where they go. Click into\nit, write under the letter, and press <code>Ctrl+Enter</code>. Code still goes in cells of your\nown, added with the <strong>+</strong> button.</span>\n<span class=\"paragraph\"><strong>A \u00b7</strong> if the input satisfies all criterias, result returns that of whatever code happens first in the line</span>\n<span class=\"paragraph\"><strong>C \u00b7</strong> how many items does append add - 1 which is [\"stapler\", \"tape\"]</span>\n<span class=\"paragraph\"><strong>D \u00b7</strong>\nsorted(tickers) is a function you call on tickers. A function like this builds a brand new list, sorted, and returns it \u2014 that return value is what print() then shows. tickers itself is untouched.\ntickers.sort() is different \u2014 it's a method, called with a dot on the list itself, and it works in place: it rearranges the items inside the existing tickers list directly, rather than building a new one. Since it already did its job by changing tickers, it has nothing new to report back, so by Python's convention, it returns None </span>\n<span class=\"paragraph\"><strong>E \u00b7</strong></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Four of the drills below ask for a sentence. This cell is where they go. Click into\nit, write under the letter, and press <code>Ctrl+Enter</code>. Code still goes in cells of your\nown, added with the <strong>+</strong> button.</span>\n<span class=\"paragraph\"><strong>A \u00b7</strong> if the input satisfies all criterias, result returns that of whatever code happens first in the line</span>\n<span class=\"paragraph\"><strong>C \u00b7</strong> how many items does append add - 1 which is [\"stapler\", \"tape\"]</span>\n<span class=\"paragraph\"><strong>D \u00b7</strong>\nsorted(tickers) is a function you call on tickers. A function like this builds a brand new list, sorted, and returns it \u2014 that return value is what print() then shows. tickers itself is untouched.\ntickers.sort() is different \u2014 it's a method, called with a dot on the list itself, and it works in place: it rearranges the items inside the existing tickers list directly, rather than building a new one. Since it already did its job by changing tickers, it has nothing new to report back, so by Python's convention, it returns None </span>\n<span class=\"paragraph\"><strong>E \u00b7</strong> in something like dynamic pricing, where multiple parts of a program need to see the exact same up-to-date prices the instant one part changes them.\"</span></span>"
           }
         }
       ],
@@ -445,19 +445,6 @@
       ]
     },
     {
-      "id": "YMBi",
-      "code_hash": "2cc489fa209edd5314cf4af1b1158a38",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><code>tickers.sort()</code> sorts the list <strong>in place</strong> and returns <code>None</code> (the convention for mutating methods in Python), whereas <code>sorted(tickers)</code> returns a <strong>new sorted list</strong> without modifying the original, so printing its result shows the actual list.\n```</span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
       "id": "pHFh",
       "code_hash": "f405b348260f91aaa0a73e40c618af25",
       "outputs": [
@@ -472,12 +459,45 @@
     },
     {
       "id": "NCOB",
-      "code_hash": "8d95c8f244caaf7e1606caf938476e98",
+      "code_hash": "fef8050147ab6b97e03e371500ce2207",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "application/json": "[\"text/plain+float:12.5\", \"text/plain+float:8.0\", \"text/plain+float:19.99\", \"text/plain+float:4.99\"]"
+            "application/json": "[\"text/plain+float:12.5\", \"text/plain+float:8.0\", \"text/plain+float:19.99\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "eJLW",
+      "code_hash": "c8ba5cd81bfd4f76e9001b7d29de9ada",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "False\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "GeGT",
+      "code_hash": "8b90c107fc07492bb419e2b330ad297e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain+float:11.25\", \"text/plain+float:7.2\", \"text/plain+float:17.99\", \"text/plain+float:4.49\"]"
           }
         }
       ],
@@ -596,7 +616,7 @@
     },
     {
       "id": "rEll",
-      "code_hash": "50be611e1f77d5e53ba193b6d6f67b40",
+      "code_hash": "7c47d299492881089deddb7da131dee3",
       "outputs": [
         {
           "type": "data",

@@ -300,7 +300,7 @@ def _(mo):
     tickers.sort() is different — it's a method, called with a dot on the list itself, and it works in place: it rearranges the items inside the existing tickers list directly, rather than building a new one. Since it already did its job by changing tickers, it has nothing new to report back, so by Python's convention, it returns None
 
 
-    **E ·**
+    **E ·** in something like dynamic pricing, where multiple parts of a program need to see the exact same up-to-date prices the instant one part changes them."
     """)
     return
 
@@ -476,15 +476,6 @@ def _():
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    `tickers.sort()` sorts the list **in place** and returns `None` (the convention for mutating methods in Python), whereas `sorted(tickers)` returns a **new sorted list** without modifying the original, so printing its result shows the actual list.
-    ```
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
     ## E · The price list that changed by itself
 
     A shop builds its sale prices from its regular prices, adds one more sale price, and
@@ -512,9 +503,25 @@ def _(mo):
 @app.cell
 def _():
     prices = [12.50, 8.00, 19.99]
-    sale_prices = prices
+    sale_prices = prices[:]
     sale_prices.append(4.99)
     prices
+    return prices, sale_prices
+
+
+@app.cell
+def _(prices, sale_prices):
+    print(prices is sale_prices)
+    return
+
+
+@app.cell
+def _(sale_prices):
+    discounted_sale_prices = []
+    for position in range(len(sale_prices)):
+        discounted_sale_prices.append(round(sale_prices[position] * 0.9, 2))
+
+    discounted_sale_prices
     return
 
 
@@ -629,9 +636,9 @@ def _(mo):
 
 @app.cell
 def _():
-    #first_order["Freight"]
-    #first_order["Freight"]
-    #first_order["0"]
+    #first_order["Freight"] --> this one works
+    #first_order["freight"]
+    #first_order[0] - KeyError 0
     return
 
 
