@@ -616,7 +616,7 @@
     },
     {
       "id": "rEll",
-      "code_hash": "7c47d299492881089deddb7da131dee3",
+      "code_hash": "0803ddda63a40ac3077260cc768a7921",
       "outputs": [
         {
           "type": "data",
@@ -693,6 +693,78 @@
       "console": []
     },
     {
+      "id": "fBnf",
+      "code_hash": "c1780f2940522fc11cd41313049ff72f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>827.0</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BkLr",
+      "code_hash": "bb42724a7c4da18bcb6eb058ae4dc4ae",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>3</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "cUzd",
+      "code_hash": "5000530959420639d3859324b69a05f3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[10263, \"text/plain+float:56.0\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "goEf",
+      "code_hash": "2fb365577bf7b44dbb4216fa87c9ef24",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "{'OrderID': 11008, 'CustomerID': 'ERNSH', 'ShipCountry': 'Austria', 'ShipCity': 'Graz', 'OrderDate': '2018-04-08', 'ShippedDate': None, 'Freight': 55.25}\n{'OrderID': 11019, 'CustomerID': 'RANCH', 'ShipCountry': 'Argentina', 'ShipCity': 'Buenos Aires', 'OrderDate': '2018-04-13', 'ShippedDate': None, 'Freight': 11.25}\n{'OrderID': 11039, 'CustomerID': 'LINOD', 'ShipCountry': 'Venezuela', 'ShipCity': 'I. de Margarita', 'OrderDate': '2018-04-21', 'ShippedDate': None, 'Freight': 43.0}\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "LhlQ",
+      "code_hash": "53cdd598cd052b1d21a5f17a1aff94b9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">their OrderIDs are all in the 10200s, and their OrderDates are all in 2016.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "LJZf",
       "code_hash": "276567fb8e96c73de1480e5e345ad8c1",
       "outputs": [
@@ -707,12 +779,12 @@
     },
     {
       "id": "urSm",
-      "code_hash": "1a951e63750454427afca99d94d5c044",
+      "code_hash": "ea3d026bf12806272a2870869d52af41",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><em>One row is ...</em></span>\n<span class=\"paragraph\"><em>(Replace this line with your own sentence. If this cell shows you code instead of\ntext, use the cell menu to turn it into a markdown cell.)</em></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><em>One row is each time that one shipment transaction occur to deliver a shipment to a customer in a certain location on a specific date in a specific freight</em></span>\n<span class=\"paragraph\"><em>(Replace this line with your own sentence. If this cell shows you code instead of\ntext, use the cell menu to turn it into a markdown cell.)</em></span></span>"
           }
         }
       ],
@@ -743,6 +815,26 @@
         }
       ],
       "console": []
+    },
+    {
+      "id": "pJFH",
+      "code_hash": "112d78411b0631de50a67103929cc076",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "AAPL 17393.0\nMSFT 15976.499999999998\nGOOG 10508.800000000001\nAMZN 25866.000000000004\nNVDA 8203.4\nTSLA 38355.0\nTotal cost: 116302.7\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
       "id": "CcZR",

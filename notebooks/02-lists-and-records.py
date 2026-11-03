@@ -731,6 +731,56 @@ def _(mo):
     return
 
 
+@app.cell
+def _(orders):
+    total_freight = 0
+    for _order in orders:
+        total_freight = total_freight + _order["Freight"]
+
+    total_freight
+    return
+
+
+@app.cell
+def _(orders):
+    unshipped_count = 0
+    for _order in orders:
+        if _order["ShippedDate"] is None:
+            unshipped_count = unshipped_count + 1
+
+    unshipped_count
+    return
+
+
+@app.cell
+def _(orders):
+    highest_freight_order = None
+    highest_freight = 0
+    for _order in orders:
+        if _order["Freight"] > highest_freight:
+            highest_freight = _order["Freight"]
+            highest_freight_order = _order["OrderID"]
+
+    highest_freight_order, highest_freight
+    return
+
+
+@app.cell
+def _(orders):
+    for _order in orders:
+        if _order["ShippedDate"] is None:
+            print(_order)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    their OrderIDs are all in the 10200s, and their OrderDates are all in 2016.
+    """)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -751,7 +801,8 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    *One row is ...*
+    *One row is each time that one shipment transaction occur to deliver a shipment to a customer in a certain location on a specific date in a specific freight*
+
 
     *(Replace this line with your own sentence. If this cell shows you code instead of
     text, use the cell menu to turn it into a markdown cell.)*
@@ -792,6 +843,19 @@ def _():
         {"Symbol": "TSLA", "Shares": 150, "Price": 255.70},
     ]
     portfolio
+    return (portfolio,)
+
+
+@app.cell
+def _(portfolio):
+    total_share_cost = 0
+
+    for stock in portfolio:
+        stock_total = stock['Shares'] * stock['Price']
+        print(stock['Symbol'], stock_total)
+        total_share_cost = total_share_cost + stock_total
+
+    print("Total cost:", total_share_cost)
     return
 
 
