@@ -1,9 +1,9 @@
-# Movie Database ERD
+# TV Show Database ERD
 
 ```mermaid
 erDiagram
-    MOVIE {
-        int movie_id PK
+    TV_SHOW {
+        int tv_show_id PK
         int year
         int eps
         decimal scores
@@ -29,10 +29,12 @@ erDiagram
         string genre_name
     }
 
-    MOVIE }o--o{ ACTOR : features
-    MOVIE }o--o{ WRITER : written_by
-    MOVIE }o--o{ GENRE : categorized_as
-    SHOW_TYPE ||--o{ MOVIE : classifies
+    TV_SHOW }o--o{ ACTOR : features
+    TV_SHOW }o--o{ WRITER : written_by
+    TV_SHOW }o--o{ GENRE : categorized_as
+    SHOW_TYPE ||--o{ TV_SHOW : classifies
 ```
+
+
 
         
