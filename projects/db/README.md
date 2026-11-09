@@ -8,17 +8,21 @@ Chosen scenario: C Babson Bean Café.
 
 ```mermaid
 erDiagram
-  MEMBER ||--o{ ORDERS : places
+  MEMBER |o--o{ ORDERS : places
+  ORDERS ||--|{ ORDER_LINE : contains
+  MENU ||--o{ ORDER_LINE : "sold on"
+  ORDER_LINE ||--o{ LINE_OPTION : carries
+  OPTIONS ||--o{ LINE_OPTION : "added as"
+  ORDERS ||--|{ PAYMENT : "paid by"
+
   MEMBER {
     int member_id PK
     string member_name
     string member_mobile
     string member_email
-    date member_joinDate
-    decimal member_pointBalance
+    date member_join_date
+    int member_points
   }
-
-  MENU ||--o{ ORDER_LINE : includes
   MENU {
     int prod_id PK
     string prod_name
@@ -27,40 +31,35 @@ erDiagram
     decimal prod_cost
     boolean prod_avail
   }
-
-  OPTIONS ||--o{ ORDER_LINE : assigned_to
   OPTIONS {
     int option_id PK
     string option_name
     decimal option_price
     decimal option_cost
   }
-
-  ORDERS ||--o{ ORDER_LINE : contains
   ORDERS {
     int order_id PK
     int member_id FK
     datetime order_datetime
     string order_channel
-    decimal order_ttl
   }
-
   ORDER_LINE {
     int line_id PK
     int order_id FK
     int prod_id FK
-    int option_id FK
     int line_qty
+    decimal line_price
   }
-
-  ORDERS ||--|| PAYMENT : pays
+  LINE_OPTION {
+    int line_id PK, FK
+    int option_id PK, FK
+    decimal option_price_charged
+  }
   PAYMENT {
     int payment_id PK
     int order_id FK
-    decimal payment_amt_card
-    decimal payment_amt_point
     string payment_method
-    decimal payment_ttl
+    decimal payment_amt
   }
 ```
 
