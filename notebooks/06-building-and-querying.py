@@ -258,11 +258,12 @@ def _(mo):
 def _(database, duckdb):
     try:
         with duckdb.connect(database) as _con:
-            _con.execute("INSERT INTO towns VALUES ('Nowhere', 'Atlantis', 10, 0, 0)")
+            _con.execute("INSERT INTO towns VALUES ('A', 'Woohoo', 1, 0, 0)")
         refused = "accepted"
     except duckdb.ConstraintException as _error:
         refused = str(_error).splitlines()[0]
     refused
+
     return
 
 
@@ -280,8 +281,27 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    1. a name that is already there,
+
+    insert:     INSERT INTO towns VALUES ('Abington', 'Plymouth', 17090, 46123, 7536
+
+    Message: 'Constraint Error: Duplicate key "name: Abington" violates primary key constraint.'
+
+    2. a population of zero
+
+    insert:  INSERT INTO towns VALUES ('Nowhere', 'Plymouth', 0, 0, 0)")
+
+    Message: 'Constraint Error: CHECK constraint failed on table towns with expression CHECK((population > 0))'
+
+    3. a county that does not exist.
+
+    insert: "INSERT INTO towns VALUES ('A', 'Woohoo', 1, 0, 0)")
+
+    Message:'Constraint Error: Violates foreign key constraint because key "name: Woohoo" does not exist in the referenced table'
+    """)
     return
 
 
@@ -317,6 +337,18 @@ def _(mo):
     *Check yourself: Brookline, Newton, Cambridge, Somerville, Quincy.*
 
     **Going further.** Ask the same question of `counties` and `towns` together: which county is each of those five in, and what share of its county's people does each hold? That needs both tables at once, which the topic slides call a join.
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+        SELECT name, population, average_single_family_bill_dollars
+        FROM towns
+        WHERE population > 50000
+        ORDER BY average_single_family_bill_dollars DESC
+        LIMIT 5
     """)
     return
 
