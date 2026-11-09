@@ -131,7 +131,6 @@ def _(mo):
 
 @app.cell
 def _(duckdb, mo):
-    # rebuild the database fresh
     _file = mo.notebook_dir().parent / "data" / "ma-towns.duckdb"
     _file.parent.mkdir(exist_ok=True)
     _file.unlink(missing_ok=True)
@@ -278,6 +277,25 @@ def _(mo):
 
     **Going further.** Find a rule the scenario of your database project states that a constraint cannot hold, and write the query that checks it instead.
     """)
+    return
+
+
+@app.cell
+def _(database, duckdb):
+    _bad_inserts = {
+        "duplicate name": "INSERT INTO towns VALUES ('Abington', 'Plymouth', 17090, 46123, 7536)",
+        "population of zero": "INSERT INTO towns VALUES ('Nowhere', 'Plymouth', 0, 0, 0)",
+        "county that does not exist": "INSERT INTO towns VALUES ('A', 'Woohoo', 1, 0, 0)",
+    }
+    _messages = {}
+    for _rule, _sql in _bad_inserts.items():
+        try:
+            with duckdb.connect(database) as _con:
+                _con.execute(_sql)
+            _messages[_rule] = "accepted"
+        except duckdb.ConstraintException as _error:
+            _messages[_rule] = str(_error).splitlines()[0]
+    _messages
     return
 
 
