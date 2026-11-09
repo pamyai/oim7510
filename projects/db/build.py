@@ -105,5 +105,24 @@ def _(ask):
     return
 
 
+@app.cell
+def _(ask):
+    ask("SELECT count(*) FROM orders")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **The Data**
+    """)
+    return
+
+
+@app.cell
+def _():
+    return
+
+
 if __name__ == "__main__":
     app.run()
