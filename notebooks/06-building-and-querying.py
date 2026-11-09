@@ -233,6 +233,8 @@ def _(database, duckdb):
         """)
         _con.execute("INSERT INTO town_bills VALUES ('Wellesley', 2020, 15760)")
         _con.execute("INSERT INTO town_bills VALUES ('Wellesley', 2021, 16284)")
+
+    ##note to prof: it kept showing error that table already exist. So I have to clear the previous table. not sure that's how you plan for this exercise, but it works now.
     return
 
 
