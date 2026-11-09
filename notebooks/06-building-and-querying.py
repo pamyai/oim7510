@@ -13,7 +13,7 @@
 
 import marimo
 
-__generated_with = "0.25.1"
+__generated_with = "0.24.2"
 app = marimo.App(width="medium", sql_output="polars")
 
 
@@ -100,7 +100,7 @@ def _(mo, pl, requests):
         town_rows = pl.DataFrame(_records).select(town_columns)
 
     county_rows.shape, town_rows.shape
-    return county_rows, town_rows
+    return
 
 
 @app.cell(hide_code=True)
@@ -130,7 +130,8 @@ def _(mo):
 
 
 @app.cell
-def _(county_rows, duckdb, mo, town_rows):
+def _(duckdb, mo):
+    # rebuild the database fresh
     _file = mo.notebook_dir().parent / "data" / "ma-towns.duckdb"
     _file.parent.mkdir(exist_ok=True)
     _file.unlink(missing_ok=True)
@@ -218,6 +219,29 @@ def _(mo):
     return
 
 
+@app.cell
+def _(database, duckdb):
+    with duckdb.connect(database) as _con:
+        _con.execute("DROP TABLE IF EXISTS town_bills")
+        _con.execute("""
+            CREATE TABLE town_bills (
+                town_name                           VARCHAR NOT NULL REFERENCES towns(name),
+                fiscal_year                         INTEGER NOT NULL,
+                average_single_family_bill_dollars  INTEGER CHECK (average_single_family_bill_dollars >= 0),
+                PRIMARY KEY (town_name, fiscal_year)
+            )
+        """)
+        _con.execute("INSERT INTO town_bills VALUES ('Wellesley', 2020, 15760)")
+        _con.execute("INSERT INTO town_bills VALUES ('Wellesley', 2021, 16284)")
+    return
+
+
+@app.cell
+def _(ask):
+    ask("SELECT * FROM town_bills")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -251,6 +275,11 @@ def _(mo):
 
     **Going further.** Find a rule the scenario of your database project states that a constraint cannot hold, and write the query that checks it instead.
     """)
+    return
+
+
+@app.cell
+def _():
     return
 
 
@@ -395,7 +424,7 @@ def _(ask, mo, requests):
         _path.write_bytes(_reply.content)
     orders_file = _path.as_posix()
     ask(f"SELECT count(*) AS orders FROM '{orders_file}'")
-    return (orders_file,)
+    return
 
 
 @app.cell(hide_code=True)
