@@ -1,4 +1,18 @@
 #try1
+import marimo
+
+app = marimo.App()
+
+
+@app.cell
+def _():
+    import marimo as mo
+    import duckdb
+    return duckdb, mo
+
+
+@app.cell
+def _(duckdb, mo):
 
 database = mo.notebook_dir() / "database.duckdb"
 
