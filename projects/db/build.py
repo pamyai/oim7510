@@ -13,7 +13,7 @@ def _():
     import polars as pl
     import requests
 
-    return duckdb, mo
+    return duckdb, mo, pl
 
 
 @app.cell
@@ -36,8 +36,9 @@ def _(mo):
 
 
 @app.cell
-def _(database, duckdb):
+def _(database, duckdb, mo):
     database.unlink(missing_ok=True)
+    _data_dir = mo.notebook_dir() / "data"
 
     with duckdb.connect(database) as _con:
         _con.sql("""
@@ -96,18 +97,25 @@ def _(database, duckdb):
             payment_amt    DECIMAL(8,2) NOT NULL CHECK (payment_amt > 0)
         );
         """)
+
+        # Load each CSV straight into its table. read_csv_auto looks at the file
+        # and guesses each column's type (number, date, text); the order below
+        # follows the foreign keys, so every row a table points to already exists.
+        for _name in ["member", "menu", "options", "orders", "order_line", "line_option", "payment"]:
+            _path = str(_data_dir / f"{_name}.csv").replace("\\", "/")
+            _con.sql(f"INSERT INTO {_name} SELECT * FROM read_csv_auto('{_path}')")
     return
 
 
 @app.cell
 def _(ask):
-    ask("SHOW ALL TABLES")
+    ask("SHOW ALL TABLES")  # refreshed after loading data
     return
 
 
 @app.cell
 def _(ask):
-    ask("SELECT count(*) FROM orders")
+    ask("SELECT count(*) AS n_orders FROM orders")
     return
 
 
@@ -120,7 +128,52 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(mo):
+    sorted(p.name for p in (mo.notebook_dir() / "data").glob("*.csv"))
+    return
+
+
+@app.cell
+def _(mo, pl):
+    _data_dir = mo.notebook_dir() / "data"
+    for _name in ["member", "menu", "options", "orders", "order_line", "line_option", "payment"]:
+        _df = pl.read_csv(_data_dir / f"{_name}.csv")
+        print(_name, _df.columns)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+        WITH line_totals AS (
+            SELECT ol.order_id,
+                   SUM(ol.line_qty * ol.line_price) AS lines_total
+            FROM order_line ol
+            GROUP BY ol.order_id
+        ),
+        option_totals AS (
+            SELECT ol.order_id,
+                   SUM(ol.line_qty * lo.option_price_charged) AS options_total
+            FROM order_line ol
+            JOIN line_option lo ON lo.line_id = ol.line_id
+            GROUP BY ol.order_id
+        ),
+        pay_totals AS (
+            SELECT order_id, SUM(payment_amt) AS paid_total
+            FROM payment
+            GROUP BY order_id
+        )
+        SELECT o.order_id,
+               lt.lines_total,
+               COALESCE(ot.options_total, 0) AS options_total,
+               lt.lines_total + COALESCE(ot.options_total, 0) AS order_total,
+               COALESCE(pt.paid_total, 0) AS paid_total
+        FROM orders o
+        JOIN line_totals lt ON lt.order_id = o.order_id
+        LEFT JOIN option_totals ot ON ot.order_id = o.order_id
+        LEFT JOIN pay_totals pt ON pt.order_id = o.order_id
+        WHERE ABS(lt.lines_total + COALESCE(ot.options_total, 0) - COALESCE(pt.paid_total, 0)) > 0.01
+    """)
     return
 
 
