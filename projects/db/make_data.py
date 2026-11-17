@@ -1,3 +1,10 @@
+#try1
+
+import marimo
+
+__generated_with = "0.24.2"
+app = marimo.App()
+
 """Write one CSV file per table of the Babson Bean Café database into projects/db/data/.
 
 Run it from the root folder of the repository:
