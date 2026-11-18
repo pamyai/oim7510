@@ -13,7 +13,7 @@ def _():
     import polars as pl
     import altair as alt
 
-    return duckdb, mo
+    return alt, duckdb, mo
 
 
 @app.cell
@@ -488,6 +488,16 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
+    when I tried query question 4, first ai didn't pre-aggregate anything, and just join orders → order_line → line_option → payment all at once. I redirect it to do 2-step joint instead as it's more accurate and easier to track. The build section already made the joint order_total ready for use as well.
+
+    The rest of the work, AI got them right the first time. Samples of how I checked it are shown in How I Know These Numbers Are Right section
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
     **Reading It Back**
     how many rows you expect its joins to produce before any grouping, and why?
 
@@ -555,7 +565,73 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
+    I tried two things. First, I put question 6 on a chart, to see whether points use
+    has a season. Second, I added a dropdown, so a manager can pick any month and see
+    that month's three best sellers (question 1) without editing the SQL.
+    """)
+    return
+
+
+@app.cell
+def _(alt, points_by_month):
+    alt.Chart(points_by_month).mark_bar().encode(
+        x=alt.X("month:O", title="Month"),
+        y=alt.Y("pct_with_points:Q", title="Orders paid partly with points (%)"),
+        tooltip=["month", "n_orders", "n_with_points", "pct_with_points"],
+    ).properties(title="Share of orders paid at least partly with points", width=500, height=300)
+    return
+
+
+@app.cell
+def _(mo, points_by_month):
+    month_picker = mo.ui.dropdown(
+        options=points_by_month["month"].to_list(),
+        value="2026-10",
+        label="Month",
+    )
+    month_picker
+    return (month_picker,)
+
+
+@app.cell
+def _(ask, month_picker):
+    ask(f"""
+        SELECT m.prod_name, m.prod_cat, sum(ol.line_qty) AS units_sold
+        FROM orders o
+        JOIN order_line ol ON ol.order_id = o.order_id
+        JOIN menu m        ON m.prod_id   = ol.prod_id
+        WHERE strftime(o.order_datetime, '%Y-%m') = '{month_picker.value}'
+        GROUP BY m.prod_name, m.prod_cat
+        ORDER BY units_sold DESC
+        LIMIT 3
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **What I found:** points use doesn't follow a clear season. It jumps around between
+    4% and 14% from month to month, partly because the summer months have only about 50
+    orders, so a few points orders move the share a lot. With the dropdown, picking
+    2026-10 gives the same three products as question 1, which also checks that the
+    control works.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
     **Time Spent**
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    aprx 5 hrs
     """)
     return
 
