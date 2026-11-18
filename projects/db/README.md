@@ -87,7 +87,6 @@ rows in each tables
 
 4.3 Which of the scenario's rules your tables cannot hold, and how you will check it instead. 
 - A quantity is more than zero, and so is a payment. --> Force with CHECK constraint
-- On the menu, a product's price is never below its cost.--> the table cannot guarantee that. need to make rules in query later 
 - A payment's method is one of the four listed above. --> if really needed, could build one more table called "Payment method". I just think it's an overkill. Can force input by choice via code rule instead. 
 
 4.4 One thing your agent proposed for the design that you changed or did not take, and why;  if you designed it alone, one thing you checked in the ERD your agent drew.
