@@ -273,7 +273,7 @@ def _(ask):
         ORDER BY month
     """)
     points_by_month
-    return
+    return (points_by_month,)
 
 
 @app.cell(hide_code=True)
@@ -408,6 +408,78 @@ def _(ask):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
+    Both ways give $9,579.50, which also matches the four categories in question 2
+    added up by hand ($5,273.50 + $1,805.75 + $1,982.25 + $518.00). The payments come to
+    $9,580.00, which is $0.50 more. That is exactly question 4's two broken orders
+    together: +$1.50 on order 501 and −$1.00 on order 667.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Check 2: question 5's count, reached another way.** Instead of looking for members
+    with no matching order, count the members who do appear in orders and subtract that
+    from all members.
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+        SELECT
+            (SELECT count(*) FROM member)                  AS all_members,
+            (SELECT count(DISTINCT member_id) FROM orders) AS members_who_ordered,
+            (SELECT count(*) FROM member)
+              - (SELECT count(DISTINCT member_id) FROM orders) AS never_ordered
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    50 − 45 = 5, the same five members as in question 5. That is also what
+    `make_data.py` was told to make: members 46 to 50 never order.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Check 3: question 6's counts, reached another way.** The monthly orders in
+    question 6 should add up to every order, and the monthly points orders should add up
+    to the number of orders with a points payment, counted straight from `payment`.
+    """)
+    return
+
+
+@app.cell
+def _(ask, points_by_month):
+    ask("""
+        SELECT
+            (SELECT count(*) FROM orders) AS all_orders,
+            (SELECT count(DISTINCT order_id) FROM payment
+              WHERE payment_method = 'points') AS orders_with_points
+    """), points_by_month.select("n_orders", "n_with_points").sum()
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    The 13 months add up to 1,200 orders and 102 orders with points, the same as
+    counting them directly.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
     **Working With the Agent**
     """)
     return
@@ -429,6 +501,45 @@ def _(mo):
     2. joining the result from step 1 to the payment table. each payment belongs to exactly one order, so no payment is lost or doubled --> 1287 rows equals to the payment rows
 
     then after that we group them into ones that match and don't match the order total
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+        WITH order_total AS (
+            SELECT ol.order_id,
+                   sum(ol.line_qty * (ol.line_price + coalesce(lo.options, 0))) AS order_total
+            FROM order_line ol
+            LEFT JOIN (SELECT line_id, sum(option_price_charged) AS options
+                       FROM line_option GROUP BY line_id) lo
+                   ON lo.line_id = ol.line_id
+            GROUP BY ol.order_id
+        )
+        SELECT
+            (SELECT count(*) FROM order_total) AS step_1_rows,
+            count(*)                           AS step_2_rows,
+            count(DISTINCT t.order_id)         AS orders_in_step_2
+        FROM order_total t
+        JOIN payment p ON p.order_id = t.order_id
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **Did it match?** Yes. Step 1 gives 1,200 rows, one per order, and the join to
+    payments gives 1,287 rows, one per payment, as predicted. All 1,200 orders are still
+    there after the join, so no payment was lost, and the count did not go above 1,287,
+    so no payment was doubled. It matched because the order totals were added up
+    *before* meeting the payments. Joining the raw lines to the payments instead would
+    have paired every line of an order with every payment of that order, giving more
+    rows and doubling the lines of the 87 orders paid in two parts.
+
+    **What one row of the final result means:** one order whose payments do not add up
+    to what its lines and options were charged, with how much it was over- or underpaid.
     """)
     return
 
