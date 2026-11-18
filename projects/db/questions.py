@@ -28,6 +28,23 @@ def _(duckdb, mo):
 
 
 @app.cell
+def _():
+    from datetime import date, timedelta
+
+    AS_OF = date(2026, 11, 7)   # every "last N days" and "last month" below counts back from here
+
+    # "Last month" is the last full calendar month before AS_OF: October 2026.
+    _this_month_start = AS_OF.replace(day=1)
+    LAST_MONTH_START = (_this_month_start - timedelta(days=1)).replace(day=1)
+    LAST_MONTH_END = _this_month_start   # exclusive: up to, not including, this month
+
+    LAST_60_START = AS_OF - timedelta(days=60)
+
+    AS_OF, LAST_MONTH_START, LAST_MONTH_END, LAST_60_START
+    return
+
+
+@app.cell
 def _(ask):
     ask("""
         SELECT
