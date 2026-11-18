@@ -52,7 +52,7 @@ def _(mo):
 
     7. The products, available today or not, that have not sold in the last 60 days.
 
-    8. The product that generate the highest gross profit (including options within their lines total)
+    8. My own question: How many orders, and how much money, does the café take through each payment method?
     """)
     return
 
@@ -326,7 +326,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # 8. My own question: Which products generate the highest gross profit, including the options sold on their lines?
+    # 8. My own question: How much money, does the café take through each payment method?
     """)
     return
 
@@ -334,30 +334,13 @@ def _(mo):
 @app.cell
 def _(ask):
     ask("""
-        WITH line_profit AS (
-            SELECT ol.line_id, ol.prod_id,
-                   ol.line_qty * (ol.line_price - m.prod_cost) AS product_profit
-            FROM order_line ol
-            JOIN menu m ON m.prod_id = ol.prod_id
-        ),
-        option_profit AS (
-            SELECT lo.line_id,
-                   sum(ol.line_qty * (lo.option_price_charged - op.option_cost)) AS options_profit
-            FROM line_option lo
-            JOIN order_line ol ON ol.line_id   = lo.line_id
-            JOIN options op    ON op.option_id = lo.option_id
-            GROUP BY lo.line_id
-        )
-        SELECT m.prod_name, m.prod_cat,
-               sum(lp.product_profit)                                  AS product_profit,
-               sum(coalesce(op.options_profit, 0))                     AS options_profit,
-               sum(lp.product_profit + coalesce(op.options_profit, 0)) AS gross_profit
-        FROM line_profit lp
-        JOIN menu m ON m.prod_id = lp.prod_id
-        LEFT JOIN option_profit op ON op.line_id = lp.line_id
-        GROUP BY m.prod_name, m.prod_cat
-        ORDER BY gross_profit DESC
-        LIMIT 5
+        SELECT payment_method,
+               count(*)                 AS n_payments,
+               sum(payment_amt)         AS total_amount,
+               round(100 * sum(payment_amt) / sum(sum(payment_amt)) OVER (), 1) AS pct_of_amount
+        FROM payment
+        GROUP BY payment_method
+        ORDER BY total_amount DESC
     """)
     return
 
@@ -365,10 +348,10 @@ def _(ask):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    The Latte generates the most gross profit over the year: $890.35, of which $841.75
-    comes from the drink itself and $48.60 from the options added to it. That is about
-    $300 more than the next product, the Iced Latte, at $592.25. Four of the top five
-    are coffee drinks; the fifth is the Chai Latte, at $526.40.
+    Card brings in the most: 595 payments worth $4,631.25 (48.3% of all money taken),
+    followed by the app (342 payments, $2,594.25, 27.1%) and cash (248 payments,
+    $2,066.25, 21.6%). Points cover only $288.25 (3.0%) across 102 payments. Together,
+    the 1,287 payments add up to $9,580.00.
     """)
     return
 
@@ -384,7 +367,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    Check 1: question 2's revenue, reached another way.** Question 2 adds up
+    **Check 1:** question 2's revenue, reached another way.** Question 2 adds up
     revenue line by line and option by option, by category. The `order_totals` view
     adds it up order by order, without categories. Both should come to the same total.
     """)
@@ -419,7 +402,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    Check 2: question 5's count, reached another way.** Instead of looking for members
+    **Check 2:** question 5's count, reached another way.** Instead of looking for members
     with no matching order, count the members who do appear in orders and subtract that
     from all members.
     """)
@@ -450,7 +433,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    Check 3: question 6's counts, reached another way.** The monthly orders in
+    **Check 3: **question 6's counts, reached another way.** The monthly orders in
     question 6 should add up to every order, and the monthly points orders should add up
     to the number of orders with a points payment, counted straight from `payment`.
     """)
@@ -488,7 +471,8 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    when I tried query question 4, first ai didn't pre-aggregate anything, and just join orders → order_line → line_option → payment all at once. I redirect it to do 2-step joint instead as it's more accurate and easier to track. The build section already made the joint order_total ready for use as well.
+    when I tried query question 4, first ai didn't pre-aggregate anything, and just join orders → order_line → line_option → payment all at once. I redirect it to do 2-step join instead as it's more accurate and easier to track. The build section already made the joint order_total ready for use as well.
+    See the Q4 query cell, and the order_totals view in build.py’s build cell.
 
     The rest of the work, AI got them right the first time. Samples of how I checked it are shown in How I Know These Numbers Are Right section
     """)
@@ -540,7 +524,9 @@ def _(ask):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    **Did it match?** Yes. Step 1 gives 1,200 rows, one per order, and the join to
+    **Did it match?**
+
+    Yes. Step 1 gives 1,200 rows, one per order, and the join to
     payments gives 1,287 rows, one per payment, as predicted. All 1,200 orders are still
     there after the join, so no payment was lost, and the count did not go above 1,287,
     so no payment was doubled. It matched because the order totals were added up
@@ -548,8 +534,9 @@ def _(mo):
     have paired every line of an order with every payment of that order, giving more
     rows and doubling the lines of the 87 orders paid in two parts.
 
-    **What one row of the final result means:** one order whose payments do not add up
-    to what its lines and options were charged, with how much it was over- or underpaid.
+    **What one row of the final result means:**
+
+    one order whose payments do not match exactly to what the total of its lines and options were charged
     """)
     return
 
@@ -631,7 +618,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    aprx 5 hrs
+    5 hrs
     """)
     return
 
