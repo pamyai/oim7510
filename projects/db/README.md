@@ -88,6 +88,7 @@ rows in each tables
 4.3 Which of the scenario's rules your tables cannot hold, and how you will check it instead. 
 - A quantity is more than zero, and so is a payment. --> Force with CHECK constraint
 - A payment's method is one of the four listed above. --> if really needed, could build one more table called "Payment method". I just think it's an overkill. Can force input by choice via code rule instead. 
+- An order’s payments add up to its total. --> No CHECK can hold it, because it spans order_line, line_option and payment, so I check it with a query (Part B, question 4).
 
 4.4 One thing your agent proposed for the design that you changed or did not take, and why;  if you designed it alone, one thing you checked in the ERD your agent drew.
 - I worked alone and just tell it to put in mermaid. Agent suggested table name "order_line" instead of just "line" which i think is good for clarity. 
